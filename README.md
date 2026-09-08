@@ -1,5 +1,7 @@
 # Portolan building blocks
 
+> **Work in progress.** This register started on 8 September 2026 and is under active development. Block identifiers, schemas, and the register URL can change before the first stable release. The Portolan specification itself is pre-1.0. Do not depend on `bblocks://portolan.*` identifiers in production yet. The schema of record, `https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json`, is stable at its versioned URL.
+
 [OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) for the [Portolan specification](https://github.com/portolan-sdi/portolan-spec).
 
 Portolan is an open-source specification for publishing geospatial data at any scale. A catalog is a static STAC catalog on plain object storage, with cloud-native assets and documentation for people and agents. This register wraps the published Portolan artifacts as building blocks so that they can be validated, documented, and composed with other blocks in the OGC ecosystem. It does not redefine them. The schema of record stays at `https://schemas.portolan-sdi.org/portolan/<version>/schema.json`, the profile text stays in [`stac/README.md`](https://github.com/portolan-sdi/portolan-spec/blob/main/stac/README.md), and [rashid](https://github.com/portolan-sdi/rashid) checks the rules a schema cannot express.
