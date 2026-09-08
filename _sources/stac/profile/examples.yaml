@@ -1,0 +1,33 @@
+examples:
+  - title: Root catalog
+    content: |
+      The root of the Portolan reference catalog. A Catalog declares the profile schema in
+      `stac_extensions`, carries a `title` and `description`, gives every `child` link a title,
+      and links its `AGENTS.md` (`rel: agents`) and `README.md` (`rel: describedby`).
+    snippets:
+      - language: json
+        ref: examples/catalog.json
+
+  - title: Vector collection (GeoParquet with PMTiles)
+    content: |
+      City of Boston open space. The GeoParquet asset carries `file:size` and `file:checksum`,
+      the PMTiles asset is exposed through a `rel: pmtiles` link (Web Map Links extension),
+      and `table:columns` documents the schema with per-column descriptions.
+    snippets:
+      - language: json
+        ref: examples/collection-vector.json
+
+  - title: Tabular collection
+    content: |
+      Eurostat electricity prices. A Parquet table with no geometry column. The column schema
+      is the primary handle for consumers and agents.
+    snippets:
+      - language: json
+        ref: examples/collection-tabular.json
+
+  - title: Raster collection (Cloud-Optimized GeoTIFF)
+    content: |
+      A sample COG collection. Band detail uses the Raster extension.
+    snippets:
+      - language: json
+        ref: examples/collection-raster.json
