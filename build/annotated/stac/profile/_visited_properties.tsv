@@ -1,0 +1,146 @@
+path	@id	schema
+/_anyOf/0/stac_extensions	https://w3id.org/ogc/stac/core/hasExtension	https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/type	@type	https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/id	@id	https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/extent	http://purl.org/dc/terms/extent	https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/extent/spatial		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/extent/spatial/bbox		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/extent/temporal		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/extent/temporal/interval		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/item_assets		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/item_assets/href		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/item_assets/title	http://purl.org/dc/terms/title	https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/item_assets/description	http://purl.org/dc/terms/description	https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/item_assets/type	@type	https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/item_assets/roles		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/item_assets/keywords		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/basics.json
+/_anyOf/0/item_assets/bands		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/bands.json
+/_anyOf/0/item_assets/bands/datetime		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/datetime.json
+/_anyOf/0/item_assets/bands/start_datetime		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/datetime.json
+/_anyOf/0/item_assets/bands/end_datetime		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/datetime.json
+/_anyOf/0/item_assets/bands/created		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/datetime.json
+/_anyOf/0/item_assets/bands/updated		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/datetime.json
+/_anyOf/0/item_assets/bands/data_type		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/nodata		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/statistics		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/statistics/minimum		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/statistics/maximum		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/statistics/mean		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/statistics/stddev		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/statistics/count		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/statistics/valid_percent		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/unit		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/data-values.json
+/_anyOf/0/item_assets/bands/platform		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/instrument.json
+/_anyOf/0/item_assets/bands/instruments		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/instrument.json
+/_anyOf/0/item_assets/bands/constellation		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/instrument.json
+/_anyOf/0/item_assets/bands/mission		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/instrument.json
+/_anyOf/0/item_assets/bands/gsd		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/instrument.json
+/_anyOf/0/item_assets/bands/license		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/licensing.json
+/_anyOf/0/item_assets/bands/providers		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/provider.json
+/_anyOf/0/item_assets/bands/providers/name		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/provider.json
+/_anyOf/0/item_assets/bands/providers/description		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/provider.json
+/_anyOf/0/item_assets/bands/providers/roles		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/provider.json
+/_anyOf/0/item_assets/bands/providers/url		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/provider.json
+/_anyOf/0/item_assets/bands/name		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/bands.json
+/_anyOf/0/links	http://www.w3.org/2000/01/rdf-schema#seeAlso	https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/links/href	http://www.w3.org/ns/oa#hasTarget	https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+/_anyOf/0/links/rel	http://www.iana.org/assignments/relation	https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+/_anyOf/0/links/anchor		https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+/_anyOf/0/links/type	http://purl.org/dc/terms/type	https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+/_anyOf/0/links/hreflang	http://purl.org/dc/terms/language	https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+/_anyOf/0/links/title	http://www.w3.org/2000/01/rdf-schema#label	https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+/_anyOf/0/links/length	http://purl.org/dc/terms/extent	https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+/_anyOf/0/summaries		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/summaries/_anyOf/0/$id		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/$schema		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/$ref		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/$comment		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/title		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/description		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/default		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/readOnly		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/writeOnly		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/examples		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/multipleOf		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/maximum		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/exclusiveMaximum		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/minimum		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/exclusiveMinimum		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/maxLength		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/minLength		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/pattern		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/additionalItems		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/items		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/maxItems		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/minItems		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/uniqueItems		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/contains		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/maxProperties		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/minProperties		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/required		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/additionalProperties		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/definitions		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/properties		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/patternProperties		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/dependencies		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/propertyNames		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/const		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/enum		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/type		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/format		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/contentMediaType		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/contentEncoding		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/if		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/then		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/else		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/allOf		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/anyOf		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/oneOf		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/0/not		http://json-schema.org/draft-07/schema
+/_anyOf/0/summaries/_anyOf/1/minimum		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/summaries/_anyOf/1/maximum		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+/_anyOf/0/assets	https://w3id.org/ogc/stac/core/hasAsset	https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets/schema.yaml
+/_anyOf/0/assets/href		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets/schema.yaml
+/_anyOf/0/assets/title		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets/schema.yaml
+/_anyOf/0/assets/description		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets/schema.yaml
+/_anyOf/0/assets/type		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets/schema.yaml
+/_anyOf/0/assets/roles		https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets/schema.yaml
+/_anyOf/1/stac_version		https://schemas.stacspec.org/v1.1.0/catalog-spec/json-schema/catalog.json
+/_anyOf/1/stac_extensions		https://schemas.stacspec.org/v1.1.0/catalog-spec/json-schema/catalog.json
+/_anyOf/1/type		https://schemas.stacspec.org/v1.1.0/catalog-spec/json-schema/catalog.json
+/_anyOf/1/id		https://schemas.stacspec.org/v1.1.0/catalog-spec/json-schema/catalog.json
+/_anyOf/1/links		https://schemas.stacspec.org/v1.1.0/catalog-spec/json-schema/catalog.json
+/_anyOf/1/links/_then/href		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/item.json
+/_anyOf/1/links/href		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/item.json
+/_anyOf/1/links/rel		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/item.json
+/_anyOf/1/links/type		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/item.json
+/_anyOf/1/links/title		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/item.json
+/_anyOf/1/links/method		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/item.json
+/_anyOf/1/links/headers		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/item.json
+/_anyOf/1/links/body		https://schemas.stacspec.org/v1.1.0/item-spec/json-schema/item.json
+/_oneOf/0/type		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/0/stac_extensions		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/0/title		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/0/description		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/0/links		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/0/links/_then/type		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/0/links/_then/href		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/0/links/_then/title		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/0/links/rel		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/0/links/type		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/type		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/assets		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/assets/href		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/assets/type		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/assets/roles		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/assets/file:size		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/assets/file:checksum		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/license		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/providers		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/providers/roles		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/_then/stac_extensions		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/extent		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/extent/spatial		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/1/extent/spatial/bbox		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/2/type		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json
+/_oneOf/2/bbox		https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json

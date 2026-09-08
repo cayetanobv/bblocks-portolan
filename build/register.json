@@ -1,0 +1,143 @@
+{
+  "name": "Portolan Building Blocks",
+  "abstract": "OGC Building Blocks for the [Portolan specification](https://github.com/portolan-sdi/portolan-spec):\nthe Portolan STAC profile and the STAC extensions Portolan defines.\n",
+  "description": "Portolan is an open specification for cloud-native geospatial data catalogs. Every Portolan\ncatalog is a static STAC catalog on plain HTTPS object storage, with cloud-native assets and\nguidance files that both people and AI agents read.\n\nThis register wraps the published Portolan artifacts as Building Blocks. It does not redefine\nthem. The schema of record is `https://schemas.portolan-sdi.org/portolan/<version>/schema.json`,\nthe profile text lives in `portolan-spec/stac/README.md`, and rules the schema cannot express are\nchecked by the [rashid](https://github.com/portolan-sdi/rashid) validator.\n",
+  "modified": "2026-09-08T14:39:07.957699",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"8d8b2ab83672c64d7d06816a86decd4ca6c04312",
+      "shortCommitId": "\"8d8b2a",
+      "date": "2026-09-08T08:41:58+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/cayetanobv/bblocks-portolan",
+  "gitHubRepository": "https://github.com/cayetanobv/bblocks-portolan/blob/main/",
+  "baseURL": "https://cayetanobv.github.io/bblocks-portolan/",
+  "viewerURL": "https://cayetanobv.github.io/bblocks-portolan/",
+  "license": {
+    "name": "Apache-2.0",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0"
+  },
+  "validationReport": "https://cayetanobv.github.io/bblocks-portolan/build/tests/report.html",
+  "validationReportJson": "https://cayetanobv.github.io/bblocks-portolan/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json",
+    "https://ogcincubator.github.io/bblocks-stac/build/register.json"
+  ],
+  "bblocks": [
+    {
+      "itemIdentifier": "portolan.stac.profile",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Portolan STAC Profile",
+      "abstract": "A STAC Catalog or Collection that conforms to the Portolan specification v0.2.0: cloud-native assets on plain HTTPS object storage, a pinned set of STAC extensions, and AGENTS.md and README.md links on every catalog and collection.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-08T00:00:00Z",
+      "itemClass": "schema",
+      "register": "bblocks-portolan",
+      "version": "0.2.0",
+      "dateOfLastChange": "2026-09-08",
+      "dependsOn": [
+        "bblocks://ogc.contrib.stac.extensions.themes",
+        "bblocks://ogc.contrib.stac.collection",
+        "bblocks://ogc.contrib.stac.extensions.raster"
+      ],
+      "sources": [
+        {
+          "title": "Portolan STAC Profile",
+          "link": "https://github.com/portolan-sdi/portolan-spec/blob/main/stac/README.md"
+        },
+        {
+          "title": "Portolan Specification, Core",
+          "link": "https://github.com/portolan-sdi/portolan-spec/blob/main/specs/portolan/core.md"
+        },
+        {
+          "title": "Portolan schema v0.2.0",
+          "link": "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json"
+        }
+      ],
+      "scope": "contrib",
+      "tags": [
+        "stac",
+        "profile",
+        "portolan",
+        "cloud-native",
+        "geoparquet",
+        "pmtiles"
+      ],
+      "group": "STAC",
+      "highlighted": true,
+      "shaclShapes": {
+        "ogc.contrib.stac.core-ontology": [
+          "https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl"
+        ],
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ],
+        "ogc.contrib.stac.components.assets-ontology": [
+          "https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl"
+        ],
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ],
+        "ogc.api.records.v1.schemas.linkTemplate": [
+          "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
+        ],
+        "ogc.contrib.stac.extensions.themes-ontology": [
+          "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/themes-ontology/shapes.shacl"
+        ],
+        "ogc.contrib.stac.extensions.raster-ontology": [
+          "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      },
+      "schema": {
+        "application/yaml": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile/schema.yaml",
+        "application/json": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile/schema.json"
+      },
+      "sourceSchema": "https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile/schema.yaml",
+      "ldContext": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile/context.jsonld",
+      "resolvedSchemaProperties": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile/resolvedProperties.json",
+      "sourceFiles": "https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/cayetanobv/bblocks-portolan/blob/main/build/tests/stac/profile/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/markdown/stac/profile/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/json-full/stac/profile/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://cayetanobv.github.io/bblocks-portolan/bblock/portolan.stac.profile"
+        }
+      }
+    }
+  ],
+  "remoteCacheDir": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://cayetanobv.github.io/bblocks-portolan/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://cayetanobv.github.io/bblocks-portolan/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://cayetanobv.github.io/bblocks-portolan/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ]
+}
