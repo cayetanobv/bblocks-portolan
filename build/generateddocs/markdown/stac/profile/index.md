@@ -210,26 +210,18 @@ and links its `AGENTS.md` (`rel: agents`) and `README.md` (`rel: describedby`).
 <file:///github/workspace/portolan-reference> a <file:///github/workspace/Catalog> ;
     dct:description "A mixed reference catalog exercising every major case in the Portolan v0.1 specification with real, openly licensed data pulled from its original upstream sources, vector polygons and points, raster, tabular, mirror provenance, nested catalogs and flat collections." ;
     dct:title "Portolan Reference Catalog" ;
-    rdfs:seeAlso [ rdfs:label "Administrative Boundaries" ;
+    rdfs:seeAlso [ rdfs:label "Guidance for AI agents" ;
+            dct:type "text/markdown" ;
+            ns1:relation <http://www.iana.org/assignments/relation/agents> ;
+            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ rdfs:label "Reference Basemaps" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <file:///github/workspace/boundaries/catalog.json> ],
-        [ rdfs:label "Raster Data" ;
-            dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <file:///github/workspace/raster/catalog.json> ],
+            oa:hasTarget <file:///github/workspace/reference/catalog.json> ],
         [ rdfs:label "Mirrored Collections" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/child> ;
             oa:hasTarget <file:///github/workspace/mirror/catalog.json> ],
-        [ rdfs:label "Guidance for AI agents" ;
-            dct:type "text/markdown" ;
-            ns1:relation <http://www.iana.org/assignments/relation/agents> ;
-            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
-        [ rdfs:label "Tabular Data" ;
-            dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <file:///github/workspace/tabular/catalog.json> ],
         [ rdfs:label "Portolan SDI" ;
             dct:type "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/icon> ;
@@ -238,13 +230,21 @@ and links its `AGENTS.md` (`rel: agents`) and `README.md` (`rel: describedby`).
             dct:type "text/markdown" ;
             ns1:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
-        [ rdfs:label "Reference Basemaps" ;
-            dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <file:///github/workspace/reference/catalog.json> ],
         [ dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///github/workspace/catalog.json> ] ;
+            oa:hasTarget <file:///github/workspace/catalog.json> ],
+        [ rdfs:label "Raster Data" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <file:///github/workspace/raster/catalog.json> ],
+        [ rdfs:label "Administrative Boundaries" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <file:///github/workspace/boundaries/catalog.json> ],
+        [ rdfs:label "Tabular Data" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <file:///github/workspace/tabular/catalog.json> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json" ;
     stac:version "1.1.0" .
 
@@ -863,11 +863,11 @@ and `table:columns` documents the schema with per-column descriptions.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ns1: <table:> .
-@prefix ns2: <https://w3id.org/ogc/stac/assets/> .
-@prefix ns3: <file:> .
+@prefix ns2: <file:> .
+@prefix ns3: <https://w3id.org/ogc/stac/assets/> .
 @prefix ns4: <http://www.iana.org/assignments/> .
-@prefix ns5: <pmtiles:> .
-@prefix ns6: <proj:> .
+@prefix ns5: <proj:> .
+@prefix ns6: <pmtiles:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
@@ -883,37 +883,37 @@ and `table:columns` documents the schema with per-column descriptions.
         "parks",
         "recreation" ;
     dct:title "Boston Open Space" ;
-    rdfs:seeAlso [ dct:type "application/json" ;
-            ns4:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///catalog.json> ],
+    rdfs:seeAlso [ rdfs:label "Human-readable documentation" ;
+            dct:type "text/markdown" ;
+            ns4:relation <http://www.iana.org/assignments/relation/describedby> ;
+            oa:hasTarget <file:///github/workspace/README.md> ],
         [ rdfs:label "Original source" ;
             dct:type "text/html" ;
             ns4:relation <http://www.iana.org/assignments/relation/via> ;
             oa:hasTarget <https://bostonopendata-boston.opendata.arcgis.com/datasets/2868d370c55d4d458d4ae2224ef8cddd_7> ],
+        [ dct:type "application/json" ;
+            ns4:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///catalog.json> ],
+        [ rdfs:label "Web map tiles" ;
+            dct:type "application/vnd.pmtiles" ;
+            ns4:relation <http://www.iana.org/assignments/relation/pmtiles> ;
+            oa:hasTarget <file:///github/workspace/boston-open-space.pmtiles> ;
+            ns6:layers "boston-open-space" ],
         [ rdfs:label "Guidance for AI agents" ;
             dct:type "text/markdown" ;
             ns4:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ],
         [ dct:type "application/json" ;
             ns4:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Web map tiles" ;
-            dct:type "application/vnd.pmtiles" ;
-            ns4:relation <http://www.iana.org/assignments/relation/pmtiles> ;
-            oa:hasTarget <file:///github/workspace/boston-open-space.pmtiles> ;
-            ns5:layers "boston-open-space" ],
-        [ rdfs:label "Human-readable documentation" ;
-            dct:type "text/markdown" ;
-            ns4:relation <http://www.iana.org/assignments/relation/describedby> ;
-            oa:hasTarget <file:///github/workspace/README.md> ] ;
-    stac:hasAsset [ ns2:data <file:///github/workspace/boston-open-space.parquet> ;
-            ns2:style-acreage <file:///github/workspace/styles/acreage.json> ;
-            ns2:style-labeled <file:///github/workspace/styles/labeled.json> ;
-            ns2:style-ownership <file:///github/workspace/styles/ownership.json> ;
-            ns2:style-protection <file:///github/workspace/styles/protection.json> ;
-            ns2:style-types <file:///github/workspace/styles/types.json> ;
-            ns2:thumbnail <file:///github/workspace/thumbnail.png> ;
-            ns2:visual <file:///github/workspace/boston-open-space.pmtiles> ] ;
+            oa:hasTarget <file:///github/catalog.json> ] ;
+    stac:hasAsset [ ns3:data <file:///github/workspace/boston-open-space.parquet> ;
+            ns3:style-acreage <file:///github/workspace/styles/acreage.json> ;
+            ns3:style-labeled <file:///github/workspace/styles/labeled.json> ;
+            ns3:style-ownership <file:///github/workspace/styles/ownership.json> ;
+            ns3:style-protection <file:///github/workspace/styles/protection.json> ;
+            ns3:style-types <file:///github/workspace/styles/types.json> ;
+            ns3:thumbnail <file:///github/workspace/thumbnail.png> ;
+            ns3:visual <file:///github/workspace/boston-open-space.pmtiles> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
         "https://stac-extensions.github.io/file/v2.1.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
@@ -923,98 +923,98 @@ and `table:columns` documents the schema with per-column descriptions.
         [ ] ;
     stac:version "1.1.0" ;
     ns1:columns [ a <file:///github/workspace/varchar> ;
-            dct:description "Agency of jurisdiction for government-owned unprotected sites. Sparsely populated by design." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Public access flag. X accessible, A by appointment, N no or unknown access." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Street address if known, null for 589 rows." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Protected open space flag. X permanently protected, N not." ],
-        [ a <file:///github/workspace/double> ;
-            dct:description "ArcGIS-computed area in square meters from the source State Plane geometry." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Best-known or official site name. Multi-parcel sites carry Roman numeral suffixes, Stony Brook Reservation I and II." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Slash-separated legal protection instruments. A97 is Article 97 of the Massachusetts Constitution, the strongest. Free text, match with LIKE." ],
-        [ a <file:///github/workspace/bigint> ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Aggregated zoning district, for example Open Space District." ],
-        [ a <file:///github/workspace/double> ;
-            dct:description "Official area in acres of the open-space portion, the figure to use instead of computing geometry area." ],
-        [ a <file:///github/workspace/geometry> ;
-            dct:description "Site geometry, WGS84 longitude and latitude." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Managing entity only when it differs from OS_Own_Jur. Null means the steward manages it, not missing data." ],
-        [ a <file:///github/workspace/double> ;
-            dct:description "ArcGIS-computed perimeter in meters." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Official, previous, or colloquial alternate names." ],
+            dct:description "Planning district per the city's open space plan, not the official neighborhood boundaries. Includes the non-spatial value Multi-District." ],
         [ a <file:///github/workspace/integer> ;
             dct:description "Numeric open space type 1 through 7. Disagrees with TypeLong on about 13 rows, treat TypeLong as closer to intent." ],
-        [ dct:description "Per-feature bounding box struct, the GeoParquet covering." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Fee owner where known. City of Boston, Commonwealth of Massachusetts, private owners, and agency abbreviations like BRA and BNAN." ],
-        [ a <file:///github/workspace/integer> ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Open space type as text, with minor spelling variants worth normalizing before grouping." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "The entity holding the open-space rights. BPRD, DCR, the Boston Conservation Commission, or None." ],
+            dct:description "Public access flag. X accessible, A by appointment, N no or unknown access." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Planning district per the city's open space plan, not the official neighborhood boundaries. Includes the non-spatial value Multi-District." ] ;
+            dct:description "Fee owner where known. City of Boston, Commonwealth of Massachusetts, private owners, and agency abbreviations like BRA and BNAN." ],
+        [ a <file:///github/workspace/geometry> ;
+            dct:description "Site geometry, WGS84 longitude and latitude." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Agency of jurisdiction for government-owned unprotected sites. Sparsely populated by design." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Official, previous, or colloquial alternate names." ],
+        [ a <file:///github/workspace/double> ;
+            dct:description "Official area in acres of the open-space portion, the figure to use instead of computing geometry area." ],
+        [ a <file:///github/workspace/double> ;
+            dct:description "ArcGIS-computed perimeter in meters." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Aggregated zoning district, for example Open Space District." ],
+        [ a <file:///github/workspace/bigint> ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Best-known or official site name. Multi-parcel sites carry Roman numeral suffixes, Stony Brook Reservation I and II." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Protected open space flag. X permanently protected, N not." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Managing entity only when it differs from OS_Own_Jur. Null means the steward manages it, not missing data." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "The entity holding the open-space rights. BPRD, DCR, the Boston Conservation Commission, or None." ],
+        [ a <file:///github/workspace/integer> ],
+        [ dct:description "Per-feature bounding box struct, the GeoParquet covering." ],
+        [ a <file:///github/workspace/double> ;
+            dct:description "ArcGIS-computed area in square meters from the source State Plane geometry." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Street address if known, null for 589 rows." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Slash-separated legal protection instruments. A97 is Article 97 of the Massachusetts Constitution, the strongest. Free text, match with LIKE." ] ;
     ns1:primary_geometry "geom" ;
     ns1:row_count 1012 .
 
-<file:///github/workspace/boston-open-space.parquet> ns3:checksum "122012852a6892d9f47810b6ad54959b22b840bdfbb118b136a25cc6dd7da41d3cff" ;
-    ns3:size 1188770 ;
+<file:///github/workspace/boston-open-space.parquet> ns2:checksum "122012852a6892d9f47810b6ad54959b22b840bdfbb118b136a25cc6dd7da41d3cff" ;
+    ns2:size 1188770 ;
     dct:format "application/vnd.apache.parquet" ;
     dct:title "Boston Open Space (GeoParquet)" ;
     stac:hasAssetroles "data"^^<xsd:string> ;
-    ns6:code "EPSG:4326" .
+    ns5:code "EPSG:4326" .
 
-<file:///github/workspace/styles/acreage.json> ns3:checksum "122092647db9cb1290d34a8b4675e8e13548c4f45e6d2c26589726232bd0bb23d710" ;
-    ns3:size 828 ;
+<file:///github/workspace/styles/acreage.json> ns2:checksum "122092647db9cb1290d34a8b4675e8e13548c4f45e6d2c26589726232bd0bb23d710" ;
+    ns2:size 828 ;
     dct:description "ACRES binned at one, ten, and one hundred acres, light to dark green, from pocket parks through Franklin Park's 392 acres." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Acreage in four classes" ;
     stac:hasAssetroles "style"^^<xsd:string> .
 
-<file:///github/workspace/styles/labeled.json> ns3:checksum "12200ce7dcdabc5683bbd6348a8fee0d83b23c47a48cf03557d9eef73d5085a9d2ca" ;
-    ns3:size 1586 ;
+<file:///github/workspace/styles/labeled.json> ns2:checksum "12200ce7dcdabc5683bbd6348a8fee0d83b23c47a48cf03557d9eef73d5085a9d2ca" ;
+    ns2:size 1586 ;
     dct:description "The type colouring with a SITE_NAME label per site." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Types with site names" ;
     stac:hasAssetroles "style"^^<xsd:string> .
 
-<file:///github/workspace/styles/ownership.json> ns3:checksum "1220430bfc3a3f3572e0156f3ce1ca91dbbdd6f1f2b360bf4f237ed8a26071a7fed5" ;
-    ns3:size 1363 ;
+<file:///github/workspace/styles/ownership.json> ns2:checksum "1220430bfc3a3f3572e0156f3ce1ca91dbbdd6f1f2b360bf4f237ed8a26071a7fed5" ;
+    ns2:size 1363 ;
     dct:description "OWNERSHIP from the catalog palette, city, Commonwealth, federal, and the 214 privately owned sites side by side." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Who owns it" ;
     stac:hasAssetroles "style"^^<xsd:string> .
 
-<file:///github/workspace/styles/protection.json> ns3:checksum "122029441a7dbf26793f87185cb67a1ee3e5055d271a6550c1cffad5b8fdaa349078" ;
-    ns3:size 1122 ;
+<file:///github/workspace/styles/protection.json> ns2:checksum "122029441a7dbf26793f87185cb67a1ee3e5055d271a6550c1cffad5b8fdaa349078" ;
+    ns2:size 1122 ;
     dct:description "The POS flag, deep green where protection is permanent under Article 97 or a conservation restriction, gray where it is not. The inner match relabels the raw X and N codes so the legend a client derives from the outer match reads in plain words." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Permanently protected or not" ;
     stac:hasAssetroles "style"^^<xsd:string> .
 
-<file:///github/workspace/styles/types.json> ns3:checksum "1220b1762e9d48bd88b6901687f255ac37fb6afc3618f46f2e4d8a569f4b9df5bfcc" ;
-    ns3:size 1224 ;
+<file:///github/workspace/styles/types.json> ns2:checksum "1220b1762e9d48bd88b6901687f255ac37fb6afc3618f46f2e4d8a569f4b9df5bfcc" ;
+    ns2:size 1224 ;
     dct:description "TypeLong separates parks, parkways and reservations, cemeteries, urban wilds, malls and plazas, and community gardens." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Open space by type" ;
     stac:hasAssetroles "default"^^<xsd:string>,
         "style"^^<xsd:string> .
 
-<file:///github/workspace/thumbnail.png> ns3:checksum "122061292d50d6b52d5452897669fe629173564b49f0d2538de5605331a323299fb0" ;
-    ns3:size 377459 ;
+<file:///github/workspace/thumbnail.png> ns2:checksum "122061292d50d6b52d5452897669fe629173564b49f0d2538de5605331a323299fb0" ;
+    ns2:size 377459 ;
     dct:format "image/png" ;
     dct:title "Preview thumbnail over a light basemap. © OpenStreetMap contributors © CARTO." ;
     stac:hasAssetroles "thumbnail"^^<xsd:string> .
 
-<file:///github/workspace/boston-open-space.pmtiles> ns3:checksum "1220db3d459dc821db7adf739ad0afee9682a3b94f8d467c564c343dcb159a2b3281" ;
-    ns3:size 989217 ;
+<file:///github/workspace/boston-open-space.pmtiles> ns2:checksum "1220db3d459dc821db7adf739ad0afee9682a3b94f8d467c564c343dcb159a2b3281" ;
+    ns2:size 989217 ;
     dct:format "application/vnd.pmtiles" ;
     dct:title "Boston Open Space (PMTiles)" ;
     stac:hasAssetroles "visual"^^<xsd:string> .
@@ -1383,9 +1383,9 @@ is the primary handle for consumers and agents.
 ```ttl
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ns1: <table:> .
-@prefix ns2: <file:> .
+@prefix ns2: <https://w3id.org/ogc/stac/assets/> .
 @prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <https://w3id.org/ogc/stac/assets/> .
+@prefix ns4: <file:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
@@ -1402,15 +1402,11 @@ is the primary handle for consumers and agents.
         "tabular" ;
     dct:title "Eurostat Electricity Prices for Household Consumers" ;
     rdfs:seeAlso [ dct:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///catalog.json> ],
-        [ dct:type "application/json" ;
             ns3:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Guidance for AI agents" ;
-            dct:type "text/markdown" ;
-            ns3:relation <http://www.iana.org/assignments/relation/agents> ;
-            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///catalog.json> ],
         [ rdfs:label "Human-readable documentation" ;
             dct:type "text/markdown" ;
             ns3:relation <http://www.iana.org/assignments/relation/describedby> ;
@@ -1418,8 +1414,12 @@ is the primary handle for consumers and agents.
         [ rdfs:label "Original source" ;
             dct:type "text/html" ;
             ns3:relation <http://www.iana.org/assignments/relation/via> ;
-            oa:hasTarget <https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table> ] ;
-    stac:hasAsset [ ns4:data <file:///github/workspace/eurostat-electricity-prices.parquet> ] ;
+            oa:hasTarget <https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table> ],
+        [ rdfs:label "Guidance for AI agents" ;
+            dct:type "text/markdown" ;
+            ns3:relation <http://www.iana.org/assignments/relation/agents> ;
+            oa:hasTarget <file:///github/workspace/AGENTS.md> ] ;
+    stac:hasAsset [ ns2:data <file:///github/workspace/eurostat-electricity-prices.parquet> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
         "https://stac-extensions.github.io/attribution/v0.1.0/schema.json",
         "https://stac-extensions.github.io/file/v2.1.0/schema.json",
@@ -1428,35 +1428,35 @@ is the primary handle for consumers and agents.
         [ ] ;
     stac:version "1.1.0" ;
     ns1:columns [ a <file:///github/workspace/varchar> ;
-            dct:description "EUR, NAC for national currency, or PPS purchasing power standard. NAC equals EUR in the euro area." ],
+            dct:description "Observation frequency, the constant S for semi-annual. S1 is January to June, S2 is July to December." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Energy product code, the constant E7000 for electricity." ],
+        [ a <file:///github/workspace/double> ;
+            dct:description "The observed electricity price in the stated currency per kilowatt-hour." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Unit of measure, the constant KWH. Prices are per kilowatt-hour." ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Eurostat dataflow identifier, the constant ESTAT nrg_pc_204 version 1.0." ],
+        [ a <file:///github/workspace/timestamp> ;
+            dct:description "Frozen at one 2019 timestamp for every row of this snapshot while the data runs to 2025. Unreliable, do not derive freshness from it." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Annual consumption band. KWH_LT1000, KWH1000-2499, KWH2500-4999 the headline household band, KWH5000-14999, KWH_GE15000, and TOT_KWH the weighted all-band average that exists only from 2017-S2." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Tax level. X_TAX excludes all taxes and levies, X_VAT excludes VAT and recoverable taxes, I_TAX includes everything a household pays." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "EUR, NAC for national currency, or PPS purchasing power standard. NAC equals EUR in the euro area." ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Observation status, e estimated, p provisional, d definition differs, null for 98 percent of rows." ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Reporting country as a Eurostat NUTS-0 code, ISO 3166-1 alpha-2 except EL for Greece and UK for the United Kingdom, plus the aggregates EU27_2020 and EA. The join key to a geometry Collection." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Energy product code, the constant E7000 for electricity." ],
-        [ a <file:///github/workspace/varchar> ;
             dct:description "Reference semester as a string, 2025-S2. Fixed format, so string ordering and MAX work." ],
-        [ a <file:///github/workspace/timestamp> ;
-            dct:description "Frozen at one 2019 timestamp for every row of this snapshot while the data runs to 2025. Unreliable, do not derive freshness from it." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Observation frequency, the constant S for semi-annual. S1 is January to June, S2 is July to December." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Tax level. X_TAX excludes all taxes and levies, X_VAT excludes VAT and recoverable taxes, I_TAX includes everything a household pays." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Unit of measure, the constant KWH. Prices are per kilowatt-hour." ],
-        [ a <file:///github/workspace/double> ;
-            dct:description "The observed electricity price in the stated currency per kilowatt-hour." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Annual consumption band. KWH_LT1000, KWH1000-2499, KWH2500-4999 the headline household band, KWH5000-14999, KWH_GE15000, and TOT_KWH the weighted all-band average that exists only from 2017-S2." ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Confidentiality status, entirely null in this snapshot." ] ;
     ns1:row_count 65412 .
 
-<file:///github/workspace/eurostat-electricity-prices.parquet> ns2:checksum "1220106081590cd5eacab833ea121be58b7b0686fec532215d3573ac0b13e94269a2" ;
-    ns2:size 163273 ;
+<file:///github/workspace/eurostat-electricity-prices.parquet> ns4:checksum "1220106081590cd5eacab833ea121be58b7b0686fec532215d3573ac0b13e94269a2" ;
+    ns4:size 163273 ;
     dct:format "application/vnd.apache.parquet" ;
     dct:title "Eurostat Electricity Prices for Household Consumers (Parquet)" ;
     stac:hasAssetroles "data"^^<xsd:string> .
@@ -1808,24 +1808,24 @@ A sample COG collection. Band detail uses the Raster extension.
         "rgb",
         "sample" ;
     dct:title "Sample Raster COG" ;
-    rdfs:seeAlso [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///catalog.json> ],
-        [ rdfs:label "Original source" ;
-            dct:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/via> ;
-            oa:hasTarget <https://github.com/rasterio/rasterio/blob/main/tests/data/RGB.byte.tif> ],
+    rdfs:seeAlso [ rdfs:label "Guidance for AI agents" ;
+            dct:type "text/markdown" ;
+            ns2:relation <http://www.iana.org/assignments/relation/agents> ;
+            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
         [ rdfs:label "Human-readable documentation" ;
             dct:type "text/markdown" ;
             ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
-        [ rdfs:label "Guidance for AI agents" ;
-            dct:type "text/markdown" ;
-            ns2:relation <http://www.iana.org/assignments/relation/agents> ;
-            oa:hasTarget <file:///github/workspace/AGENTS.md> ] ;
+        [ dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///catalog.json> ],
+        [ dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ rdfs:label "Original source" ;
+            dct:type "text/html" ;
+            ns2:relation <http://www.iana.org/assignments/relation/via> ;
+            oa:hasTarget <https://github.com/rasterio/rasterio/blob/main/tests/data/RGB.byte.tif> ] ;
     stac:hasAsset [ ns1:data <file:///github/workspace/sample-cog.tif> ;
             ns1:source <https://raw.githubusercontent.com/rasterio/rasterio/main/tests/data/RGB.byte.tif> ;
             ns1:thumbnail <file:///github/workspace/thumbnail.png> ] ;
