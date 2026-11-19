@@ -1,6 +1,6 @@
 # Portolan building blocks
 
-> **Work in progress.** This register started on 8 September 2026 and is under active development. Block identifiers, schemas, and the register URL can change before the first stable release. The Portolan specification itself is pre-1.0. Do not depend on `bblocks://portolan.*` identifiers in production yet. The schema of record, `https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json`, is stable at its versioned URL.
+> **Work in progress.** This register started on 8 September 2026 and is under active development. Block identifiers, schemas, and the register URL can change before the first stable release. The Portolan specification itself is pre-1.0. Do not depend on `bblocks://portolan.*` identifiers in production yet. The schema of record, `https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json`, is stable at its versioned URL.
 
 [OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) for the [Portolan specification](https://github.com/portolan-sdi/portolan-spec).
 
@@ -12,9 +12,9 @@ Register: https://cayetanobv.github.io/bblocks-portolan/
 
 | Identifier | Wraps | Status |
 |---|---|---|
-| `portolan.stac.profile` | Portolan STAC profile v0.2.0. A STAC Catalog or Collection that conforms to the Portolan specification. | under-development |
+| `portolan.stac.profile` | Portolan STAC profile v0.3.0. A STAC Catalog or Collection that conforms to the Portolan specification. Profile of `ogc.contrib.stac.collection`. | under-development |
 
-The profile block depends on `ogc.contrib.stac.collection`, `ogc.contrib.stac.extensions.raster`, and `ogc.contrib.stac.extensions.themes` from [bblocks-stac](https://ogcincubator.github.io/bblocks-stac/). The other STAC extensions Portolan composes are referenced by schema URL until a block exists for each.
+The profile block depends on `ogc.contrib.stac.collection` and on the extension blocks in [bblocks-stac](https://ogcincubator.github.io/bblocks-stac/) (imported as `@ogc/stac`) that match a version Portolan pins: classification, datacube, file, raster, scientific, themes, and version. The other STAC extensions Portolan composes are referenced by schema URL until a block exists for each.
 
 ## Use the blocks
 
@@ -39,7 +39,7 @@ Then use `$ref: bblocks://portolan.stac.profile` in a schema.
 Docker is required.
 
 ```bash
-./build.sh   # runs ghcr.io/opengeospatial/bblocks-postprocess, writes build-local/
+./build.sh   # runs ghcr.io/opengeospatial/bblocks-postprocess (pinned, override with BBP_IMAGE_TAG), writes build-local/
 ./view.sh    # serves the register viewer at http://localhost:9090/register/
 ```
 

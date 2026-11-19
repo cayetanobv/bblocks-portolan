@@ -2,9 +2,10 @@
   "type": "Collection",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/language/v1.0.0/schema.json"
   ],
   "id": "raster/sample-cog",
   "title": "Sample Raster COG",
@@ -97,7 +98,8 @@
           }
         }
       ],
-      "proj:code": "EPSG:32618"
+      "proj:code": "EPSG:32618",
+      "description": "The 3-band 8-bit RGB image in UTM zone 18N, with band statistics in its header."
     },
     "source": {
       "href": "https://raw.githubusercontent.com/rasterio/rasterio/main/tests/data/RGB.byte.tif",
@@ -107,17 +109,19 @@
         "source"
       ],
       "file:size": 1745956,
-      "file:checksum": "1220d7cbe932c7ed74a627706a9e9df99f706df3e5abc7d45a49e9d00677a6b09eb4"
+      "file:checksum": "1220d7cbe932c7ed74a627706a9e9df99f706df3e5abc7d45a49e9d00677a6b09eb4",
+      "description": "The rasterio RGB.byte.tif test image, the 3-band 8-bit GeoTIFF that the COG is made from."
     },
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
-      "title": "Preview thumbnail over a light basemap. \u00a9 OpenStreetMap contributors \u00a9 CARTO.",
+      "title": "Preview thumbnail over a light basemap. © OpenStreetMap contributors © CARTO.",
       "roles": [
         "thumbnail"
       ],
       "file:size": 243153,
-      "file:checksum": "12203f05e92e5b77ab80d92d7e319053dfa48f00ce72d05f8c7251959b88dbd57971"
+      "file:checksum": "12203f05e92e5b77ab80d92d7e319053dfa48f00ce72d05f8c7251959b88dbd57971",
+      "description": "A PNG of the image over a light basemap."
     }
   },
   "links": [
@@ -141,14 +145,35 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown",
-      "title": "Guidance for AI agents"
+      "title": "Guidance for AI agents",
+      "hreflang": "en"
     },
     {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown",
-      "title": "Human-readable documentation"
+      "title": "Human-readable documentation",
+      "hreflang": "en"
+    },
+    {
+      "rel": "alternate",
+      "href": "../../ar/raster/sample-cog/collection.json",
+      "type": "application/json",
+      "title": "Arabic",
+      "hreflang": "ar"
     }
   ],
-  "updated": "2026-07-21T00:00:00Z"
+  "updated": "2026-07-21T00:00:00Z",
+  "language": {
+    "code": "en",
+    "name": "English"
+  },
+  "languages": [
+    {
+      "code": "ar",
+      "name": "العربية",
+      "alternate": "Arabic",
+      "dir": "rtl"
+    }
+  ]
 }
