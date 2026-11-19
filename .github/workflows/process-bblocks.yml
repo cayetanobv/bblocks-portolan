@@ -20,6 +20,10 @@ jobs:
     if: github.run_number != 1
     name: Validate and process
     uses: opengeospatial/bblocks-postprocess/.github/workflows/validate-and-process.yml@master
+    with:
+      # Pin the postprocess image so builds are reproducible. Keep in step with BBP_IMAGE_TAG in build.sh.
+      # pr-check.yml cannot be pinned: the upstream pr-check workflow has no image_tag input.
+      image_tag: v1.2.4
     secrets:
       sparql_username: ${{ secrets.sparql_username }}
       sparql_password: ${{ secrets.sparql_password }}
