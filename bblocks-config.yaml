@@ -23,7 +23,7 @@ identifier-prefix: portolan.
 
 imports:
   - default
-  - https://ogcincubator.github.io/bblocks-stac/build/register.json
+  - '@ogc/stac'
 
 license:
   name: Apache-2.0
