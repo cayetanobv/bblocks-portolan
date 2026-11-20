@@ -1,0 +1,67 @@
+name: Client
+
+# Tests for the portolan-bblocks client, and an on-demand check of the catalogs in
+# client/catalogs.yaml. The tests use the published register, so a change to _sources/
+# shows up in them only after it is merged and the register is republished.
+
+on:
+  pull_request:
+    paths:
+      - client/**
+      - _sources/**
+      - .github/workflows/client.yml
+  push:
+    branches: [main]
+    paths:
+      - client/**
+      - .github/workflows/client.yml
+  workflow_dispatch:
+    inputs:
+      check_catalogs:
+        description: Check every catalog in client/catalogs.yaml
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[test]"
+      - run: pytest -v
+
+  check-catalogs:
+    name: Check catalogs
+    if: github.event_name == 'workflow_dispatch' && inputs.check_catalogs
+    needs: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Check catalogs
+        run: portolan-bblocks check --config catalogs.yaml --json catalogs-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: catalogs-report
+          path: client/catalogs-report.json

@@ -34,6 +34,17 @@ imports:
 
 Then use `$ref: bblocks://portolan.stac.profile` in a schema.
 
+## Check catalogs
+
+The [`client/`](client/) folder holds `portolan-bblocks`, a command-line client that loads a block from this register with OGC's `bblocks_client` library, walks a Portolan catalog and checks every catalog and collection against it:
+
+```bash
+cd client && python3 -m venv .venv && .venv/bin/pip install -e .
+.venv/bin/portolan-bblocks check https://data.source.coop/nlebovits/pergamino-ide/catalog.json
+```
+
+It checks JSON conformance only. [rashid](https://github.com/portolan-sdi/rashid) remains the authority on full Portolan conformance. See [`client/README.md`](client/README.md).
+
 ## Build locally
 
 Docker is required.

@@ -1,0 +1,16 @@
+# Catalogs that `portolan-bblocks check --config client/catalogs.yaml` checks.
+# The "Check catalogs" workflow runs this list on demand.
+# Starting list: the two registry catalogs on Portolan v0.3.0 and one v0.2.0 mirror.
+# Replace or extend it with the catalogs we maintain.
+
+# register: https://cayetanobv.github.io/bblocks-portolan/build/register.json
+# block: portolan.stac.profile
+
+catalogs:
+  - name: Italian cadastral parcels and map sheets
+    url: https://data.source.coop/ondata/cadastral-italy-geospatial-data/catalog.json
+  - name: IDE Pergamino
+    url: https://data.source.coop/nlebovits/pergamino-ide/catalog.json
+    max: 500
+  - name: Indirizzi ANNCSU (v0.2.0 mirror)
+    url: https://pub-1e760dc850cb4a5aa5f8afb77713f8cd.r2.dev/catalog.json

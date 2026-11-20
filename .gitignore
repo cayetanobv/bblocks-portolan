@@ -7,3 +7,9 @@ build-local/
 bblocks-config-local.yml
 bblocks-config-local.yaml
 .volumes
+
+# portolan-bblocks client
+client/.venv/
+client/**/__pycache__/
+client/**/*.egg-info/
+client/catalogs-report.json
