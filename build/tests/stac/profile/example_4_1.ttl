@@ -1,7 +1,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/stac/assets/> .
-@prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <file:> .
+@prefix ns2: <file:> .
+@prefix ns3: <http://www.iana.org/assignments/> .
 @prefix ns4: <proj:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -18,36 +18,45 @@
         "rgb",
         "sample" ;
     dct:title "Sample Raster COG" ;
-    rdfs:seeAlso [ rdfs:label "Guidance for AI agents" ;
+    rdfs:seeAlso [ dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ rdfs:label "Arabic" ;
+            dct:language "ar" ;
+            dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <file:///ar/raster/sample-cog/collection.json> ],
+        [ rdfs:label "Guidance for AI agents" ;
+            dct:language "en" ;
             dct:type "text/markdown" ;
-            ns2:relation <http://www.iana.org/assignments/relation/agents> ;
+            ns3:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ],
         [ rdfs:label "Human-readable documentation" ;
+            dct:language "en" ;
             dct:type "text/markdown" ;
-            ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
+            ns3:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
-        [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///catalog.json> ],
-        [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Original source" ;
             dct:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/via> ;
-            oa:hasTarget <https://github.com/rasterio/rasterio/blob/main/tests/data/RGB.byte.tif> ] ;
+            ns3:relation <http://www.iana.org/assignments/relation/via> ;
+            oa:hasTarget <https://github.com/rasterio/rasterio/blob/main/tests/data/RGB.byte.tif> ],
+        [ dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///catalog.json> ] ;
     stac:hasAsset [ ns1:data <file:///github/workspace/sample-cog.tif> ;
             ns1:source <https://raw.githubusercontent.com/rasterio/rasterio/main/tests/data/RGB.byte.tif> ;
             ns1:thumbnail <file:///github/workspace/thumbnail.png> ] ;
-    stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
         "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/language/v1.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json" ;
     stac:hasProvider [ ],
         [ ] ;
     stac:version "1.1.0" .
 
-<file:///github/workspace/sample-cog.tif> ns3:checksum "1220b2e1aa393fe37dc26e516b13c8f4fb3b1e99efd01a6661c894a5e840201c8c96" ;
-    ns3:size 1054493 ;
+<file:///github/workspace/sample-cog.tif> ns2:checksum "1220b2e1aa393fe37dc26e516b13c8f4fb3b1e99efd01a6661c894a5e840201c8c96" ;
+    ns2:size 1054493 ;
+    dct:description "The 3-band 8-bit RGB image in UTM zone 18N, with band statistics in its header." ;
     dct:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dct:title "Sample Raster COG (COG)" ;
     ns1:bands [ ns1:data_type "uint8" ;
@@ -58,27 +67,29 @@
                     ns1:valid_percent 6.74572e+01 ] ],
         [ ns1:data_type "uint8" ;
             ns1:statistics [ ns1:maximum 2.55e+02 ;
-                    ns1:mean 6.59922e+01 ;
-                    ns1:minimum 1e+00 ;
-                    ns1:stddev 5.82068e+01 ;
-                    ns1:valid_percent 6.74572e+01 ] ],
-        [ ns1:data_type "uint8" ;
-            ns1:statistics [ ns1:maximum 2.55e+02 ;
                     ns1:mean 4.4396e+01 ;
                     ns1:minimum 1e+00 ;
                     ns1:stddev 5.84784e+01 ;
+                    ns1:valid_percent 6.74572e+01 ] ],
+        [ ns1:data_type "uint8" ;
+            ns1:statistics [ ns1:maximum 2.55e+02 ;
+                    ns1:mean 6.59922e+01 ;
+                    ns1:minimum 1e+00 ;
+                    ns1:stddev 5.82068e+01 ;
                     ns1:valid_percent 6.74572e+01 ] ] ;
     stac:hasAssetroles "data"^^<xsd:string> ;
     ns4:code "EPSG:32618" .
 
-<file:///github/workspace/thumbnail.png> ns3:checksum "12203f05e92e5b77ab80d92d7e319053dfa48f00ce72d05f8c7251959b88dbd57971" ;
-    ns3:size 243153 ;
+<file:///github/workspace/thumbnail.png> ns2:checksum "12203f05e92e5b77ab80d92d7e319053dfa48f00ce72d05f8c7251959b88dbd57971" ;
+    ns2:size 243153 ;
+    dct:description "A PNG of the image over a light basemap." ;
     dct:format "image/png" ;
     dct:title "Preview thumbnail over a light basemap. © OpenStreetMap contributors © CARTO." ;
     stac:hasAssetroles "thumbnail"^^<xsd:string> .
 
-<https://raw.githubusercontent.com/rasterio/rasterio/main/tests/data/RGB.byte.tif> ns3:checksum "1220d7cbe932c7ed74a627706a9e9df99f706df3e5abc7d45a49e9d00677a6b09eb4" ;
-    ns3:size 1745956 ;
+<https://raw.githubusercontent.com/rasterio/rasterio/main/tests/data/RGB.byte.tif> ns2:checksum "1220d7cbe932c7ed74a627706a9e9df99f706df3e5abc7d45a49e9d00677a6b09eb4" ;
+    ns2:size 1745956 ;
+    dct:description "The rasterio RGB.byte.tif test image, the 3-band 8-bit GeoTIFF that the COG is made from." ;
     dct:format "image/tiff" ;
     dct:title "rasterio RGB.byte.tif test fixture (GeoTIFF)" ;
     stac:hasAssetroles "source"^^<xsd:string> .

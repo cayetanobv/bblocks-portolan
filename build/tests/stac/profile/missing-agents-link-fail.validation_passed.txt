@@ -1,5 +1,5 @@
 Validation report for portolan.stac.profile - Portolan STAC Profile
-Generated 2026-09-08T14:45:29.853436+00:00
+Generated 2026-11-20T13:13:42.226656+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -14,95 +14,65 @@ Output Turtle missing-agents-link-fail.ttl created
 === JSON Schema ===
 
 ** Validation error **
-ValidationError: {'type': 'Collection', 'stac_version': '1.1.0', 'stac_extensions': ['https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json', 'https://stac-extensions.github.io/file/v2.1.0/schema.json', 'https://stac-extensions.github.io/table/v1.2.0/schema.json', 'https://stac-extensions.github.io/projection/v2.0.0/schema.json', 'https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json'], 'id': 'boundaries/boston-open-space', 'title': 'Boston Open Space', 'description': 'City of Boston open spaces and parks, playgrounds, athletic fields, conservation land, and cemeteries, 1,012 polygons from the City of Boston GIS open data platform. Official primary source, republished as cloud-native GeoParquet with a PMTiles visualization and MapLibre styles.', 'license': 'PDDL-1.0', 'keywords': ['open-space', 'parks', 'boston', 'recreation', 'boundaries'], 'providers': [{'name': 'City of Boston', 'url': 'https://data.boston.gov', 'roles': ['producer', 'licensor']}, {'name': 'Portolan SDI', 'url': 'https://github.com/portolan-sdi', 'email': 'portolan@googlegroups.com', 'roles': ['host']}], 'extent': {'spatial': {'bbox': [[-71.190913, 42.227891, -70.874864, 42.396534]]}, 'temporal': {'interval': [['2025-01-01T00:00:00Z', None]]}}, 'table:columns': [{'name': 'fid', 'type': 'bigint'}, {'name': 'OBJECTID', 'type': 'integer'}, {'name': 'SITE_NAME', 'type': 'varchar', 'description': 'Best-known or official site name. Multi-parcel sites carry Roman numeral suffixes, Stony Brook Reservation I and II.'}, {'name': 'OWNERSHIP', 'type': 'varchar', 'description': 'Fee owner where known. City of Boston, Commonwealth of Massachusetts, private owners, and agency abbreviations like BRA and BNAN.'}, {'name': 'PROTECTION', 'type': 'varchar', 'description': 'Slash-separated legal protection instruments. A97 is Article 97 of the Massachusetts Constitution, the strongest. Free text, match with LIKE.'}, {'name': 'TYPECODE', 'type': 'integer', 'description': 'Numeric open space type 1 through 7. Disagrees with TypeLong on about 13 rows, treat TypeLong as closer to intent.'}, {'name': 'DISTRICT', 'type': 'varchar', 'description': "Planning district per the city's open space plan, not the official neighborhood boundaries. Includes the non-spatial value Multi-District."}, {'name': 'ACRES', 'type': 'double', 'description': 'Official area in acres of the open-space portion, the figure to use instead of computing geometry area.'}, {'name': 'ADDRESS', 'type': 'varchar', 'description': 'Street address if known, null for 589 rows.'}, {'name': 'ZonAgg', 'type': 'varchar', 'description': 'Aggregated zoning district, for example Open Space District.'}, {'name': 'TypeLong', 'type': 'varchar', 'description': 'Open space type as text, with minor spelling variants worth normalizing before grouping.'}, {'name': 'OS_Own_Jur', 'type': 'varchar', 'description': 'The entity holding the open-space rights. BPRD, DCR, the Boston Conservation Commission, or None.'}, {'name': 'OS_Mngmnt', 'type': 'varchar', 'description': 'Managing entity only when it differs from OS_Own_Jur. Null means the steward manages it, not missing data.'}, {'name': 'POS', 'type': 'varchar', 'description': 'Protected open space flag. X permanently protected, N not.'}, {'name': 'PA', 'type': 'varchar', 'description': 'Public access flag. X accessible, A by appointment, N no or unknown access.'}, {'name': 'ALT_NAME', 'type': 'varchar', 'description': 'Official, previous, or colloquial alternate names.'}, {'name': 'AgncyJuris', 'type': 'varchar', 'description': 'Agency of jurisdiction for government-owned unprotected sites. Sparsely populated by design.'}, {'name': 'ShapeSTAre', 'type': 'double', 'description': 'ArcGIS-computed area in square meters from the source State Plane geometry.'}, {'name': 'ShapeSTLen', 'type': 'double', 'description': 'ArcGIS-computed perimeter in meters.'}, {'name': 'geom', 'type': 'geometry', 'description': 'Site geometry, WGS84 longitude and latitude.'}, {'name': 'bbox', 'type': 'struct(xmin double, ymin double, xmax double, ymax double)', 'description': 'Per-feature bounding box struct, the GeoParquet covering.'}], 'table:primary_geometry': 'geom', 'table:row_count': 1012, 'assets': {'data': {'href': './boston-open-space.parquet', 'type': 'application/vnd.apache.parquet', 'title': 'Boston Open Space (GeoParquet)', 'roles': ['data'], 'file:size': 1188770, 'file:checksum': '122012852a6892d9f47810b6ad54959b22b840bdfbb118b136a25cc6dd7da41d3cff', 'proj:code': 'EPSG:4326'}, 'visual': {'href': './boston-open-space.pmtiles', 'type': 'application/vnd.pmtiles', 'title': 'Boston Open Space (PMTiles)', 'roles': ['visual'], 'file:size': 989217, 'file:checksum': '1220db3d459dc821db7adf739ad0afee9682a3b94f8d467c564c343dcb159a2b3281'}, 'thumbnail': {'href': './thumbnail.png', 'type': 'image/png', 'title': 'Preview thumbnail over a light basemap. © OpenStreetMap contributors © CARTO.', 'roles': ['thumbnail'], 'file:size': 377459, 'file:checksum': '122061292d50d6b52d5452897669fe629173564b49f0d2538de5605331a323299fb0'}, 'style-types': {'href': './styles/types.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Open space by type', 'roles': ['style', 'default'], 'file:size': 1224, 'file:checksum': '1220b1762e9d48bd88b6901687f255ac37fb6afc3618f46f2e4d8a569f4b9df5bfcc', 'description': 'TypeLong separates parks, parkways and reservations, cemeteries, urban wilds, malls and plazas, and community gardens.'}, 'style-labeled': {'href': './styles/labeled.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Types with site names', 'roles': ['style'], 'file:size': 1586, 'file:checksum': '12200ce7dcdabc5683bbd6348a8fee0d83b23c47a48cf03557d9eef73d5085a9d2ca', 'description': 'The type colouring with a SITE_NAME label per site.'}, 'style-acreage': {'href': './styles/acreage.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Acreage in four classes', 'roles': ['style'], 'file:size': 828, 'file:checksum': '122092647db9cb1290d34a8b4675e8e13548c4f45e6d2c26589726232bd0bb23d710', 'description': "ACRES binned at one, ten, and one hundred acres, light to dark green, from pocket parks through Franklin Park's 392 acres."}, 'style-ownership': {'href': './styles/ownership.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Who owns it', 'roles': ['style'], 'file:size': 1363, 'file:checksum': '1220430bfc3a3f3572e0156f3ce1ca91dbbdd6f1f2b360bf4f237ed8a26071a7fed5', 'description': 'OWNERSHIP from the catalog palette, city, Commonwealth, federal, and the 214 privately owned sites side by side.'}, 'style-protection': {'href': './styles/protection.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Permanently protected or not', 'roles': ['style'], 'file:size': 1122, 'file:checksum': '122029441a7dbf26793f87185cb67a1ee3e5055d271a6550c1cffad5b8fdaa349078', 'description': 'The POS flag, deep green where protection is permanent under Article 97 or a conservation restriction, gray where it is not. The inner match relabels the raw X and N codes so the legend a client derives from the outer match reads in plain words.'}}, 'links': [{'rel': 'root', 'href': '../../catalog.json', 'type': 'application/json'}, {'rel': 'parent', 'href': '../catalog.json', 'type': 'application/json'}, {'rel': 'pmtiles', 'href': './boston-open-space.pmtiles', 'type': 'application/vnd.pmtiles', 'title': 'Web map tiles', 'pmtiles:layers': ['boston-open-space']}, {'rel': 'via', 'href': 'https://bostonopendata-boston.opendata.arcgis.com/datasets/2868d370c55d4d458d4ae2224ef8cddd_7', 'type': 'text/html', 'title': 'Original source'}, {'rel': 'describedby', 'href': './README.md', 'type': 'text/markdown', 'title': 'Human-readable documentation'}], 'updated': '2026-07-21T00:00:00Z'} is not valid under any of the given schemas
+ValidationError: {'type': 'Collection', 'stac_version': '1.1.0', 'stac_extensions': ['https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json', 'https://stac-extensions.github.io/file/v2.1.0/schema.json', 'https://stac-extensions.github.io/table/v1.2.0/schema.json', 'https://stac-extensions.github.io/projection/v2.0.0/schema.json', 'https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json', 'https://stac-extensions.github.io/language/v1.0.0/schema.json'], 'id': 'boundaries/boston-open-space', 'title': 'Boston Open Space', 'description': 'City of Boston open spaces and parks, playgrounds, athletic fields, conservation land, and cemeteries, 1,012 polygons from the City of Boston GIS open data platform. Official primary source, republished as cloud-native GeoParquet with a PMTiles visualization and MapLibre styles.', 'license': 'PDDL-1.0', 'keywords': ['open-space', 'parks', 'boston', 'recreation', 'boundaries'], 'providers': [{'name': 'City of Boston', 'url': 'https://data.boston.gov', 'roles': ['producer', 'licensor']}, {'name': 'Portolan SDI', 'url': 'https://github.com/portolan-sdi', 'email': 'portolan@googlegroups.com', 'roles': ['host']}], 'extent': {'spatial': {'bbox': [[-71.190913, 42.227891, -70.874864, 42.396534]]}, 'temporal': {'interval': [['2025-01-01T00:00:00Z', None]]}}, 'table:columns': [{'name': 'fid', 'type': 'bigint', 'description': 'Feature id that GDAL assigned when the generator read the source layer. Unique in this file. It is not an upstream key.'}, {'name': 'OBJECTID', 'type': 'integer', 'description': 'Esri object ID that ArcGIS assigns to each row of the source layer. Unique in this file.'}, {'name': 'SITE_NAME', 'type': 'varchar', 'description': 'Best-known or official site name. Multi-parcel sites carry Roman numeral suffixes, Stony Brook Reservation I and II.'}, {'name': 'OWNERSHIP', 'type': 'varchar', 'description': 'Fee owner where known. City of Boston, Commonwealth of Massachusetts, private owners, and agency abbreviations like BRA and BNAN.'}, {'name': 'PROTECTION', 'type': 'varchar', 'description': 'Slash-separated legal protection instruments. A97 is Article 97 of the Massachusetts Constitution, the strongest. Free text, match with LIKE.'}, {'name': 'TYPECODE', 'type': 'integer', 'description': 'Numeric open space type 1 through 7. Disagrees with TypeLong on about 13 rows, treat TypeLong as closer to intent.'}, {'name': 'DISTRICT', 'type': 'varchar', 'description': "Planning district per the city's open space plan, not the official neighborhood boundaries. Includes the non-spatial value Multi-District."}, {'name': 'ACRES', 'type': 'double', 'description': 'Official area in acres of the open-space portion, the figure to use instead of computing geometry area.'}, {'name': 'ADDRESS', 'type': 'varchar', 'description': 'Street address if known, null for 589 rows.'}, {'name': 'ZonAgg', 'type': 'varchar', 'description': 'Aggregated zoning district, for example Open Space District.'}, {'name': 'TypeLong', 'type': 'varchar', 'description': 'Open space type as text, with minor spelling variants worth normalizing before grouping.'}, {'name': 'OS_Own_Jur', 'type': 'varchar', 'description': 'The entity holding the open-space rights. BPRD, DCR, the Boston Conservation Commission, or None.'}, {'name': 'OS_Mngmnt', 'type': 'varchar', 'description': 'Managing entity only when it differs from OS_Own_Jur. Null means the steward manages it, not missing data.'}, {'name': 'POS', 'type': 'varchar', 'description': 'Protected open space flag. X permanently protected, N not.'}, {'name': 'PA', 'type': 'varchar', 'description': 'Public access flag. X accessible, A by appointment, N no or unknown access.'}, {'name': 'ALT_NAME', 'type': 'varchar', 'description': 'Official, previous, or colloquial alternate names.'}, {'name': 'AgncyJuris', 'type': 'varchar', 'description': 'Agency of jurisdiction for government-owned unprotected sites. Sparsely populated by design.'}, {'name': 'ShapeSTAre', 'type': 'double', 'description': 'ArcGIS-computed area in square meters from the source State Plane geometry.'}, {'name': 'ShapeSTLen', 'type': 'double', 'description': 'ArcGIS-computed perimeter in meters.'}, {'name': 'geom', 'type': 'geometry', 'description': 'Site geometry, WGS84 longitude and latitude.'}, {'name': 'bbox', 'type': 'struct(xmin double, ymin double, xmax double, ymax double)', 'description': 'Per-feature bounding box struct, the GeoParquet covering.'}], 'table:primary_geometry': 'geom', 'table:row_count': 1012, 'assets': {'data': {'href': './boston-open-space.parquet', 'type': 'application/vnd.apache.parquet', 'title': 'Boston Open Space (GeoParquet)', 'roles': ['data'], 'file:size': 1188770, 'file:checksum': '122012852a6892d9f47810b6ad54959b22b840bdfbb118b136a25cc6dd7da41d3cff', 'proj:code': 'EPSG:4326', 'description': 'The 1,012 open space polygons with their attribute columns, in WGS84 longitude and latitude.'}, 'visual': {'href': './boston-open-space.pmtiles', 'type': 'application/vnd.pmtiles', 'title': 'Boston Open Space (PMTiles)', 'roles': ['visual'], 'file:size': 989217, 'file:checksum': '1220db3d459dc821db7adf739ad0afee9682a3b94f8d467c564c343dcb159a2b3281', 'description': 'Vector tiles of the open space polygons for web maps, in one layer named boston-open-space.'}, 'style-types': {'href': './styles/types.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Open space by type', 'roles': ['style', 'default'], 'file:size': 1224, 'file:checksum': '1220b1762e9d48bd88b6901687f255ac37fb6afc3618f46f2e4d8a569f4b9df5bfcc', 'description': 'TypeLong separates parks, parkways and reservations, cemeteries, urban wilds, malls and plazas, and community gardens.'}, 'style-labeled': {'href': './styles/labeled.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Types with site names', 'roles': ['style'], 'file:size': 1586, 'file:checksum': '12200ce7dcdabc5683bbd6348a8fee0d83b23c47a48cf03557d9eef73d5085a9d2ca', 'description': 'The type colouring with a SITE_NAME label per site.'}, 'style-acreage': {'href': './styles/acreage.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Acreage in four classes', 'roles': ['style'], 'file:size': 828, 'file:checksum': '122092647db9cb1290d34a8b4675e8e13548c4f45e6d2c26589726232bd0bb23d710', 'description': "ACRES binned at one, ten, and one hundred acres, light to dark green, from pocket parks through Franklin Park's 392 acres."}, 'style-ownership': {'href': './styles/ownership.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Who owns it', 'roles': ['style'], 'file:size': 1363, 'file:checksum': '1220430bfc3a3f3572e0156f3ce1ca91dbbdd6f1f2b360bf4f237ed8a26071a7fed5', 'description': 'OWNERSHIP from the catalog palette, city, Commonwealth, federal, and the 214 privately owned sites side by side.'}, 'style-protection': {'href': './styles/protection.json', 'type': 'application/vnd.mapbox.style+json', 'title': 'Permanently protected or not', 'roles': ['style'], 'file:size': 1122, 'file:checksum': '122029441a7dbf26793f87185cb67a1ee3e5055d271a6550c1cffad5b8fdaa349078', 'description': 'The POS flag, deep green where protection is permanent under Article 97 or a conservation restriction, gray where it is not. The inner match relabels the raw X and N codes so the legend a client derives from the outer match reads in plain words.'}, 'thumbnail': {'href': './thumbnail.png', 'type': 'image/png', 'title': 'Preview thumbnail over a light basemap. © OpenStreetMap contributors © CARTO.', 'roles': ['thumbnail'], 'file:size': 377459, 'file:checksum': '122061292d50d6b52d5452897669fe629173564b49f0d2538de5605331a323299fb0', 'description': 'A PNG map of the open space polygons over a light basemap.'}}, 'links': [{'rel': 'root', 'href': '../../catalog.json', 'type': 'application/json'}, {'rel': 'parent', 'href': '../catalog.json', 'type': 'application/json'}, {'rel': 'pmtiles', 'href': './boston-open-space.pmtiles', 'type': 'application/vnd.pmtiles', 'title': 'Web map tiles', 'pmtiles:layers': ['boston-open-space']}, {'rel': 'via', 'href': 'https://bostonopendata-boston.opendata.arcgis.com/datasets/2868d370c55d4d458d4ae2224ef8cddd_7', 'type': 'text/html', 'title': 'Original source'}, {'rel': 'describedby', 'href': './README.md', 'type': 'text/markdown', 'title': 'Human-readable documentation', 'hreflang': 'en'}, {'rel': 'alternate', 'href': '../../ar/boundaries/boston-open-space/collection.json', 'type': 'application/json', 'title': 'Arabic', 'hreflang': 'ar'}], 'updated': '2026-07-21T00:00:00Z', 'language': {'code': 'en', 'name': 'English'}, 'languages': [{'code': 'ar', 'name': 'العربية', 'alternate': 'Arabic', 'dir': 'rtl'}]} is not valid under any of the given schemas
 
 Failed validating 'oneOf' in schema['allOf'][1]:
-    {'$id': 'https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json#',
-     '$schema': 'http://json-schema.org/draft-07/schema#',
-     'definitions': {'agents_link': {'$comment': 'Every Catalog and '
-                                                 'Collection links its '
-                                                 'AGENTS.md with rel '
-                                                 "'agents' and type "
-                                                 'text/markdown. The '
-                                                 "target's existence is a "
-                                                 'link-resolution check '
-                                                 'performed by crawling '
-                                                 'validators.',
-                                     'properties': {'links': {'contains': {'properties': {'rel': {'const': 'agents'},
-                                                                                          'type': {'const': 'text/markdown'}},
-                                                                           'required': ['rel',
-                                                                                        'href',
-                                                                                        'type'],
-                                                                           'type': 'object'},
-                                                              'type': 'array'}},
-                                     'required': ['links'],
-                                     'type': 'object'},
-                     'assets_typed_and_roled': {'$comment': 'STAC leaves '
-                                                            'media type '
-                                                            'and roles '
-                                                            'optional on '
-                                                            'assets; '
-                                                            'Portolan '
-                                                            'requires both '
-                                                            'so validators '
-                                                            'and browsers '
-                                                            'can dispatch '
-                                                            'on them. '
-                                                            'file:size and '
-                                                            'file:checksum '
-                                                            'are '
-                                                            'SHOULD-level '
-                                                            '(spec: '
-                                                            'Assets), so '
-                                                            'the schema '
-                                                            'constrains '
-                                                            'their shape '
-                                                            'where present '
-                                                            'but does not '
-                                                            'require them; '
-                                                            'the '
-                                                            "checksum's "
-                                                            'multihash '
-                                                            'encoding and '
-                                                            'its agreement '
-                                                            'with the '
-                                                            'bytes are '
-                                                            'verified by '
-                                                            'Portolan '
-                                                            'tooling, not '
-                                                            'by schema. '
-                                                            'Absolute '
-                                                            'hrefs MUST '
-                                                            'use https, '
-                                                            'never s3 or '
-                                                            'other bucket '
-                                                            'schemes; '
-                                                            'relative '
-                                                            'hrefs are '
-                                                            'allowed.',
-                                                'properties': {'assets': {'additionalProperties': {'properties': {'file:checksum': {'minLength': 1,
-                                                                                                                                    'type': 'string'},
-                                                                                                                  'file:size': {'minimum': 0,
-                                                                                                                                'type': 'integer'},
-                                                                                                                  'href': {'anyOf': [{'pattern': '^https://'},
-                                                                                                                                     {'not': {'pattern': '://'}}],
-                                                                                                                           'minLength': 1,
-                                                                                                                           'type': 'string'},
-                                                                                                                  'roles': {'items': {'minLength': 1,
-                                                                                                                                      'type': 'string'},
-                                                                                                                            'minItems': 1,
-                                                                                                                            'type': 'array'},
-                                                                                                                  'type': {'minLength': 1,
-                                                                                                                           'type': 'string'}},
-                                                                                                   'required': ['href',
-                                                                                                                'type',
-                                                                                                                'roles'],
-                                                                                                   'type': 'object'},
-                                                                          'type': 'object'}},
-                                                'type': 'object'},
-                     'elevation': {'maximum': 100000,
-                                   'minimum': -100000,
-                                   'type': 'number'},
+    {'$schema': 'http://json-schema.org/draft-07/schema#',
+     '$id': 'https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json#',
+     'title': 'Portolan STAC Profile',
+     'description': 'The schema-checkable structural requirements of the '
+                    'Portolan specification. The versioned schema URI '
+                    'declared in stac_extensions is the single signal of '
+                    'specification version; no portolan-prefixed fields '
+                    'are defined. Requirements that need link crawling, '
+                    'reading asset bytes, or probing the hosting server '
+                    'are defined in the Portolan specification and '
+                    'validated by Portolan tooling.',
+     'oneOf': [{'$comment': 'STAC Catalogs.',
+                'type': 'object',
+                'allOf': [{'required': ['type'],
+                           'properties': {'type': {'const': 'Catalog'}}},
+                          {'$ref': '#/definitions/stac_extensions'},
+                          {'$ref': '#/definitions/human_readable'},
+                          {'$ref': '#/definitions/links_conformant'},
+                          {'$ref': '#/definitions/agents_link'},
+                          {'$ref': '#/definitions/readme_link'}]},
+               {'$comment': 'STAC Collections.',
+                'type': 'object',
+                'allOf': [{'required': ['type'],
+                           'properties': {'type': {'const': 'Collection'}}},
+                          {'$ref': '#/definitions/stac_extensions'},
+                          {'$ref': '#/definitions/human_readable'},
+                          {'$ref': '#/definitions/links_conformant'},
+                          {'$ref': '#/definitions/agents_link'},
+                          {'$ref': '#/definitions/readme_link'},
+                          {'$ref': '#/definitions/assets_typed_and_roled'},
+                          {'$ref': '#/definitions/license_not_proprietary'},
+                          {'$ref': '#/definitions/providers_conformant'},
+                          {'$ref': '#/definitions/partition_conformant'},
+                          {'$ref': '#/definitions/classes_conformant'},
+                          {'properties': {'extent': {'type': 'object',
+                                                     'properties': {'spatial': {'type': 'object',
+                                                                                'properties': {'bbox': {'type': 'array',
+                                                                                                        'items': {'$ref': '#/definitions/valid_bbox'}}}}}}}}]},
+               {'$comment': 'STAC Items. Items do not declare the Portolan '
+                            'schema URI — declaration happens at the '
+                            'catalog and collection level only, and items '
+                            'inherit conformance from their collection. '
+                            'This branch is applied to items by the '
+                            'Portolan validator, not via stac_extensions.',
+                'type': 'object',
+                'allOf': [{'required': ['type'],
+                           'properties': {'type': {'const': 'Feature'}}},
+                          {'properties': {'bbox': {'$ref': '#/definitions/valid_bbox'}}},
+                          {'$ref': '#/definitions/assets_typed_and_roled'},
+                          {'$ref': '#/definitions/item_data_asset'},
+                          {'$ref': '#/definitions/classes_conformant'},
+                          {'$ref': '#/definitions/links_conformant'}]}],
+     'definitions': {'stac_extensions': {'type': 'object',
+                                         'required': ['stac_extensions'],
+                                         'properties': {'stac_extensions': {'type': 'array',
+                                                                            'contains': {'const': 'https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json'}}}},
                      'human_readable': {'$comment': 'Every Catalog and '
                                                     'Collection carries a '
                                                     'non-empty title and '
@@ -111,37 +81,13 @@ Failed validating 'oneOf' in schema['allOf'][1]:
                                                     'is checked by '
                                                     'Portolan tooling, not '
                                                     'by schema.',
-                                        'properties': {'description': {'minLength': 1,
-                                                                       'type': 'string'},
-                                                       'title': {'minLength': 1,
-                                                                 'type': 'string'}},
+                                        'type': 'object',
                                         'required': ['title',
                                                      'description'],
-                                        'type': 'object'},
-                     'latitude': {'maximum': 90,
-                                  'minimum': -90,
-                                  'type': 'number'},
-                     'license_not_proprietary': {'$comment': 'The '
-                                                             'deprecated '
-                                                             'STAC 1.1 '
-                                                             'value '
-                                                             "'proprietary' "
-                                                             'is banned; '
-                                                             'use an SPDX '
-                                                             'identifier, '
-                                                             "or 'other' "
-                                                             'plus a rel '
-                                                             "'license' "
-                                                             'link. SPDX '
-                                                             'validity and '
-                                                             'the '
-                                                             'conditional '
-                                                             'license link '
-                                                             'are checked '
-                                                             'by Portolan '
-                                                             'tooling.',
-                                                 'properties': {'license': {'not': {'const': 'proprietary'}}},
-                                                 'type': 'object'},
+                                        'properties': {'title': {'type': 'string',
+                                                                 'minLength': 1},
+                                                       'description': {'type': 'string',
+                                                                       'minLength': 1}}},
                      'links_conformant': {'$comment': 'Structural links '
                                                       '(root, parent, '
                                                       'child, item, '
@@ -179,90 +125,76 @@ Failed validating 'oneOf' in schema['allOf'][1]:
                                                       'crawling check '
                                                       'performed by '
                                                       'Portolan tooling.',
-                                          'properties': {'links': {'items': {'allOf': [{'if': {'properties': {'rel': {'enum': ['root',
+                                          'type': 'object',
+                                          'properties': {'links': {'type': 'array',
+                                                                   'items': {'allOf': [{'if': {'required': ['rel'],
+                                                                                               'properties': {'rel': {'enum': ['root',
                                                                                                                                'parent',
                                                                                                                                'child',
-                                                                                                                               'collection']}},
-                                                                                               'required': ['rel']},
-                                                                                        'then': {'properties': {'href': {'minLength': 1,
-                                                                                                                         'type': 'string'},
-                                                                                                                'type': {'const': 'application/json'}},
-                                                                                                 'required': ['type']}},
-                                                                                       {'if': {'properties': {'rel': {'const': 'item'}},
-                                                                                               'required': ['rel']},
-                                                                                        'then': {'properties': {'href': {'minLength': 1,
-                                                                                                                         'type': 'string'},
-                                                                                                                'type': {'const': 'application/geo+json'}},
-                                                                                                 'required': ['type']}},
-                                                                                       {'if': {'properties': {'rel': {'enum': ['child',
-                                                                                                                               'item']}},
-                                                                                               'required': ['rel']},
-                                                                                        'then': {'properties': {'title': {'minLength': 1,
-                                                                                                                          'type': 'string'}},
-                                                                                                 'required': ['title']}},
-                                                                                       {'if': {'properties': {'rel': {'const': 'icon'}},
-                                                                                               'required': ['rel']},
-                                                                                        'then': {'properties': {'type': {'enum': ['image/apng',
+                                                                                                                               'collection']}}},
+                                                                                        'then': {'required': ['type'],
+                                                                                                 'properties': {'type': {'const': 'application/json'},
+                                                                                                                'href': {'type': 'string',
+                                                                                                                         'minLength': 1}}}},
+                                                                                       {'if': {'required': ['rel'],
+                                                                                               'properties': {'rel': {'const': 'item'}}},
+                                                                                        'then': {'required': ['type'],
+                                                                                                 'properties': {'type': {'const': 'application/geo+json'},
+                                                                                                                'href': {'type': 'string',
+                                                                                                                         'minLength': 1}}}},
+                                                                                       {'if': {'required': ['rel'],
+                                                                                               'properties': {'rel': {'enum': ['child',
+                                                                                                                               'item']}}},
+                                                                                        'then': {'required': ['title'],
+                                                                                                 'properties': {'title': {'type': 'string',
+                                                                                                                          'minLength': 1}}}},
+                                                                                       {'if': {'required': ['rel'],
+                                                                                               'properties': {'rel': {'const': 'icon'}}},
+                                                                                        'then': {'required': ['type'],
+                                                                                                 'properties': {'type': {'enum': ['image/apng',
                                                                                                                                   'image/avif',
                                                                                                                                   'image/gif',
                                                                                                                                   'image/jpeg',
                                                                                                                                   'image/png',
                                                                                                                                   'image/svg+xml',
-                                                                                                                                  'image/webp']}},
-                                                                                                 'required': ['type']}}]},
-                                                                   'type': 'array'}},
-                                          'type': 'object'},
-                     'longitude': {'maximum': 180,
-                                   'minimum': -180,
-                                   'type': 'number'},
-                     'partition_conformant': {'$comment': 'A partitioned '
-                                                          'collection '
-                                                          'declares the '
-                                                          'partition '
-                                                          'extension and '
-                                                          'carries its '
-                                                          'required fields '
-                                                          '(spec: '
-                                                          'Partitioned '
-                                                          'Collections). '
-                                                          'Any partition:* '
-                                                          'field without '
-                                                          'the declared '
-                                                          'extension, or a '
-                                                          'declaration '
-                                                          'missing a '
-                                                          'required field, '
-                                                          'fails. Field '
-                                                          'shapes are '
-                                                          'validated by '
-                                                          'the partition '
-                                                          'extension '
-                                                          'schema itself, '
-                                                          'which Portolan '
-                                                          'validators '
-                                                          'apply alongside '
-                                                          'this profile; '
-                                                          'cross-partition '
-                                                          'Parquet schema '
-                                                          'consistency is '
-                                                          'checked by '
-                                                          'tooling reading '
-                                                          'file footers.',
-                                              'if': {'anyOf': [{'required': ['partition:scheme']},
-                                                               {'required': ['partition:keys']},
-                                                               {'required': ['partition:strategy']},
-                                                               {'required': ['partition:file_count']},
-                                                               {'required': ['partition:glob']},
-                                                               {'properties': {'stac_extensions': {'contains': {'const': 'https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json'},
-                                                                                                   'type': 'array'}},
-                                                                'required': ['stac_extensions']}]},
-                                              'then': {'properties': {'stac_extensions': {'contains': {'const': 'https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json'},
-                                                                                          'type': 'array'}},
-                                                       'required': ['partition:scheme',
-                                                                    'partition:keys',
-                                                                    'partition:glob',
-                                                                    'stac_extensions']},
-                                              'type': 'object'},
+                                                                                                                                  'image/webp']}}}}]}}}},
+                     'agents_link': {'$comment': 'Every Catalog and '
+                                                 'Collection links its '
+                                                 'AGENTS.md with rel '
+                                                 "'agents' and type "
+                                                 'text/markdown. The '
+                                                 "target's existence is a "
+                                                 'link-resolution check '
+                                                 'performed by crawling '
+                                                 'validators.',
+                                     'type': 'object',
+                                     'required': ['links'],
+                                     'properties': {'links': {'type': 'array',
+                                                              'contains': {'type': 'object',
+                                                                           'required': ['rel',
+                                                                                        'href',
+                                                                                        'type'],
+                                                                           'properties': {'rel': {'const': 'agents'},
+                                                                                          'type': {'const': 'text/markdown'}}}}}},
+                     'readme_link': {'$comment': 'Every Catalog and '
+                                                 'Collection links its '
+                                                 'README.md with rel '
+                                                 "'describedby' and type "
+                                                 'text/markdown (spec: '
+                                                 "README.md). The target's "
+                                                 'existence is a '
+                                                 'link-resolution check '
+                                                 'performed by crawling '
+                                                 'validators.',
+                                     'type': 'object',
+                                     'required': ['links'],
+                                     'properties': {'links': {'type': 'array',
+                                                              'contains': {'type': 'object',
+                                                                           'required': ['rel',
+                                                                                        'href',
+                                                                                        'type'],
+                                                                           'properties': {'rel': {'const': 'describedby'},
+                                                                                          'type': {'const': 'text/markdown'}}}}}},
                      'providers_conformant': {'$comment': 'Every '
                                                           'collection '
                                                           'identifies at '
@@ -284,43 +216,462 @@ Failed validating 'oneOf' in schema['allOf'][1]:
                                                           'official-vs-mirror '
                                                           'from producer '
                                                           'and host.',
-                                              'properties': {'providers': {'allOf': [{'contains': {'properties': {'roles': {'contains': {'const': 'producer'},
-                                                                                                                            'type': 'array'}},
-                                                                                                   'required': ['roles'],
-                                                                                                   'type': 'object'}},
-                                                                                     {'contains': {'anyOf': [{'required': ['url']},
-                                                                                                             {'required': ['email']}],
-                                                                                                   'properties': {'roles': {'contains': {'const': 'host'},
-                                                                                                                            'type': 'array'}},
-                                                                                                   'required': ['roles'],
-                                                                                                   'type': 'object'}}],
-                                                                           'minItems': 1,
-                                                                           'type': 'array'}},
+                                              'type': 'object',
                                               'required': ['providers'],
-                                              'type': 'object'},
-                     'readme_link': {'$comment': 'Every Catalog and '
-                                                 'Collection links its '
-                                                 'README.md with rel '
-                                                 "'describedby' and type "
-                                                 'text/markdown (spec: '
-                                                 "README.md). The target's "
-                                                 'existence is a '
-                                                 'link-resolution check '
-                                                 'performed by crawling '
-                                                 'validators.',
-                                     'properties': {'links': {'contains': {'properties': {'rel': {'const': 'describedby'},
-                                                                                          'type': {'const': 'text/markdown'}},
-                                                                           'required': ['rel',
-                                                                                        'href',
-                                                                                        'type'],
-                                                                           'type': 'object'},
-                                                              'type': 'array'}},
-                                     'required': ['links'],
-                                     'type': 'object'},
-                     'stac_extensions': {'properties': {'stac_extensions': {'contains': {'const': 'https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json'},
-                                                                            'type': 'array'}},
-                                         'required': ['stac_extensions'],
-                                         'type': 'object'},
+                                              'properties': {'providers': {'type': 'array',
+                                                                           'minItems': 1,
+                                                                           'allOf': [{'contains': {'type': 'object',
+                                                                                                   'required': ['roles'],
+                                                                                                   'properties': {'roles': {'type': 'array',
+                                                                                                                            'contains': {'const': 'producer'}}}}},
+                                                                                     {'contains': {'type': 'object',
+                                                                                                   'required': ['roles'],
+                                                                                                   'properties': {'roles': {'type': 'array',
+                                                                                                                            'contains': {'const': 'host'}}},
+                                                                                                   'anyOf': [{'required': ['url']},
+                                                                                                             {'required': ['email']}]}}]}}},
+                     'assets_typed_and_roled': {'$comment': 'STAC leaves '
+                                                            'media type '
+                                                            'and roles '
+                                                            'optional on '
+                                                            'assets; '
+                                                            'Portolan '
+                                                            'requires both '
+                                                            'so validators '
+                                                            'and browsers '
+                                                            'can dispatch '
+                                                            'on them. '
+                                                            'file:size and '
+                                                            'file:checksum '
+                                                            'are '
+                                                            'SHOULD-level '
+                                                            '(spec: '
+                                                            'Assets), so '
+                                                            'the schema '
+                                                            'constrains '
+                                                            'their shape '
+                                                            'where present '
+                                                            'but does not '
+                                                            'require them; '
+                                                            'the '
+                                                            "checksum's "
+                                                            'multihash '
+                                                            'encoding and '
+                                                            'its agreement '
+                                                            'with the '
+                                                            'bytes are '
+                                                            'verified by '
+                                                            'Portolan '
+                                                            'tooling, not '
+                                                            'by schema. An '
+                                                            'href can be '
+                                                            'relative or '
+                                                            'absolute. An '
+                                                            'absolute href '
+                                                            'SHOULD use '
+                                                            'https, and '
+                                                            'one with '
+                                                            'another '
+                                                            'scheme needs '
+                                                            'an https '
+                                                            'alternate '
+                                                            '(asset_https_alternate).',
+                                                'type': 'object',
+                                                'properties': {'assets': {'type': 'object',
+                                                                          'additionalProperties': {'type': 'object',
+                                                                                                   'required': ['href',
+                                                                                                                'type',
+                                                                                                                'roles'],
+                                                                                                   'allOf': [{'$ref': '#/definitions/asset_https_alternate'},
+                                                                                                             {'$ref': '#/definitions/data_asset_single_file'},
+                                                                                                             {'$ref': '#/definitions/pmtiles_asset_visual'}],
+                                                                                                   'properties': {'href': {'type': 'string',
+                                                                                                                           'minLength': 1},
+                                                                                                                  'type': {'type': 'string',
+                                                                                                                           'minLength': 1},
+                                                                                                                  'roles': {'type': 'array',
+                                                                                                                            'minItems': 1,
+                                                                                                                            'items': {'type': 'string',
+                                                                                                                                      'minLength': 1}},
+                                                                                                                  'file:size': {'type': 'integer',
+                                                                                                                                'minimum': 0},
+                                                                                                                  'file:checksum': {'type': 'string',
+                                                                                                                                    'minLength': 1}}}}}},
+                     'source_asset': {'$comment': 'An asset with the '
+                                                  'source role is an '
+                                                  'upstream original. The '
+                                                  'format requirements do '
+                                                  'not apply to it (spec: '
+                                                  'Formats), so the format '
+                                                  'rules below skip it. '
+                                                  'The Assets rules in '
+                                                  'core.md still apply.',
+                                      'type': 'object',
+                                      'required': ['roles'],
+                                      'properties': {'roles': {'type': 'array',
+                                                               'contains': {'const': 'source'}}}},
+                     'asset_https_alternate': {'$comment': 'Browsers '
+                                                           'cannot open s3 '
+                                                           'or other '
+                                                           'bucket URLs. '
+                                                           'An absolute '
+                                                           'href with a '
+                                                           'scheme other '
+                                                           'than https '
+                                                           'therefore '
+                                                           'needs an HTTPS '
+                                                           'URL for the '
+                                                           'same data in '
+                                                           "the asset's "
+                                                           'alternate '
+                                                           'field, from '
+                                                           'the '
+                                                           'alternate-assets '
+                                                           'extension '
+                                                           '(spec: '
+                                                           'Assets). An '
+                                                           'href is '
+                                                           'absolute when '
+                                                           'it starts with '
+                                                           'an RFC 3986 '
+                                                           'scheme and a '
+                                                           'colon, so '
+                                                           'file:/x and '
+                                                           'C:/x are '
+                                                           'absolute. The '
+                                                           'schema '
+                                                           'requires at '
+                                                           'least one '
+                                                           'alternate '
+                                                           'whose href is '
+                                                           'an https URL '
+                                                           'with a '
+                                                           'nonempty host. '
+                                                           'That the '
+                                                           'alternate '
+                                                           'serves the '
+                                                           'same data is '
+                                                           'checked by '
+                                                           'Portolan '
+                                                           'tooling.',
+                                               'type': 'object',
+                                               'if': {'required': ['href'],
+                                                      'properties': {'href': {'type': 'string',
+                                                                              'pattern': '^[A-Za-z][A-Za-z0-9+.-]*:',
+                                                                              'not': {'pattern': '^[Hh][Tt][Tt][Pp][Ss]:'}}}},
+                                               'then': {'required': ['alternate'],
+                                                        'properties': {'alternate': {'type': 'object',
+                                                                                     '$comment': 'At '
+                                                                                                 'least '
+                                                                                                 'one '
+                                                                                                 'value '
+                                                                                                 'is '
+                                                                                                 'an '
+                                                                                                 'https '
+                                                                                                 'alternate: '
+                                                                                                 'the '
+                                                                                                 'alternates '
+                                                                                                 'are '
+                                                                                                 'not '
+                                                                                                 'all '
+                                                                                                 'something '
+                                                                                                 'else.',
+                                                                                     'not': {'additionalProperties': {'not': {'type': 'object',
+                                                                                                                              'required': ['href'],
+                                                                                                                              'properties': {'href': {'type': 'string',
+                                                                                                                                                      'pattern': "^[Hh][Tt][Tt][Pp][Ss]://([^/?#@]*@)?([A-Za-z0-9._~%!$&'()*+,;=-]+|\\[[0-9A-Fa-f:.]+\\])(:[0-9]*)?([/?#]|$)"}}}}}}}}},
+                     'data_asset_single_file': {'$comment': 'Each data '
+                                                            'asset links '
+                                                            'to only one '
+                                                            'file, so the '
+                                                            'href of an '
+                                                            'asset with '
+                                                            'the data role '
+                                                            'contains no '
+                                                            "'*' and no "
+                                                            "'[' (spec: "
+                                                            'Formats). The '
+                                                            'rule has no '
+                                                            'exception, so '
+                                                            'an IPv6 '
+                                                            'literal host '
+                                                            'fails too. To '
+                                                            'link to many '
+                                                            'files, a '
+                                                            'partitioned '
+                                                            'collection '
+                                                            'uses '
+                                                            'partition:glob. '
+                                                            'A query '
+                                                            'string is '
+                                                            'allowed. '
+                                                            'Source assets '
+                                                            'are exempt.',
+                                                'type': 'object',
+                                                'if': {'allOf': [{'required': ['roles'],
+                                                                  'properties': {'roles': {'type': 'array',
+                                                                                           'contains': {'const': 'data'}}}},
+                                                                 {'not': {'$ref': '#/definitions/source_asset'}}]},
+                                                'then': {'properties': {'href': {'type': 'string',
+                                                                                 'not': {'pattern': '[*\\[]'}}}}},
+                     'pmtiles_asset_visual': {'$comment': 'A PMTiles '
+                                                          'asset, '
+                                                          'identified by '
+                                                          'its media type '
+                                                          'or a .pmtiles '
+                                                          'extension at '
+                                                          'the end of the '
+                                                          'href path, has '
+                                                          'the visual role '
+                                                          '(spec: '
+                                                          'PMTiles). The '
+                                                          'query string '
+                                                          'and the '
+                                                          'fragment do not '
+                                                          'count. Source '
+                                                          'assets are '
+                                                          'exempt. The '
+                                                          'rule that its '
+                                                          'collection also '
+                                                          'refers to the '
+                                                          'GeoParquet data '
+                                                          'behind the '
+                                                          'PMTiles can '
+                                                          'depend on the '
+                                                          "collection's "
+                                                          'items, so '
+                                                          'Portolan '
+                                                          'tooling checks '
+                                                          'it.',
+                                              'type': 'object',
+                                              'if': {'allOf': [{'anyOf': [{'required': ['type'],
+                                                                           'properties': {'type': {'const': 'application/vnd.pmtiles'}}},
+                                                                          {'required': ['href'],
+                                                                           'properties': {'href': {'type': 'string',
+                                                                                                   'pattern': '^[^?#]*\\.[Pp][Mm][Tt][Ii][Ll][Ee][Ss]([?#]|$)'}}}]},
+                                                               {'not': {'$ref': '#/definitions/source_asset'}}]},
+                                              'then': {'required': ['roles'],
+                                                       'properties': {'roles': {'type': 'array',
+                                                                                'contains': {'const': 'visual'}}}}},
+                     'item_data_asset': {'$comment': 'Every item carries '
+                                                     'at least one asset '
+                                                     'with the data role, '
+                                                     'because an item '
+                                                     'exists to describe a '
+                                                     'data file (spec: '
+                                                     'Items). A collection '
+                                                     'must also refer to '
+                                                     'its primary data, '
+                                                     'but it can do so '
+                                                     'through its items, '
+                                                     'so Portolan tooling '
+                                                     'checks collections.',
+                                         'type': 'object',
+                                         'required': ['assets'],
+                                         'properties': {'assets': {'type': 'object',
+                                                                   '$comment': 'At '
+                                                                               'least '
+                                                                               'one '
+                                                                               'asset '
+                                                                               'has '
+                                                                               'the '
+                                                                               'data '
+                                                                               'role: '
+                                                                               'the '
+                                                                               'assets '
+                                                                               'are '
+                                                                               'not '
+                                                                               'all '
+                                                                               'without '
+                                                                               'it.',
+                                                                   'not': {'additionalProperties': {'not': {'type': 'object',
+                                                                                                            'required': ['roles'],
+                                                                                                            'properties': {'roles': {'type': 'array',
+                                                                                                                                     'contains': {'const': 'data'}}}}}}}}},
+                     'classes_conformant': {'$comment': 'Classified '
+                                                        'rasters list '
+                                                        'their classes in '
+                                                        'classification:classes '
+                                                        'from the '
+                                                        'classification '
+                                                        'extension (spec: '
+                                                        'Raster, '
+                                                        'Classified '
+                                                        'rasters). The '
+                                                        'rules apply to '
+                                                        'assets and to '
+                                                        'item_assets '
+                                                        'definitions. The '
+                                                        'classification '
+                                                        'extension schema '
+                                                        'checks value, '
+                                                        'name, and '
+                                                        'color_hint. A '
+                                                        'class is marked '
+                                                        'nodata exactly '
+                                                        'when its value '
+                                                        'equals the nodata '
+                                                        'value of the '
+                                                        'asset or band '
+                                                        'that holds the '
+                                                        'list; that rule '
+                                                        'compares two '
+                                                        'fields, so '
+                                                        'Portolan tooling '
+                                                        'checks it.',
+                                            'type': 'object',
+                                            'properties': {'assets': {'type': 'object',
+                                                                      'additionalProperties': {'$ref': '#/definitions/class_holder'}},
+                                                           'item_assets': {'type': 'object',
+                                                                           'additionalProperties': {'$ref': '#/definitions/class_holder'}}}},
+                     'class_holder': {'$comment': 'A single-band raster '
+                                                  'has its class list on '
+                                                  'the data asset. A '
+                                                  'multiband raster has '
+                                                  'each class list on the '
+                                                  'band it describes, in '
+                                                  'the STAC 1.1 bands '
+                                                  'array of the asset, '
+                                                  'never in raster:bands. '
+                                                  'An asset with no bands '
+                                                  'array counts as '
+                                                  'single-band. Source '
+                                                  'assets are exempt.',
+                                      'type': 'object',
+                                      'if': {'$ref': '#/definitions/source_asset'},
+                                      'else': {'properties': {'classification:classes': {'$ref': '#/definitions/class_list'},
+                                                              'bands': {'type': 'array',
+                                                                        'items': {'type': 'object',
+                                                                                  'properties': {'classification:classes': {'$ref': '#/definitions/class_list'}}}},
+                                                              'raster:bands': {'type': 'array',
+                                                                               '$comment': 'Class '
+                                                                                           'lists '
+                                                                                           'go '
+                                                                                           'in '
+                                                                                           'the '
+                                                                                           'STAC '
+                                                                                           '1.1 '
+                                                                                           'bands '
+                                                                                           'array, '
+                                                                                           'not '
+                                                                                           'in '
+                                                                                           'the '
+                                                                                           'legacy '
+                                                                                           'raster:bands '
+                                                                                           'array.',
+                                                                               'items': {'not': {'required': ['classification:classes']}}}},
+                                               'allOf': [{'if': {'required': ['bands'],
+                                                                 'properties': {'bands': {'type': 'array',
+                                                                                          'minItems': 2}}},
+                                                          'then': {'not': {'required': ['classification:classes']}}},
+                                                         {'if': {'required': ['bands'],
+                                                                 'properties': {'bands': {'type': 'array',
+                                                                                          'maxItems': 1}}},
+                                                          'then': {'properties': {'bands': {'items': {'not': {'required': ['classification:classes']}}}}}}]}},
+                     'class_list': {'$comment': 'Every class carries a '
+                                                'non-empty human-readable '
+                                                'title, in addition to the '
+                                                'value and name that the '
+                                                'classification extension '
+                                                'defines.',
+                                    'type': 'array',
+                                    'items': {'type': 'object',
+                                              'required': ['title'],
+                                              'properties': {'title': {'type': 'string',
+                                                                       'minLength': 1}}}},
+                     'partition_conformant': {'$comment': 'A partitioned '
+                                                          'collection '
+                                                          'declares the '
+                                                          'partition '
+                                                          'extension and '
+                                                          'carries its '
+                                                          'required fields '
+                                                          '(spec: '
+                                                          'Partitioned '
+                                                          'Collections). '
+                                                          'Any partition:* '
+                                                          'field without '
+                                                          'the declared '
+                                                          'extension, or a '
+                                                          'declaration '
+                                                          'missing a '
+                                                          'required field, '
+                                                          'fails. Clients '
+                                                          'list files to '
+                                                          'expand the '
+                                                          'glob, and they '
+                                                          'cannot list a '
+                                                          'relative path '
+                                                          'or an http or '
+                                                          'https URL, so '
+                                                          'partition:glob '
+                                                          'is an absolute '
+                                                          'URL with '
+                                                          'another scheme, '
+                                                          'such as s3, gs, '
+                                                          'or az. Whether '
+                                                          'the URL names a '
+                                                          'bucket or host, '
+                                                          'and whether its '
+                                                          'scheme supports '
+                                                          'listing, is '
+                                                          'checked by '
+                                                          'Portolan '
+                                                          'tooling. Field '
+                                                          'shapes are '
+                                                          'validated by '
+                                                          'the partition '
+                                                          'extension '
+                                                          'schema itself, '
+                                                          'which Portolan '
+                                                          'validators '
+                                                          'apply alongside '
+                                                          'this profile; '
+                                                          'cross-partition '
+                                                          'Parquet schema '
+                                                          'consistency is '
+                                                          'checked by '
+                                                          'tooling reading '
+                                                          'file footers.',
+                                              'type': 'object',
+                                              'if': {'anyOf': [{'required': ['partition:scheme']},
+                                                               {'required': ['partition:keys']},
+                                                               {'required': ['partition:strategy']},
+                                                               {'required': ['partition:file_count']},
+                                                               {'required': ['partition:glob']},
+                                                               {'required': ['stac_extensions'],
+                                                                'properties': {'stac_extensions': {'type': 'array',
+                                                                                                   'contains': {'const': 'https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json'}}}}]},
+                                              'then': {'required': ['partition:scheme',
+                                                                    'partition:keys',
+                                                                    'partition:glob',
+                                                                    'stac_extensions'],
+                                                       'properties': {'stac_extensions': {'type': 'array',
+                                                                                          'contains': {'const': 'https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json'}},
+                                                                      'partition:glob': {'type': 'string',
+                                                                                         'pattern': '^[A-Za-z][A-Za-z0-9+.-]+://',
+                                                                                         'not': {'pattern': '^[Hh][Tt][Tt][Pp][Ss]?://'}}}}},
+                     'license_not_proprietary': {'$comment': 'The '
+                                                             'deprecated '
+                                                             'STAC 1.1 '
+                                                             'value '
+                                                             "'proprietary' "
+                                                             'is banned; '
+                                                             'use an SPDX '
+                                                             'identifier, '
+                                                             "or 'other' "
+                                                             'plus a rel '
+                                                             "'license' "
+                                                             'link. SPDX '
+                                                             'validity and '
+                                                             'the '
+                                                             'conditional '
+                                                             'license link '
+                                                             'are checked '
+                                                             'by Portolan '
+                                                             'tooling.',
+                                                 'type': 'object',
+                                                 'properties': {'license': {'not': {'const': 'proprietary'}}}},
                      'valid_bbox': {'$comment': 'WGS84 ranges exclude '
                                                 "sentinel 'effectively "
                                                 "infinite' values (e.g. "
@@ -330,111 +681,250 @@ Failed validating 'oneOf' in schema['allOf'][1]:
                                                 'they fail at the parser. '
                                                 'south <= north is checked '
                                                 'by Portolan tooling.',
-                                    'oneOf': [{'items': [{'$ref': '#/definitions/longitude'},
+                                    'type': 'array',
+                                    'oneOf': [{'minItems': 4,
+                                               'maxItems': 4,
+                                               'items': [{'$ref': '#/definitions/longitude'},
                                                          {'$ref': '#/definitions/latitude'},
                                                          {'$ref': '#/definitions/longitude'},
-                                                         {'$ref': '#/definitions/latitude'}],
-                                               'maxItems': 4,
-                                               'minItems': 4},
-                                              {'items': [{'$ref': '#/definitions/longitude'},
+                                                         {'$ref': '#/definitions/latitude'}]},
+                                              {'minItems': 6,
+                                               'maxItems': 6,
+                                               'items': [{'$ref': '#/definitions/longitude'},
                                                          {'$ref': '#/definitions/latitude'},
                                                          {'$ref': '#/definitions/elevation'},
                                                          {'$ref': '#/definitions/longitude'},
                                                          {'$ref': '#/definitions/latitude'},
-                                                         {'$ref': '#/definitions/elevation'}],
-                                               'maxItems': 6,
-                                               'minItems': 6}],
-                                    'type': 'array'}},
-     'description': 'The schema-checkable structural requirements of the '
-                    'Portolan specification. The versioned schema URI '
-                    'declared in stac_extensions is the single signal of '
-                    'specification version; no portolan-prefixed fields '
-                    'are defined. Requirements that need link crawling, '
-                    'reading asset bytes, or probing the hosting server '
-                    'are defined in the Portolan specification and '
-                    'validated by Portolan tooling.',
-     'oneOf': [{'$comment': 'STAC Catalogs.',
-                'allOf': [{'properties': {'type': {'const': 'Catalog'}},
-                           'required': ['type']},
-                          {'$ref': '#/definitions/stac_extensions'},
-                          {'$ref': '#/definitions/human_readable'},
-                          {'$ref': '#/definitions/links_conformant'},
-                          {'$ref': '#/definitions/agents_link'},
-                          {'$ref': '#/definitions/readme_link'}],
-                'type': 'object'},
-               {'$comment': 'STAC Collections.',
-                'allOf': [{'properties': {'type': {'const': 'Collection'}},
-                           'required': ['type']},
-                          {'$ref': '#/definitions/stac_extensions'},
-                          {'$ref': '#/definitions/human_readable'},
-                          {'$ref': '#/definitions/links_conformant'},
-                          {'$ref': '#/definitions/agents_link'},
-                          {'$ref': '#/definitions/readme_link'},
-                          {'$ref': '#/definitions/assets_typed_and_roled'},
-                          {'$ref': '#/definitions/license_not_proprietary'},
-                          {'$ref': '#/definitions/providers_conformant'},
-                          {'$ref': '#/definitions/partition_conformant'},
-                          {'properties': {'extent': {'properties': {'spatial': {'properties': {'bbox': {'items': {'$ref': '#/definitions/valid_bbox'},
-                                                                                                        'type': 'array'}},
-                                                                                'type': 'object'}},
-                                                     'type': 'object'}}}],
-                'type': 'object'},
-               {'$comment': 'STAC Items. Items do not declare the Portolan '
-                            'schema URI — declaration happens at the '
-                            'catalog and collection level only, and items '
-                            'inherit conformance from their collection. '
-                            'This branch is applied to items by the '
-                            'Portolan validator, not via stac_extensions.',
-                'allOf': [{'properties': {'type': {'const': 'Feature'}},
-                           'required': ['type']},
-                          {'properties': {'bbox': {'$ref': '#/definitions/valid_bbox'}}},
-                          {'$ref': '#/definitions/assets_typed_and_roled'},
-                          {'$ref': '#/definitions/links_conformant'}],
-                'type': 'object'}],
-     'title': 'Portolan STAC Profile'}
+                                                         {'$ref': '#/definitions/elevation'}]}]},
+                     'longitude': {'type': 'number',
+                                   'minimum': -180,
+                                   'maximum': 180},
+                     'latitude': {'type': 'number',
+                                  'minimum': -90,
+                                  'maximum': 90},
+                     'elevation': {'type': 'number',
+                                   'minimum': -100000,
+                                   'maximum': 100000}}}
 
 On instance:
-    {'assets': {'data': {'file:checksum': '122012852a6892d9f47810b6ad54959b22b840bdfbb118b136a25cc6dd7da41d3cff',
-                         'file:size': 1188770,
-                         'href': './boston-open-space.parquet',
-                         'proj:code': 'EPSG:4326',
-                         'roles': ['data'],
+    {'type': 'Collection',
+     'stac_version': '1.1.0',
+     'stac_extensions': ['https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json',
+                         'https://stac-extensions.github.io/file/v2.1.0/schema.json',
+                         'https://stac-extensions.github.io/table/v1.2.0/schema.json',
+                         'https://stac-extensions.github.io/projection/v2.0.0/schema.json',
+                         'https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json',
+                         'https://stac-extensions.github.io/language/v1.0.0/schema.json'],
+     'id': 'boundaries/boston-open-space',
+     'title': 'Boston Open Space',
+     'description': 'City of Boston open spaces and parks, playgrounds, '
+                    'athletic fields, conservation land, and cemeteries, '
+                    '1,012 polygons from the City of Boston GIS open data '
+                    'platform. Official primary source, republished as '
+                    'cloud-native GeoParquet with a PMTiles visualization '
+                    'and MapLibre styles.',
+     'license': 'PDDL-1.0',
+     'keywords': ['open-space',
+                  'parks',
+                  'boston',
+                  'recreation',
+                  'boundaries'],
+     'providers': [{'name': 'City of Boston',
+                    'url': 'https://data.boston.gov',
+                    'roles': ['producer', 'licensor']},
+                   {'name': 'Portolan SDI',
+                    'url': 'https://github.com/portolan-sdi',
+                    'email': 'portolan@googlegroups.com',
+                    'roles': ['host']}],
+     'extent': {'spatial': {'bbox': [[-71.190913,
+                                      42.227891,
+                                      -70.874864,
+                                      42.396534]]},
+                'temporal': {'interval': [['2025-01-01T00:00:00Z', None]]}},
+     'table:columns': [{'name': 'fid',
+                        'type': 'bigint',
+                        'description': 'Feature id that GDAL assigned when '
+                                       'the generator read the source '
+                                       'layer. Unique in this file. It is '
+                                       'not an upstream key.'},
+                       {'name': 'OBJECTID',
+                        'type': 'integer',
+                        'description': 'Esri object ID that ArcGIS assigns '
+                                       'to each row of the source layer. '
+                                       'Unique in this file.'},
+                       {'name': 'SITE_NAME',
+                        'type': 'varchar',
+                        'description': 'Best-known or official site name. '
+                                       'Multi-parcel sites carry Roman '
+                                       'numeral suffixes, Stony Brook '
+                                       'Reservation I and II.'},
+                       {'name': 'OWNERSHIP',
+                        'type': 'varchar',
+                        'description': 'Fee owner where known. City of '
+                                       'Boston, Commonwealth of '
+                                       'Massachusetts, private owners, and '
+                                       'agency abbreviations like BRA and '
+                                       'BNAN.'},
+                       {'name': 'PROTECTION',
+                        'type': 'varchar',
+                        'description': 'Slash-separated legal protection '
+                                       'instruments. A97 is Article 97 of '
+                                       'the Massachusetts Constitution, '
+                                       'the strongest. Free text, match '
+                                       'with LIKE.'},
+                       {'name': 'TYPECODE',
+                        'type': 'integer',
+                        'description': 'Numeric open space type 1 through '
+                                       '7. Disagrees with TypeLong on '
+                                       'about 13 rows, treat TypeLong as '
+                                       'closer to intent.'},
+                       {'name': 'DISTRICT',
+                        'type': 'varchar',
+                        'description': "Planning district per the city's "
+                                       'open space plan, not the official '
+                                       'neighborhood boundaries. Includes '
+                                       'the non-spatial value '
+                                       'Multi-District.'},
+                       {'name': 'ACRES',
+                        'type': 'double',
+                        'description': 'Official area in acres of the '
+                                       'open-space portion, the figure to '
+                                       'use instead of computing geometry '
+                                       'area.'},
+                       {'name': 'ADDRESS',
+                        'type': 'varchar',
+                        'description': 'Street address if known, null for '
+                                       '589 rows.'},
+                       {'name': 'ZonAgg',
+                        'type': 'varchar',
+                        'description': 'Aggregated zoning district, for '
+                                       'example Open Space District.'},
+                       {'name': 'TypeLong',
+                        'type': 'varchar',
+                        'description': 'Open space type as text, with '
+                                       'minor spelling variants worth '
+                                       'normalizing before grouping.'},
+                       {'name': 'OS_Own_Jur',
+                        'type': 'varchar',
+                        'description': 'The entity holding the open-space '
+                                       'rights. BPRD, DCR, the Boston '
+                                       'Conservation Commission, or None.'},
+                       {'name': 'OS_Mngmnt',
+                        'type': 'varchar',
+                        'description': 'Managing entity only when it '
+                                       'differs from OS_Own_Jur. Null '
+                                       'means the steward manages it, not '
+                                       'missing data.'},
+                       {'name': 'POS',
+                        'type': 'varchar',
+                        'description': 'Protected open space flag. X '
+                                       'permanently protected, N not.'},
+                       {'name': 'PA',
+                        'type': 'varchar',
+                        'description': 'Public access flag. X accessible, '
+                                       'A by appointment, N no or unknown '
+                                       'access.'},
+                       {'name': 'ALT_NAME',
+                        'type': 'varchar',
+                        'description': 'Official, previous, or colloquial '
+                                       'alternate names.'},
+                       {'name': 'AgncyJuris',
+                        'type': 'varchar',
+                        'description': 'Agency of jurisdiction for '
+                                       'government-owned unprotected '
+                                       'sites. Sparsely populated by '
+                                       'design.'},
+                       {'name': 'ShapeSTAre',
+                        'type': 'double',
+                        'description': 'ArcGIS-computed area in square '
+                                       'meters from the source State Plane '
+                                       'geometry.'},
+                       {'name': 'ShapeSTLen',
+                        'type': 'double',
+                        'description': 'ArcGIS-computed perimeter in '
+                                       'meters.'},
+                       {'name': 'geom',
+                        'type': 'geometry',
+                        'description': 'Site geometry, WGS84 longitude and '
+                                       'latitude.'},
+                       {'name': 'bbox',
+                        'type': 'struct(xmin double, ymin double, xmax '
+                                'double, ymax double)',
+                        'description': 'Per-feature bounding box struct, '
+                                       'the GeoParquet covering.'}],
+     'table:primary_geometry': 'geom',
+     'table:row_count': 1012,
+     'assets': {'data': {'href': './boston-open-space.parquet',
+                         'type': 'application/vnd.apache.parquet',
                          'title': 'Boston Open Space (GeoParquet)',
-                         'type': 'application/vnd.apache.parquet'},
-                'style-acreage': {'description': 'ACRES binned at one, '
+                         'roles': ['data'],
+                         'file:size': 1188770,
+                         'file:checksum': '122012852a6892d9f47810b6ad54959b22b840bdfbb118b136a25cc6dd7da41d3cff',
+                         'proj:code': 'EPSG:4326',
+                         'description': 'The 1,012 open space polygons '
+                                        'with their attribute columns, in '
+                                        'WGS84 longitude and latitude.'},
+                'visual': {'href': './boston-open-space.pmtiles',
+                           'type': 'application/vnd.pmtiles',
+                           'title': 'Boston Open Space (PMTiles)',
+                           'roles': ['visual'],
+                           'file:size': 989217,
+                           'file:checksum': '1220db3d459dc821db7adf739ad0afee9682a3b94f8d467c564c343dcb159a2b3281',
+                           'description': 'Vector tiles of the open space '
+                                          'polygons for web maps, in one '
+                                          'layer named boston-open-space.'},
+                'style-types': {'href': './styles/types.json',
+                                'type': 'application/vnd.mapbox.style+json',
+                                'title': 'Open space by type',
+                                'roles': ['style', 'default'],
+                                'file:size': 1224,
+                                'file:checksum': '1220b1762e9d48bd88b6901687f255ac37fb6afc3618f46f2e4d8a569f4b9df5bfcc',
+                                'description': 'TypeLong separates parks, '
+                                               'parkways and reservations, '
+                                               'cemeteries, urban wilds, '
+                                               'malls and plazas, and '
+                                               'community gardens.'},
+                'style-labeled': {'href': './styles/labeled.json',
+                                  'type': 'application/vnd.mapbox.style+json',
+                                  'title': 'Types with site names',
+                                  'roles': ['style'],
+                                  'file:size': 1586,
+                                  'file:checksum': '12200ce7dcdabc5683bbd6348a8fee0d83b23c47a48cf03557d9eef73d5085a9d2ca',
+                                  'description': 'The type colouring with '
+                                                 'a SITE_NAME label per '
+                                                 'site.'},
+                'style-acreage': {'href': './styles/acreage.json',
+                                  'type': 'application/vnd.mapbox.style+json',
+                                  'title': 'Acreage in four classes',
+                                  'roles': ['style'],
+                                  'file:size': 828,
+                                  'file:checksum': '122092647db9cb1290d34a8b4675e8e13548c4f45e6d2c26589726232bd0bb23d710',
+                                  'description': 'ACRES binned at one, '
                                                  'ten, and one hundred '
                                                  'acres, light to dark '
                                                  'green, from pocket parks '
                                                  "through Franklin Park's "
-                                                 '392 acres.',
-                                  'file:checksum': '122092647db9cb1290d34a8b4675e8e13548c4f45e6d2c26589726232bd0bb23d710',
-                                  'file:size': 828,
-                                  'href': './styles/acreage.json',
-                                  'roles': ['style'],
-                                  'title': 'Acreage in four classes',
-                                  'type': 'application/vnd.mapbox.style+json'},
-                'style-labeled': {'description': 'The type colouring with '
-                                                 'a SITE_NAME label per '
-                                                 'site.',
-                                  'file:checksum': '12200ce7dcdabc5683bbd6348a8fee0d83b23c47a48cf03557d9eef73d5085a9d2ca',
-                                  'file:size': 1586,
-                                  'href': './styles/labeled.json',
-                                  'roles': ['style'],
-                                  'title': 'Types with site names',
-                                  'type': 'application/vnd.mapbox.style+json'},
-                'style-ownership': {'description': 'OWNERSHIP from the '
+                                                 '392 acres.'},
+                'style-ownership': {'href': './styles/ownership.json',
+                                    'type': 'application/vnd.mapbox.style+json',
+                                    'title': 'Who owns it',
+                                    'roles': ['style'],
+                                    'file:size': 1363,
+                                    'file:checksum': '1220430bfc3a3f3572e0156f3ce1ca91dbbdd6f1f2b360bf4f237ed8a26071a7fed5',
+                                    'description': 'OWNERSHIP from the '
                                                    'catalog palette, city, '
                                                    'Commonwealth, federal, '
                                                    'and the 214 privately '
                                                    'owned sites side by '
-                                                   'side.',
-                                    'file:checksum': '1220430bfc3a3f3572e0156f3ce1ca91dbbdd6f1f2b360bf4f237ed8a26071a7fed5',
-                                    'file:size': 1363,
-                                    'href': './styles/ownership.json',
-                                    'roles': ['style'],
-                                    'title': 'Who owns it',
-                                    'type': 'application/vnd.mapbox.style+json'},
-                'style-protection': {'description': 'The POS flag, deep '
+                                                   'side.'},
+                'style-protection': {'href': './styles/protection.json',
+                                     'type': 'application/vnd.mapbox.style+json',
+                                     'title': 'Permanently protected or '
+                                              'not',
+                                     'roles': ['style'],
+                                     'file:size': 1122,
+                                     'file:checksum': '122029441a7dbf26793f87185cb67a1ee3e5055d271a6550c1cffad5b8fdaa349078',
+                                     'description': 'The POS flag, deep '
                                                     'green where '
                                                     'protection is '
                                                     'permanent under '
@@ -447,429 +937,166 @@ On instance:
                                                     'so the legend a '
                                                     'client derives from '
                                                     'the outer match reads '
-                                                    'in plain words.',
-                                     'file:checksum': '122029441a7dbf26793f87185cb67a1ee3e5055d271a6550c1cffad5b8fdaa349078',
-                                     'file:size': 1122,
-                                     'href': './styles/protection.json',
-                                     'roles': ['style'],
-                                     'title': 'Permanently protected or '
-                                              'not',
-                                     'type': 'application/vnd.mapbox.style+json'},
-                'style-types': {'description': 'TypeLong separates parks, '
-                                               'parkways and reservations, '
-                                               'cemeteries, urban wilds, '
-                                               'malls and plazas, and '
-                                               'community gardens.',
-                                'file:checksum': '1220b1762e9d48bd88b6901687f255ac37fb6afc3618f46f2e4d8a569f4b9df5bfcc',
-                                'file:size': 1224,
-                                'href': './styles/types.json',
-                                'roles': ['style', 'default'],
-                                'title': 'Open space by type',
-                                'type': 'application/vnd.mapbox.style+json'},
-                'thumbnail': {'file:checksum': '122061292d50d6b52d5452897669fe629173564b49f0d2538de5605331a323299fb0',
-                              'file:size': 377459,
-                              'href': './thumbnail.png',
-                              'roles': ['thumbnail'],
+                                                    'in plain words.'},
+                'thumbnail': {'href': './thumbnail.png',
+                              'type': 'image/png',
                               'title': 'Preview thumbnail over a light '
                                        'basemap. © OpenStreetMap '
                                        'contributors © CARTO.',
-                              'type': 'image/png'},
-                'visual': {'file:checksum': '1220db3d459dc821db7adf739ad0afee9682a3b94f8d467c564c343dcb159a2b3281',
-                           'file:size': 989217,
-                           'href': './boston-open-space.pmtiles',
-                           'roles': ['visual'],
-                           'title': 'Boston Open Space (PMTiles)',
-                           'type': 'application/vnd.pmtiles'}},
-     'description': 'City of Boston open spaces and parks, playgrounds, '
-                    'athletic fields, conservation land, and cemeteries, '
-                    '1,012 polygons from the City of Boston GIS open data '
-                    'platform. Official primary source, republished as '
-                    'cloud-native GeoParquet with a PMTiles visualization '
-                    'and MapLibre styles.',
-     'extent': {'spatial': {'bbox': [[-71.190913,
-                                      42.227891,
-                                      -70.874864,
-                                      42.396534]]},
-                'temporal': {'interval': [['2025-01-01T00:00:00Z', None]]}},
-     'id': 'boundaries/boston-open-space',
-     'keywords': ['open-space',
-                  'parks',
-                  'boston',
-                  'recreation',
-                  'boundaries'],
-     'license': 'PDDL-1.0',
-     'links': [{'href': '../../catalog.json',
-                'rel': 'root',
+                              'roles': ['thumbnail'],
+                              'file:size': 377459,
+                              'file:checksum': '122061292d50d6b52d5452897669fe629173564b49f0d2538de5605331a323299fb0',
+                              'description': 'A PNG map of the open space '
+                                             'polygons over a light '
+                                             'basemap.'}},
+     'links': [{'rel': 'root',
+                'href': '../../catalog.json',
                 'type': 'application/json'},
-               {'href': '../catalog.json',
-                'rel': 'parent',
+               {'rel': 'parent',
+                'href': '../catalog.json',
                 'type': 'application/json'},
-               {'href': './boston-open-space.pmtiles',
-                'pmtiles:layers': ['boston-open-space'],
-                'rel': 'pmtiles',
+               {'rel': 'pmtiles',
+                'href': './boston-open-space.pmtiles',
+                'type': 'application/vnd.pmtiles',
                 'title': 'Web map tiles',
-                'type': 'application/vnd.pmtiles'},
-               {'href': 'https://bostonopendata-boston.opendata.arcgis.com/datasets/2868d370c55d4d458d4ae2224ef8cddd_7',
-                'rel': 'via',
-                'title': 'Original source',
-                'type': 'text/html'},
-               {'href': './README.md',
-                'rel': 'describedby',
+                'pmtiles:layers': ['boston-open-space']},
+               {'rel': 'via',
+                'href': 'https://bostonopendata-boston.opendata.arcgis.com/datasets/2868d370c55d4d458d4ae2224ef8cddd_7',
+                'type': 'text/html',
+                'title': 'Original source'},
+               {'rel': 'describedby',
+                'href': './README.md',
+                'type': 'text/markdown',
                 'title': 'Human-readable documentation',
-                'type': 'text/markdown'}],
-     'providers': [{'name': 'City of Boston',
-                    'roles': ['producer', 'licensor'],
-                    'url': 'https://data.boston.gov'},
-                   {'email': 'portolan@googlegroups.com',
-                    'name': 'Portolan SDI',
-                    'roles': ['host'],
-                    'url': 'https://github.com/portolan-sdi'}],
-     'stac_extensions': ['https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json',
-                         'https://stac-extensions.github.io/file/v2.1.0/schema.json',
-                         'https://stac-extensions.github.io/table/v1.2.0/schema.json',
-                         'https://stac-extensions.github.io/projection/v2.0.0/schema.json',
-                         'https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json'],
-     'stac_version': '1.1.0',
-     'table:columns': [{'name': 'fid', 'type': 'bigint'},
-                       {'name': 'OBJECTID', 'type': 'integer'},
-                       {'description': 'Best-known or official site name. '
-                                       'Multi-parcel sites carry Roman '
-                                       'numeral suffixes, Stony Brook '
-                                       'Reservation I and II.',
-                        'name': 'SITE_NAME',
-                        'type': 'varchar'},
-                       {'description': 'Fee owner where known. City of '
-                                       'Boston, Commonwealth of '
-                                       'Massachusetts, private owners, and '
-                                       'agency abbreviations like BRA and '
-                                       'BNAN.',
-                        'name': 'OWNERSHIP',
-                        'type': 'varchar'},
-                       {'description': 'Slash-separated legal protection '
-                                       'instruments. A97 is Article 97 of '
-                                       'the Massachusetts Constitution, '
-                                       'the strongest. Free text, match '
-                                       'with LIKE.',
-                        'name': 'PROTECTION',
-                        'type': 'varchar'},
-                       {'description': 'Numeric open space type 1 through '
-                                       '7. Disagrees with TypeLong on '
-                                       'about 13 rows, treat TypeLong as '
-                                       'closer to intent.',
-                        'name': 'TYPECODE',
-                        'type': 'integer'},
-                       {'description': "Planning district per the city's "
-                                       'open space plan, not the official '
-                                       'neighborhood boundaries. Includes '
-                                       'the non-spatial value '
-                                       'Multi-District.',
-                        'name': 'DISTRICT',
-                        'type': 'varchar'},
-                       {'description': 'Official area in acres of the '
-                                       'open-space portion, the figure to '
-                                       'use instead of computing geometry '
-                                       'area.',
-                        'name': 'ACRES',
-                        'type': 'double'},
-                       {'description': 'Street address if known, null for '
-                                       '589 rows.',
-                        'name': 'ADDRESS',
-                        'type': 'varchar'},
-                       {'description': 'Aggregated zoning district, for '
-                                       'example Open Space District.',
-                        'name': 'ZonAgg',
-                        'type': 'varchar'},
-                       {'description': 'Open space type as text, with '
-                                       'minor spelling variants worth '
-                                       'normalizing before grouping.',
-                        'name': 'TypeLong',
-                        'type': 'varchar'},
-                       {'description': 'The entity holding the open-space '
-                                       'rights. BPRD, DCR, the Boston '
-                                       'Conservation Commission, or None.',
-                        'name': 'OS_Own_Jur',
-                        'type': 'varchar'},
-                       {'description': 'Managing entity only when it '
-                                       'differs from OS_Own_Jur. Null '
-                                       'means the steward manages it, not '
-                                       'missing data.',
-                        'name': 'OS_Mngmnt',
-                        'type': 'varchar'},
-                       {'description': 'Protected open space flag. X '
-                                       'permanently protected, N not.',
-                        'name': 'POS',
-                        'type': 'varchar'},
-                       {'description': 'Public access flag. X accessible, '
-                                       'A by appointment, N no or unknown '
-                                       'access.',
-                        'name': 'PA',
-                        'type': 'varchar'},
-                       {'description': 'Official, previous, or colloquial '
-                                       'alternate names.',
-                        'name': 'ALT_NAME',
-                        'type': 'varchar'},
-                       {'description': 'Agency of jurisdiction for '
-                                       'government-owned unprotected '
-                                       'sites. Sparsely populated by '
-                                       'design.',
-                        'name': 'AgncyJuris',
-                        'type': 'varchar'},
-                       {'description': 'ArcGIS-computed area in square '
-                                       'meters from the source State Plane '
-                                       'geometry.',
-                        'name': 'ShapeSTAre',
-                        'type': 'double'},
-                       {'description': 'ArcGIS-computed perimeter in '
-                                       'meters.',
-                        'name': 'ShapeSTLen',
-                        'type': 'double'},
-                       {'description': 'Site geometry, WGS84 longitude and '
-                                       'latitude.',
-                        'name': 'geom',
-                        'type': 'geometry'},
-                       {'description': 'Per-feature bounding box struct, '
-                                       'the GeoParquet covering.',
-                        'name': 'bbox',
-                        'type': 'struct(xmin double, ymin double, xmax '
-                                'double, ymax double)'}],
-     'table:primary_geometry': 'geom',
-     'table:row_count': 1012,
-     'title': 'Boston Open Space',
-     'type': 'Collection',
-     'updated': '2026-07-21T00:00:00Z'}
+                'hreflang': 'en'},
+               {'rel': 'alternate',
+                'href': '../../ar/boundaries/boston-open-space/collection.json',
+                'type': 'application/json',
+                'title': 'Arabic',
+                'hreflang': 'ar'}],
+     'updated': '2026-07-21T00:00:00Z',
+     'language': {'code': 'en', 'name': 'English'},
+     'languages': [{'code': 'ar',
+                    'name': 'العربية',
+                    'alternate': 'Arabic',
+                    'dir': 'rtl'}]}
 === End JSON Schema ===
 
 === SHACL ===
 Error processing closure source skos.ttl: [Errno 2] No such file or directory: '/github/skos.ttl' - SHACL validation will run against an incomplete closure graph
 Error processing closure source ../raster-ontology/skos.ttl: [Errno 2] No such file or directory: '/raster-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../classification-ontology/ontology.ttl: [Errno 2] No such file or directory: '/classification-ontology/ontology.ttl' - SHACL validation will run against an incomplete closure graph
 Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/classification-ontology/ontology.ttl
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl
  - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/raster-ontology/ontology.ttl
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/themes-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl
  - https://www.w3.org/ns/prov-o
-Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
- - Shape stac:LinkShape: *none*
- - Shape stac:AssetShape: *none*
- - Shape stac:ItemShape: *none*
- - Shape stac:CollectionShape: *none*
-
-Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb225: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb206: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb164: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb218: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-agent>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb258: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-used>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#AgentInfluence-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb152: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb98: *none*
- - Shape <https://www.ogc.org/rules/prov/#EntityInfluence-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-activity>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb200: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb68: *none*
- - Shape <https://www.ogc.org/rules/prov/#Association-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb8: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Derivation-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb134: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Person-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb212: *none*
- - Shape <https://www.ogc.org/rules/prov/#Quotation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-used>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-activity>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb176: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Attribution-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-influencer>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Agent-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb56: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb240: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb44: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-agent>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-generated>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb146: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb80: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-entity>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb224: *none*
- - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#SoftwareAgent-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Delegation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb170: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb14: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb2: *none*
- - Shape <https://www.ogc.org/rules/prov/#PrimarySource-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb234: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb128: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb92: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb38: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb122: *none*
- - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb74: *none*
- - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb116: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb226: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#ActivityInfluence-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb140: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb104: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Organization-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb252: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb158: *none*
- - Shape <https://www.ogc.org/rules/prov/#Revision-shape>: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb32: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb50: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb188: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-generated>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb246: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb182: *none*
- - Shape <https://www.ogc.org/rules/prov/#Influence-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>/sh:or/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb194: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-influencer>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-entity>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb26: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb62: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb86: *none*
- - Shape <https://www.ogc.org/rules/prov/#Communication-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb110: *none*
- - Shape _:n2b3edf07f28e427a8deabad24bda6c4eb20: *none*
-
-Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl: no results
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
  - Shape assets:RolesShape: *none*
 
-Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape: *none*
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl: no results
+Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+ - Shape stac:CollectionShape: *none*
+ - Shape stac:ItemShape: *none*
+ - Shape stac:AssetShape: *none*
+ - Shape stac:LinkShape: *none*
 
-Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
-  Validation Report
-  Conforms: True
-  
+Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl: no results
+Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl: no results
+Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl:
+ - Shape classification:BitFieldShape: *none*
+ - Shape classification:BitfieldsUsageShape: *none*
+ - Shape classification:ClassShape: *none*
+ - Shape classification:ClassesUsageShape: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl: no results
 Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: *none*
 
-Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/themes-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/themes-ontology/shapes.shacl:
- - Shape thns:ThemeShape: *none*
- - Shape thns:SchemesUsageShape: *none*
- - Shape thns:ConceptShape: *none*
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl: no results
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:FeatureShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
 
-Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl: no results
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl:
- - Shape raster:OffsetShape: *none*
- - Shape raster:ScaleShape: *none*
- - Shape raster:SpatialResolutionShape: *none*
  - Shape raster:HistogramUsageShape: *none*
  - Shape raster:HistogramShape: *none*
  - Shape raster:SamplingShape: *none*
  - Shape raster:BitsPerSampleShape: *none*
+ - Shape raster:OffsetShape: *none*
+ - Shape raster:SpatialResolutionShape: *none*
+ - Shape raster:ScaleShape: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/themes-ontology/shapes.shacl: no results
+Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/themes-ontology/shapes.shacl:
+ - Shape thns:SchemesUsageShape: *none*
+ - Shape thns:ThemeShape: *none*
+ - Shape thns:ConceptShape: *none*
 
 === End SHACL ===
 

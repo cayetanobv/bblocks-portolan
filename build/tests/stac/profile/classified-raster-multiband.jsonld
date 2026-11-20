@@ -1,0 +1,179 @@
+{
+  "@context": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile/context.jsonld",
+  "type": "Collection",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/classification/v2.0.0/schema.json"
+  ],
+  "id": "valencia-2024-multiband",
+  "title": "Flood classification and confidence, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)",
+  "description": "Flood classification over Valencia and l'Albufera after the 29 October 2024 DANA, with a per-pixel confidence band. Test variant of the classified raster example: the COG has two discrete uint8 bands, so each class list sits on the band it describes, in the STAC 1.1 bands array of the asset, and not on the asset.",
+  "license": "other",
+  "keywords": [
+    "flood",
+    "Sentinel-1",
+    "SAR",
+    "Valencia",
+    "DANA"
+  ],
+  "providers": [
+    {
+      "name": "Geohazards TEP (GEP)",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://geohazards-tep.eu/"
+    },
+    {
+      "name": "Portolan SDI",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://github.com/portolan-sdi"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -0.62,
+          39.12,
+          0.03,
+          39.63
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-10-07T00:00:00Z",
+          "2024-10-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "data": {
+      "href": "./sar-features-flood-confidence-cog.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Flood classification and confidence (COG)",
+      "description": "Discrete two-band uint8 COG. Band 1 is the flood class, band 2 the classification confidence. Value 0 is nodata in both bands.",
+      "roles": [
+        "data"
+      ],
+      "bands": [
+        {
+          "name": "flood_class",
+          "description": "Flood classification",
+          "data_type": "uint8",
+          "nodata": 0,
+          "classification:classes": [
+            {
+              "value": 0,
+              "name": "other",
+              "title": "Other",
+              "nodata": true
+            },
+            {
+              "value": 1,
+              "name": "urban",
+              "title": "Urban",
+              "color_hint": "000000"
+            },
+            {
+              "value": 2,
+              "name": "permanent-water",
+              "title": "Permanent water",
+              "color_hint": "0000FF"
+            },
+            {
+              "value": 3,
+              "name": "bare-soil-flood",
+              "title": "Flooded bare soil",
+              "color_hint": "00FF00"
+            },
+            {
+              "value": 4,
+              "name": "urban-flood",
+              "title": "Flooded urban area",
+              "color_hint": "00FFFF"
+            }
+          ]
+        },
+        {
+          "name": "confidence",
+          "description": "Confidence of the flood classification",
+          "data_type": "uint8",
+          "nodata": 0,
+          "classification:classes": [
+            {
+              "value": 0,
+              "name": "nodata",
+              "title": "No data",
+              "nodata": true
+            },
+            {
+              "value": 1,
+              "name": "low",
+              "title": "Low confidence",
+              "color_hint": "FFFF00"
+            },
+            {
+              "value": 2,
+              "name": "medium",
+              "title": "Medium confidence",
+              "color_hint": "FFA500"
+            },
+            {
+              "value": 3,
+              "name": "high",
+              "title": "High confidence",
+              "color_hint": "FF0000"
+            }
+          ]
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Preview drawn from the embedded color table",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "license",
+      "href": "./LICENSE.html",
+      "type": "text/html",
+      "title": "Terms of use"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Guidance for AI agents"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "Human-readable documentation"
+    }
+  ]
+}

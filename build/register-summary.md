@@ -20,5 +20,5 @@ checked by the [rashid](https://github.com/portolan-sdi/rashid) validator.
 
 **Type:** schema
 
-A STAC Catalog or Collection that conforms to the Portolan specification v0.2.0: cloud-native assets on plain HTTPS object storage, a pinned set of STAC extensions, and AGENTS.md and README.md links on every catalog and collection.
+A STAC Catalog or Collection that conforms to the Portolan specification v0.3.0: cloud-native assets on object storage with https access, a pinned set of STAC extensions, and AGENTS.md and README.md links on every catalog and collection.
 

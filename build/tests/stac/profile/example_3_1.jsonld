@@ -3,10 +3,11 @@
   "type": "Collection",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
-    "https://stac-extensions.github.io/attribution/v0.1.0/schema.json"
+    "https://stac-extensions.github.io/attribution/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/language/v1.0.0/schema.json"
   ],
   "id": "tabular/eurostat-electricity-prices",
   "title": "Eurostat Electricity Prices for Household Consumers",
@@ -124,7 +125,7 @@
       "description": "Confidentiality status, entirely null in this snapshot."
     }
   ],
-  "table:row_count": 65412,
+  "table:row_count": 65466,
   "assets": {
     "data": {
       "href": "./eurostat-electricity-prices.parquet",
@@ -133,8 +134,9 @@
       "roles": [
         "data"
       ],
-      "file:size": 163273,
-      "file:checksum": "1220106081590cd5eacab833ea121be58b7b0686fec532215d3573ac0b13e94269a2"
+      "file:size": 162919,
+      "file:checksum": "122051a96f8677c374f6b54cb6e876dcf6af33bc2982b52c9445d0c9a857240b6477",
+      "description": "The rows of Eurostat table nrg_pc_204, one price for each country or country group, half year, consumption band, tax level, and currency."
     }
   },
   "links": [
@@ -158,15 +160,36 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown",
-      "title": "Guidance for AI agents"
+      "title": "Guidance for AI agents",
+      "hreflang": "en"
     },
     {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown",
-      "title": "Human-readable documentation"
+      "title": "Human-readable documentation",
+      "hreflang": "en"
+    },
+    {
+      "rel": "alternate",
+      "href": "../../ar/tabular/eurostat-electricity-prices/collection.json",
+      "type": "application/json",
+      "title": "Arabic",
+      "hreflang": "ar"
     }
   ],
   "attribution": "Source, Eurostat",
-  "updated": "2026-07-21T00:00:00Z"
+  "updated": "2026-07-21T00:00:00Z",
+  "language": {
+    "code": "en",
+    "name": "English"
+  },
+  "languages": [
+    {
+      "code": "ar",
+      "name": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+      "alternate": "Arabic",
+      "dir": "rtl"
+    }
+  ]
 }
