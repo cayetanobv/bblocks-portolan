@@ -22,14 +22,14 @@
             ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
         [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Guidance for AI agents" ;
             dct:type "text/markdown" ;
             ns2:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ],
         [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Terms of use" ;
             dct:type "text/html" ;
@@ -47,6 +47,10 @@
             ns1:color_hint "0000FF" ;
             ns1:name "permanent-water" ;
             ns1:value 2 ],
+        [ dct:title "Flooded bare soil" ;
+            ns1:color_hint "00FF00" ;
+            ns1:name "bare-soil-flood" ;
+            ns1:value 3 ],
         [ ns1:color_hint "000000" ;
             ns1:name "urban" ;
             ns1:value 1 ],
@@ -54,10 +58,6 @@
             ns1:name "other" ;
             ns1:nodata true ;
             ns1:value 0 ],
-        [ dct:title "Flooded bare soil" ;
-            ns1:color_hint "00FF00" ;
-            ns1:name "bare-soil-flood" ;
-            ns1:value 3 ],
         [ dct:title "Flooded urban area" ;
             ns1:color_hint "00FFFF" ;
             ns1:name "urban-flood" ;

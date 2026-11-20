@@ -1,9 +1,9 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <partition:> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <partition:> .
 @prefix ns3: <file:> .
-@prefix ns4: <pmtiles:> .
-@prefix ns5: <table:> .
+@prefix ns4: <table:> .
+@prefix ns5: <pmtiles:> .
 @prefix ns6: <https://w3id.org/ogc/stac/assets/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -19,33 +19,33 @@
         "cadastre",
         "footprints" ;
     dct:title "Buildings of Andalusia" ;
-    rdfs:seeAlso [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Buildings — Seville province" ;
+    rdfs:seeAlso [ rdfs:label "Buildings — Seville province" ;
             dct:type "application/geo+json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/item> ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <file:///github/workspace/buildings-sevilla/item.json> ],
-        [ rdfs:label "Original source (Spanish Cadastre INSPIRE services)" ;
-            dct:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/via> ;
-            oa:hasTarget <https://www.catastro.hacienda.gob.es/webinspire/index.html> ],
-        [ rdfs:label "Guidance for AI agents" ;
-            dct:type "text/markdown" ;
-            ns2:relation <http://www.iana.org/assignments/relation/agents> ;
-            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Web map tiles" ;
             dct:type "application/vnd.pmtiles" ;
-            ns2:relation <http://www.iana.org/assignments/relation/pmtiles> ;
+            ns1:relation <http://www.iana.org/assignments/relation/pmtiles> ;
             oa:hasTarget <file:///github/workspace/buildings.pmtiles> ;
-            ns4:layers "buildings" ],
+            ns5:layers "buildings" ],
         [ rdfs:label "Human-readable documentation" ;
             dct:type "text/markdown" ;
-            ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
+            ns1:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
         [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ] ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ rdfs:label "Guidance for AI agents" ;
+            dct:type "text/markdown" ;
+            ns1:relation <http://www.iana.org/assignments/relation/agents> ;
+            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ rdfs:label "Original source (Spanish Cadastre INSPIRE services)" ;
+            dct:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/via> ;
+            oa:hasTarget <https://www.catastro.hacienda.gob.es/webinspire/index.html> ] ;
     stac:hasAsset [ ns6:style-default <file:///github/workspace/styles/default.json> ;
             ns6:thumbnail <file:///github/workspace/thumbnail.png> ;
             ns6:visual <file:///github/workspace/buildings.pmtiles> ] ;
@@ -57,20 +57,20 @@
     stac:hasProvider [ ],
         [ ] ;
     stac:version "1.1.0" ;
-    ns1:file_count 8 ;
-    ns1:glob "s3://example-bucket/andalusia/buildings/*/*.parquet" ;
-    ns1:keys [ a <file:///github/workspace/string> ;
+    ns2:file_count 8 ;
+    ns2:glob "s3://example-bucket/andalusia/buildings/*/*.parquet" ;
+    ns2:keys [ a <file:///github/workspace/string> ;
             dct:description "Province of Andalusia, one GeoParquet file per province" ] ;
-    ns1:scheme "directory" ;
-    ns1:strategy "attribute" ;
-    ns5:columns [ a <file:///github/workspace/float> ;
+    ns2:scheme "directory" ;
+    ns2:strategy "attribute" ;
+    ns4:columns [ a <file:///github/workspace/string> ;
+            dct:description "Cadastral reference of the building, unique across all partitions." ],
+        [ a <file:///github/workspace/float> ;
             dct:description "Building height in metres, null where the cadastre records none." ],
-        [ a <file:///github/workspace/string> ;
-            dct:description "Province name, the partition key; every file holds one province." ],
         [ a <file:///github/workspace/binary> ;
             dct:description "Building footprint as WKB, EPSG:4326." ],
         [ a <file:///github/workspace/string> ;
-            dct:description "Cadastral reference of the building, unique across all partitions." ] .
+            dct:description "Province name, the partition key; every file holds one province." ] .
 
 <file:///github/workspace/styles/default.json> ns3:checksum "12207b0e3d6c9f2a5b8e1d4c7f0a3b6e9d2c5f8b1e4a7d0c3f6b9e2a5d8c1f4b7e09" ;
     ns3:size 2304 ;

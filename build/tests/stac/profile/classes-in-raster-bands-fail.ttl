@@ -22,6 +22,9 @@
             dct:type "text/markdown" ;
             ns3:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
+        [ dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Guidance for AI agents" ;
             dct:type "text/markdown" ;
             ns3:relation <http://www.iana.org/assignments/relation/agents> ;
@@ -30,9 +33,6 @@
             dct:type "text/html" ;
             ns3:relation <http://www.iana.org/assignments/relation/license> ;
             oa:hasTarget <file:///github/workspace/LICENSE.html> ],
-        [ dct:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
         [ dct:type "application/json" ;
             ns3:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <file:///github/catalog.json> ] ;
@@ -50,26 +50,26 @@
     ns1:data_type "uint8" ;
     ns1:nodata 0 ;
     stac:hasAssetroles "data"^^<xsd:string> ;
-    ns4:bands [ ns2:classes [ dct:title "Other" ;
+    ns4:bands [ ns2:classes [ dct:title "Flooded urban area" ;
+                    ns1:color_hint "00FFFF" ;
+                    ns1:name "urban-flood" ;
+                    ns1:value 4 ],
+                [ dct:title "Other" ;
                     ns1:name "other" ;
                     ns1:nodata true ;
                     ns1:value 0 ],
+                [ dct:title "Flooded bare soil" ;
+                    ns1:color_hint "00FF00" ;
+                    ns1:name "bare-soil-flood" ;
+                    ns1:value 3 ],
                 [ dct:title "Permanent water" ;
                     ns1:color_hint "0000FF" ;
                     ns1:name "permanent-water" ;
                     ns1:value 2 ],
-                [ dct:title "Flooded urban area" ;
-                    ns1:color_hint "00FFFF" ;
-                    ns1:name "urban-flood" ;
-                    ns1:value 4 ],
                 [ dct:title "Urban" ;
                     ns1:color_hint "000000" ;
                     ns1:name "urban" ;
-                    ns1:value 1 ],
-                [ dct:title "Flooded bare soil" ;
-                    ns1:color_hint "00FF00" ;
-                    ns1:name "bare-soil-flood" ;
-                    ns1:value 3 ] ] .
+                    ns1:value 1 ] ] .
 
 <file:///github/workspace/thumbnail.png> dct:format "image/png" ;
     dct:title "Preview drawn from the embedded color table" ;
