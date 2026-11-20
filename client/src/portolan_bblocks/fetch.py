@@ -50,6 +50,8 @@ class Fetcher:
         return data
 
     def _load(self, url: str) -> Any:
+        if urlparse(url).scheme not in ("http", "https", "file"):
+            raise ValueError(f"unsupported URL scheme: {url}")
         request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
         with urllib.request.urlopen(request, timeout=self.timeout) as response:
             text = response.read().decode("utf-8")

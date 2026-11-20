@@ -96,6 +96,25 @@ def test_crawl_follows_children_counts_items_and_reports_broken_links(tmp_path):
     assert by_name["/missing/collection.json"].error.startswith("could not fetch")
 
 
+def test_remote_catalog_cannot_lead_to_local_files():
+    from portolan_bblocks.crawl import _links
+
+    doc = {"links": [{"rel": "child", "href": "file:///etc/passwd"},
+                     {"rel": "child", "href": "./a/collection.json"},
+                     {"rel": "child", "href": "ftp://example.org/x.json"}]}
+    remote = _links(doc, "child", "https://example.org/catalog.json", root_scheme="https")
+    assert remote == ["https://example.org/a/collection.json"]
+    local = _links(doc, "child", "file:///data/catalog.json", root_scheme="file")
+    assert local == ["file:///etc/passwd", "file:///data/a/collection.json"]
+
+
+def test_fetcher_rejects_other_schemes():
+    import pytest
+
+    with pytest.raises(ValueError):
+        Fetcher()("ftp://example.org/catalog.json")
+
+
 def test_crawl_stops_at_max_objects(tmp_path):
     write(tmp_path / "catalog.json", {"type": "Catalog", "links": [
         {"rel": "child", "href": f"./c{i}.json"} for i in range(10)]})

@@ -5,7 +5,7 @@ from __future__ import annotations
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Any, Iterator
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 from .fetch import Fetcher
 
@@ -21,14 +21,26 @@ class Node:
     children: list[str] = field(default_factory=list)
 
 
-def _links(doc: Any, rel: str, base: str) -> list[str]:
+def _allowed(url: str, root_scheme: str) -> bool:
+    """Links may go to http(s) from anywhere, and to local files only from a local root.
+
+    A remote catalog must not make the client read files on the machine running it.
+    """
+    scheme = urlparse(url).scheme
+    if scheme in ("http", "https"):
+        return True
+    return scheme == "file" and root_scheme == "file"
+
+
+def _links(doc: Any, rel: str, base: str, root_scheme: str = "https") -> list[str]:
     if not isinstance(doc, dict):
         return []
-    return [
+    urls = [
         urljoin(base, link["href"])
         for link in doc.get("links") or []
         if isinstance(link, dict) and link.get("rel") == rel and isinstance(link.get("href"), str)
     ]
+    return [u for u in urls if _allowed(u, root_scheme)]
 
 
 def crawl(root: str, fetch: Fetcher, max_objects: int = 1000, workers: int = 8) -> Iterator[Node]:
@@ -40,14 +52,15 @@ def crawl(root: str, fetch: Fetcher, max_objects: int = 1000, workers: int = 8) 
     seen: set[str] = set()
     queue = [root]
     emitted = 0
+    root_scheme = urlparse(root).scheme
 
     def load(url: str) -> Node:
         try:
             doc = fetch(url)
         except Exception as exc:  # report the failure and keep walking
             return Node(url=url, error=f"could not fetch: {exc}")
-        return Node(url=url, doc=doc, item_links=len(_links(doc, "item", url)),
-                    children=_links(doc, "child", url))
+        return Node(url=url, doc=doc, item_links=len(_links(doc, "item", url, root_scheme)),
+                    children=_links(doc, "child", url, root_scheme))
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
         while queue and emitted < max_objects:
