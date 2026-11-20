@@ -59,8 +59,16 @@ def crawl(root: str, fetch: Fetcher, max_objects: int = 1000, workers: int = 8) 
             doc = fetch(url)
         except Exception as exc:  # report the failure and keep walking
             return Node(url=url, error=f"could not fetch: {exc}")
+        children = [c for c in _links(doc, "child", url, root_scheme) if _fetchable(c)]
         return Node(url=url, doc=doc, item_links=len(_links(doc, "item", url, root_scheme)),
-                    children=_links(doc, "child", url, root_scheme))
+                    children=children)
+
+    def _fetchable(link: str) -> bool:
+        """Apply the scheme rule to the URL actually fetched, after any --local mapping."""
+        try:
+            return _allowed(fetch.resolve(link), root_scheme)
+        except ValueError:
+            return False
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
         while queue and emitted < max_objects:
