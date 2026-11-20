@@ -108,6 +108,32 @@ def test_remote_catalog_cannot_lead_to_local_files():
     assert local == ["file:///etc/passwd", "file:///data/a/collection.json"]
 
 
+def test_mapped_links_cannot_reach_local_files_from_a_remote_catalog(tmp_path):
+    import pytest
+
+    repo = tmp_path / "repo"
+    (repo / "build-local").mkdir(parents=True)
+    fetch = Fetcher([("http://localhost:9090/register/", repo.as_uri() + "/")])
+    assert fetch.resolve("http://localhost:9090/register/build-local/x.json") == (repo / "build-local" / "x.json").as_uri()
+    with pytest.raises(ValueError):
+        fetch.resolve("http://localhost:9090/register/../../etc/passwd")
+    with pytest.raises(ValueError):
+        fetch.resolve("http://localhost:9090/register/%2e%2e/%2e%2e/etc/passwd")
+
+    # A remote catalog linking to the mapped prefix: the mapped target is a local file, so it is not followed.
+    remote_root = tmp_path / "remote.json"
+    remote_root.write_text(json.dumps({"links": [{"rel": "child", "href": "http://localhost:9090/register/build-local/x.json"}]}))
+    from portolan_bblocks import crawl as crawl_mod
+
+    class FakeRemote(Fetcher):
+        def __call__(self, url):
+            return json.loads(remote_root.read_text()) if url == "https://example.org/catalog.json" else {}
+
+    nodes = list(crawl_mod.crawl("https://example.org/catalog.json",
+                                 FakeRemote([("http://localhost:9090/register/", repo.as_uri() + "/")])))
+    assert [n.url for n in nodes] == ["https://example.org/catalog.json"]
+
+
 def test_fetcher_rejects_other_schemes():
     import pytest
 

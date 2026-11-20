@@ -8,6 +8,7 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
+from urllib.request import url2pathname
 
 import yaml
 
@@ -37,7 +38,14 @@ class Fetcher:
     def resolve(self, url: str) -> str:
         for prefix, replacement in self.mappings:
             if url.startswith(prefix):
-                return replacement + url[len(prefix):]
+                mapped = replacement + url[len(prefix):]
+                if urlparse(replacement).scheme == "file":
+                    base = Path(url2pathname(urlparse(replacement).path)).resolve()
+                    target = Path(url2pathname(urlparse(mapped).path)).resolve()
+                    if not target.is_relative_to(base):
+                        raise ValueError(f"{url} maps outside {base}")
+                    return target.as_uri()
+                return mapped
         return url
 
     def __call__(self, url: str) -> Any:
