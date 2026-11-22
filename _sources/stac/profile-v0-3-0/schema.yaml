@@ -1,0 +1,15 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+title: Portolan STAC Profile
+description: >-
+  A STAC Catalog or Collection that conforms to the Portolan specification v0.3.0.
+  The object is a STAC 1.x Collection (via the STAC Collection building block) or a
+  STAC 1.1 Catalog, and it validates against the Portolan schema of record.
+allOf:
+  - anyOf:
+      # bblocks-stac has Collection and Item blocks but no Catalog block yet, so the
+      # Catalog case references the canonical STAC schema URL directly.
+      - $ref: bblocks://ogc.contrib.stac.collection
+      - $ref: https://schemas.stacspec.org/v1.1.0/catalog-spec/json-schema/catalog.json
+  # Schema of record. It also requires the STAC extensions the profile composes,
+  # through stac_extensions, where their condition applies.
+  - $ref: https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json

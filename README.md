@@ -12,7 +12,8 @@ Register: https://cayetanobv.github.io/bblocks-portolan/
 
 | Identifier | Wraps | Status |
 |---|---|---|
-| `portolan.stac.profile` | Portolan STAC profile v0.3.0. A STAC Catalog or Collection that conforms to the Portolan specification. Profile of `ogc.contrib.stac.collection`. | under-development |
+| `portolan.stac.profile` | The latest Portolan STAC profile, now v0.3.0. It points to the block of that version; reference it to follow new versions. | under-development |
+| `portolan.stac.profile-v0-3-0` | Portolan STAC profile v0.3.0. A STAC Catalog or Collection that conforms to the Portolan specification. Profile of `ogc.contrib.stac.collection`. | under-development |
 | `portolan.stac.profile-v0-2-0` | Portolan STAC profile v0.2.0, the version most published catalogs declare. Its test files show the rules that changed in v0.3.0. | under-development |
 
 The profile block depends on `ogc.contrib.stac.collection` and on the extension blocks in [bblocks-stac](https://ogcincubator.github.io/bblocks-stac/) (imported as `@ogc/stac`) that match a version Portolan pins: classification, datacube, file, raster, scientific, themes, and version. The other STAC extensions Portolan composes are referenced by schema URL until a block exists for each.

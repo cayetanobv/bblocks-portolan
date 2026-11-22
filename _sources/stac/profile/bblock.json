@@ -1,22 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
   "name": "Portolan STAC Profile",
-  "abstract": "A STAC Catalog or Collection that conforms to the Portolan specification v0.3.0: cloud-native assets on object storage with https access, a pinned set of STAC extensions, and AGENTS.md and README.md links on every catalog and collection.",
+  "abstract": "A STAC Catalog or Collection that conforms to the latest Portolan specification, now v0.3.0. It points to the block of that version, such as portolan.stac.profile-v0-3-0. Reference this block to follow new Portolan versions, or a versioned block to stay on one.",
   "status": "under-development",
   "dateTimeAddition": "2026-09-08T00:00:00Z",
   "itemClass": "schema",
   "register": "bblocks-portolan",
   "version": "0.3.0",
-  "dateOfLastChange": "2026-11-20",
+  "dateOfLastChange": "2026-11-22",
   "dependsOn": [
-    "ogc.contrib.stac.collection",
-    "ogc.contrib.stac.extensions.classification",
-    "ogc.contrib.stac.extensions.datacube",
-    "ogc.contrib.stac.extensions.file",
-    "ogc.contrib.stac.extensions.raster",
-    "ogc.contrib.stac.extensions.scientific",
-    "ogc.contrib.stac.extensions.themes",
-    "ogc.contrib.stac.extensions.version"
+    "portolan.stac.profile-v0-3-0"
   ],
   "isProfileOf": "ogc.contrib.stac.collection",
   "sources": [
