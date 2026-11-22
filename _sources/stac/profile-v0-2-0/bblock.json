@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Portolan STAC Profile (v0.2.0)",
+  "abstract": "A STAC Catalog or Collection that conforms to the Portolan specification v0.2.0, the version most published Portolan catalogs declare. Use it to check those catalogs against the rules they claim; the Portolan STAC Profile block holds the current version.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-22T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bblocks-portolan",
+  "version": "0.2.0",
+  "dateOfLastChange": "2026-11-22",
+  "dependsOn": [
+    "ogc.contrib.stac.collection",
+    "ogc.contrib.stac.extensions.file",
+    "ogc.contrib.stac.extensions.raster",
+    "ogc.contrib.stac.extensions.scientific",
+    "ogc.contrib.stac.extensions.themes",
+    "ogc.contrib.stac.extensions.version"
+  ],
+  "isProfileOf": "ogc.contrib.stac.collection",
+  "sources": [
+    {
+      "title": "Portolan STAC Profile v0.2.0",
+      "link": "https://github.com/portolan-sdi/portolan-spec/blob/v0.2.0/stac/README.md"
+    },
+    {
+      "title": "Portolan Specification v0.2.0, Core",
+      "link": "https://github.com/portolan-sdi/portolan-spec/blob/v0.2.0/specs/portolan/core.md"
+    },
+    {
+      "title": "Portolan Specification v0.2.0, Formats",
+      "link": "https://github.com/portolan-sdi/portolan-spec/blob/v0.2.0/specs/portolan/formats.md"
+    },
+    {
+      "title": "Portolan schema v0.2.0",
+      "link": "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json"
+    }
+  ],
+  "scope": "contrib",
+  "tags": [
+    "stac",
+    "profile",
+    "portolan",
+    "cloud-native",
+    "geoparquet",
+    "pmtiles"
+  ],
+  "group": "STAC"
+}

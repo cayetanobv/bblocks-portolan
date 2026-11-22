@@ -1,0 +1,39 @@
+examples:
+  - title: Root catalog
+    content: |
+      The root of the Portolan reference catalog at v0.2.0. A Catalog declares the v0.2.0 schema
+      in `stac_extensions`, carries a `title` and `description`, gives every `child` link a title,
+      and links its `AGENTS.md` (`rel: agents`) and `README.md` (`rel: describedby`).
+    snippets:
+      - language: json
+        ref: examples/catalog.json
+
+  - title: Vector collection (GeoParquet with PMTiles)
+    content: |
+      City of Boston open space. Every asset href is relative or `https`, as v0.2.0 requires.
+    snippets:
+      - language: json
+        ref: examples/collection-vector.json
+
+  - title: Tabular collection
+    content: |
+      Eurostat electricity prices. A Parquet table with no geometry column.
+    snippets:
+      - language: json
+        ref: examples/collection-tabular.json
+
+  - title: Raster collection (Cloud-Optimized GeoTIFF)
+    content: |
+      A sample COG collection with a `data` asset, the `source` file it was converted from, and
+      a thumbnail.
+    snippets:
+      - language: json
+        ref: examples/collection-raster.json
+
+  - title: Partitioned vector collection
+    content: |
+      Buildings of Andalusia, one GeoParquet file per province. In v0.2.0 `partition:glob` may be
+      an `https` URL. From v0.3.0 it must use a scheme clients can list, such as `s3://`.
+    snippets:
+      - language: json
+        ref: examples/collection-vector-partitioned.json
