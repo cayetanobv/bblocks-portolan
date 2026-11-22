@@ -22,3 +22,9 @@ checked by the [rashid](https://github.com/portolan-sdi/rashid) validator.
 
 A STAC Catalog or Collection that conforms to the Portolan specification v0.3.0: cloud-native assets on object storage with https access, a pinned set of STAC extensions, and AGENTS.md and README.md links on every catalog and collection.
 
+### `portolan.stac.profile-v0-2-0` — Portolan STAC Profile (v0.2.0)
+
+**Type:** schema
+
+A STAC Catalog or Collection that conforms to the Portolan specification v0.2.0, the version most published Portolan catalogs declare. Use it to check those catalogs against the rules they claim; the Portolan STAC Profile block holds the current version.
+
