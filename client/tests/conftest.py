@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 
 REPO = Path(__file__).resolve().parents[2]
-BLOCK_DIR = REPO / "_sources" / "stac" / "profile"
+BLOCK_DIR = REPO / "_sources" / "stac" / "profile-v0-3-0"
 EXAMPLES = sorted((BLOCK_DIR / "examples").glob("*.json"))
 TEST_FILES = sorted((BLOCK_DIR / "tests").glob("*.json"))
 

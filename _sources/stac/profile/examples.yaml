@@ -7,7 +7,7 @@ examples:
       links a logo (`rel: icon`) and its translations (`rel: alternate`, Language extension).
     snippets:
       - language: json
-        ref: examples/catalog.json
+        ref: ../profile-v0-3-0/examples/catalog.json
 
   - title: Vector collection (GeoParquet with PMTiles)
     content: |
@@ -17,7 +17,7 @@ examples:
       every column.
     snippets:
       - language: json
-        ref: examples/collection-vector.json
+        ref: ../profile-v0-3-0/examples/collection-vector.json
 
   - title: Tabular collection
     content: |
@@ -25,7 +25,7 @@ examples:
       is the primary handle for consumers and agents.
     snippets:
       - language: json
-        ref: examples/collection-tabular.json
+        ref: ../profile-v0-3-0/examples/collection-tabular.json
 
   - title: Raster collection (Cloud-Optimized GeoTIFF)
     content: |
@@ -33,7 +33,7 @@ examples:
       a thumbnail. Projection metadata uses the Projection extension.
     snippets:
       - language: json
-        ref: examples/collection-raster.json
+        ref: ../profile-v0-3-0/examples/collection-raster.json
 
   - title: Classified raster collection
     content: |
@@ -42,7 +42,7 @@ examples:
       has a `title`, and the class whose value equals the asset `nodata` is marked `nodata: true`.
     snippets:
       - language: json
-        ref: examples/collection-raster-classified.json
+        ref: ../profile-v0-3-0/examples/collection-raster-classified.json
 
   - title: Partitioned vector collection
     content: |
@@ -51,4 +51,4 @@ examples:
       `visual` role and the glob is the GeoParquet data it renders.
     snippets:
       - language: json
-        ref: examples/collection-vector-partitioned.json
+        ref: ../profile-v0-3-0/examples/collection-vector-partitioned.json

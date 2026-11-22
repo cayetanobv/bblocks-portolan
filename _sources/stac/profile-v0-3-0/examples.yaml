@@ -1,0 +1,54 @@
+examples:
+  - title: Root catalog
+    content: |
+      The root of the Portolan reference catalog. A Catalog declares the profile schema in
+      `stac_extensions`, carries a `title` and `description`, gives every `child` link a title,
+      and links its `AGENTS.md` (`rel: agents`) and `README.md` (`rel: describedby`). It also
+      links a logo (`rel: icon`) and its translations (`rel: alternate`, Language extension).
+    snippets:
+      - language: json
+        ref: examples/catalog.json
+
+  - title: Vector collection (GeoParquet with PMTiles)
+    content: |
+      City of Boston open space. The GeoParquet asset carries `file:size` and `file:checksum`.
+      The PMTiles asset has the `visual` role and is also exposed through a `rel: pmtiles` link
+      (Web Map Links extension). `table:columns` documents the schema with a description for
+      every column.
+    snippets:
+      - language: json
+        ref: examples/collection-vector.json
+
+  - title: Tabular collection
+    content: |
+      Eurostat electricity prices. A Parquet table with no geometry column. The column schema
+      is the primary handle for consumers and agents.
+    snippets:
+      - language: json
+        ref: examples/collection-tabular.json
+
+  - title: Raster collection (Cloud-Optimized GeoTIFF)
+    content: |
+      A sample COG collection with a `data` asset, the `source` file it was converted from, and
+      a thumbnail. Projection metadata uses the Projection extension.
+    snippets:
+      - language: json
+        ref: examples/collection-raster.json
+
+  - title: Classified raster collection
+    content: |
+      Flood classification over Valencia, October 2024. The raster has one band, so its classes
+      sit in `classification:classes` on the data asset (Classification extension). Every class
+      has a `title`, and the class whose value equals the asset `nodata` is marked `nodata: true`.
+    snippets:
+      - language: json
+        ref: examples/collection-raster-classified.json
+
+  - title: Partitioned vector collection
+    content: |
+      Buildings of Andalusia, one GeoParquet file per province. `partition:glob` is an absolute
+      `s3://` URL that clients can list (Portolan partition extension). The PMTiles asset has the
+      `visual` role and the glob is the GeoParquet data it renders.
+    snippets:
+      - language: json
+        ref: examples/collection-vector-partitioned.json

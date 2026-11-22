@@ -98,3 +98,24 @@ def test_cli_exit_codes(tmp_path, capsys):
     report = json.loads((tmp_path / "r.json").read_text())
     assert report["objects"][0]["declared"][0]["path"] == "license"
     assert "RESULT FAIL" in capsys.readouterr().out
+
+
+def test_latest_and_v030_blocks_agree():
+    """portolan.stac.profile points to portolan.stac.profile-v0-3-0 while v0.3.0 is the latest version."""
+    from conftest import _block_validator
+
+    _, v030 = _block_validator("portolan.stac.profile-v0-3-0")
+    assert v030.portolan_version == "v0.3.0"
+    for path in EXAMPLES + TEST_FILES:
+        assert [str(p) for p in v030.validate(load(path))] == [str(p) for p in published_validator().validate(load(path))]
+
+
+_latest = []
+
+
+def published_validator():
+    from conftest import _block_validator
+
+    if not _latest:
+        _latest.append(_block_validator("portolan.stac.profile")[1])
+    return _latest[0]
