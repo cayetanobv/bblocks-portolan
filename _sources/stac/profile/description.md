@@ -45,4 +45,4 @@ The negative tests in `tests/` each change one field of an example so that it br
 
 ## Versioning
 
-The Building Block version follows the Portolan specification version. This block wraps v0.3.0, released on 17 November 2026. Earlier schema versions stay published at their own URLs.
+The Building Block version follows the Portolan specification version. This block wraps v0.3.0, released on 17 November 2026. The `portolan.stac.profile-v0-2-0` block checks objects that declare v0.2.0 and shows which rules changed. Earlier schema versions stay published at their own URLs.

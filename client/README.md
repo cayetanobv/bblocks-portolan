@@ -81,3 +81,5 @@ The client then reads `build-local/register.json` and maps its `http://localhost
 ```
 
 The network tests check that every example in `_sources/` passes, that every `*-fail.json` test file fails on the field it targets, and that a local catalog made of the examples passes end to end.
+
+Tests for a block that is not published yet skip themselves. To run them against the local build, run `./build.sh` at the repository root, then `PORTOLAN_BBLOCKS_LOCAL=1 .venv/bin/pytest`.
