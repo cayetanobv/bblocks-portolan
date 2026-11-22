@@ -44,5 +44,6 @@
     "geoparquet",
     "pmtiles"
   ],
-  "group": "STAC"
+  "group": "STAC",
+  "highlighted": true
 }
