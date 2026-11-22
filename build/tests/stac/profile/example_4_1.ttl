@@ -18,31 +18,31 @@
         "rgb",
         "sample" ;
     dct:title "Sample Raster COG" ;
-    rdfs:seeAlso [ rdfs:label "Original source" ;
-            dct:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/via> ;
-            oa:hasTarget <https://github.com/rasterio/rasterio/blob/main/tests/data/RGB.byte.tif> ],
-        [ rdfs:label "Human-readable documentation" ;
+    rdfs:seeAlso [ rdfs:label "Human-readable documentation" ;
             dct:language "en" ;
             dct:type "text/markdown" ;
             ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
-        [ rdfs:label "Arabic" ;
-            dct:language "ar" ;
-            dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <file:///ar/raster/sample-cog/collection.json> ],
+        [ dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///catalog.json> ],
+        [ rdfs:label "Original source" ;
+            dct:type "text/html" ;
+            ns2:relation <http://www.iana.org/assignments/relation/via> ;
+            oa:hasTarget <https://github.com/rasterio/rasterio/blob/main/tests/data/RGB.byte.tif> ],
         [ rdfs:label "Guidance for AI agents" ;
             dct:language "en" ;
             dct:type "text/markdown" ;
             ns2:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ],
-        [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///catalog.json> ],
-        [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ] ;
+        [ rdfs:label "Arabic" ;
+            dct:language "ar" ;
+            dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <file:///ar/raster/sample-cog/collection.json> ] ;
     stac:hasAsset [ ns1:data <file:///github/workspace/sample-cog.tif> ;
             ns1:source <https://raw.githubusercontent.com/rasterio/rasterio/main/tests/data/RGB.byte.tif> ;
             ns1:thumbnail <file:///github/workspace/thumbnail.png> ] ;
@@ -61,12 +61,6 @@
     dct:title "Sample Raster COG (COG)" ;
     ns1:bands [ ns1:data_type "uint8" ;
             ns1:statistics [ ns1:maximum 2.55e+02 ;
-                    ns1:mean 4.4396e+01 ;
-                    ns1:minimum 1e+00 ;
-                    ns1:stddev 5.84784e+01 ;
-                    ns1:valid_percent 6.74572e+01 ] ],
-        [ ns1:data_type "uint8" ;
-            ns1:statistics [ ns1:maximum 2.55e+02 ;
                     ns1:mean 6.59922e+01 ;
                     ns1:minimum 1e+00 ;
                     ns1:stddev 5.82068e+01 ;
@@ -76,6 +70,12 @@
                     ns1:mean 7.13248e+01 ;
                     ns1:minimum 1e+00 ;
                     ns1:stddev 6.08373e+01 ;
+                    ns1:valid_percent 6.74572e+01 ] ],
+        [ ns1:data_type "uint8" ;
+            ns1:statistics [ ns1:maximum 2.55e+02 ;
+                    ns1:mean 4.4396e+01 ;
+                    ns1:minimum 1e+00 ;
+                    ns1:stddev 5.84784e+01 ;
                     ns1:valid_percent 6.74572e+01 ] ] ;
     stac:hasAssetroles "data"^^<xsd:string> ;
     ns4:code "EPSG:32618" .
