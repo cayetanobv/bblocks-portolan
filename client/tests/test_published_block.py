@@ -44,8 +44,22 @@ def test_valid_test_files_pass(published, path):
     assert validator.validate(load(path)) == []
 
 
+# Fail files that break a rule only the block's SHACL shapes check, with the requirement each
+# breaks. They pass the JSON Schema, which is all this client checks.
+SHACL_ONLY = {
+    "license-not-spdx-fail": "PORTO-CORE-058",
+    "license-other-without-link-fail": "PORTO-CORE-059",
+}
+
+
 def test_every_fail_file_has_an_expected_field():
-    assert {p.stem for p in TEST_FILES if p.stem.endswith("-fail")} == set(EXPECTED_FIELD)
+    assert {p.stem for p in TEST_FILES if p.stem.endswith("-fail")} == set(EXPECTED_FIELD) | set(SHACL_ONLY)
+
+
+@pytest.mark.parametrize("name", sorted(SHACL_ONLY))
+def test_shacl_only_fail_files_pass_the_json_schema(published, name):
+    _, validator = published
+    assert validator.validate(load(next(p for p in TEST_FILES if p.stem == name))) == []
 
 
 @pytest.mark.parametrize("name", sorted(EXPECTED_FIELD))

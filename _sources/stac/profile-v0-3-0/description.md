@@ -33,6 +33,20 @@ The format rules skip assets with the `source` role.
 
 Some rules cannot be expressed in JSON Schema. The [rashid](https://github.com/portolan-sdi/rashid) validator checks them: the host provider is exactly one and listed last, the SPDX identifier is valid, `file:checksum` is a multihash and matches the bytes, range requests work on the assets, and the file-level format rules hold. Declaring the profile in `stac_extensions` is a claim of conformance. An object conforms when it passes rashid.
 
+## What the SHACL shapes check
+
+Some of the rules the schema leaves to tooling can be read from the metadata of one document. `shapes.shacl` checks those on the RDF that the JSON-LD context produces, so any SHACL tool can apply them, not only rashid:
+
+| Rule | Requirement | Same check in rashid | Level |
+|---|---|---|---|
+| `license` is an SPDX identifier or `other` | `PORTO-CORE-058` | `PTL-LIC-001` | error |
+| `license: other` has a `rel: license` link | `PORTO-CORE-059` | `PTL-LIC-002` | error |
+| A logo link (`rel: icon`) has a title | `PORTO-CORE-076` | `PTL-LNK-008` | warning |
+
+The SPDX list is rashid's, so the two give the same answer. `scripts/spdx_shacl_list.py` regenerates it. The test files `license-not-spdx-fail.json` and `license-other-without-link-fail.json` pass the JSON Schema and fail only these shapes. `icon-link-without-title.json` passes with a warning.
+
+The block's `context.jsonld` maps the `type` values `Catalog` and `Collection` to the STAC ontology classes, so the shapes, and the STAC core shapes, find their targets. Rules on assets and providers, such as exactly one host provider listed last, need the STAC contexts to map those objects first.
+
 ## STAC extensions
 
 Portolan reuses established extensions rather than adding `portolan:` fields. The profile pins 17 upstream `stac-extensions` schemas plus the Portolan [partition extension](https://github.com/portolan-sdi/stac-partition-extension), each with a requirement level and the condition under which it applies. Seven of them exist as Building Blocks in [`bblocks-stac`](https://ogcincubator.github.io/bblocks-stac/) at the version Portolan pins, and are declared as dependencies here: Classification v2.0.0, Datacube v2.3.0, File Info v2.1.0, Raster v2.0.0, Scientific Citation v1.0.0, Themes v1.0.0, and Versioning Indicators v1.2.0. The others are referenced by schema URL until a Building Block exists for each.
