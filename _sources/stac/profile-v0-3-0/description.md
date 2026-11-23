@@ -39,7 +39,7 @@ Some of the rules the schema leaves to tooling can be read from the metadata of 
 
 | Rule | Requirement | Same check in rashid | Level |
 |---|---|---|---|
-| `license` is an SPDX identifier or `other` | `PORTO-CORE-058` | `PTL-LIC-001` | error |
+| `license` is an SPDX identifier or `other` | `PORTO-CORE-059` | `PTL-LIC-001` | error |
 | `license: other` has a `rel: license` link | `PORTO-CORE-059` | `PTL-LIC-002` | error |
 | A logo link (`rel: icon`) has a title | `PORTO-CORE-076` | `PTL-LNK-008` | warning |
 

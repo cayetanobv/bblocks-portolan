@@ -1,0 +1,6 @@
+{
+  "@context": {
+    "Catalog": "https://w3id.org/ogc/stac/core/Catalog",
+    "Collection": "https://w3id.org/ogc/stac/core/Collection"
+  }
+}
