@@ -47,7 +47,7 @@ def test_valid_test_files_pass(published, path):
 # Fail files that break a rule only the block's SHACL shapes check, with the requirement each
 # breaks. They pass the JSON Schema, which is all this client checks.
 SHACL_ONLY = {
-    "license-not-spdx-fail": "PORTO-CORE-058",
+    "license-not-spdx-fail": "PORTO-CORE-059",
     "license-other-without-link-fail": "PORTO-CORE-059",
 }
 

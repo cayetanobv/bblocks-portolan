@@ -20,14 +20,14 @@
 # type, title, target) and STAC version and extensions. Rules on assets and providers need
 # richer contexts in the STAC Building Blocks first.
 
-# PORTO-CORE-058: "license" is an SPDX identifier or "other".
+# PORTO-CORE-059: "license" is an SPDX identifier or "other".
 # The list is rashid's (SPDX license list 3.28.0, deprecated identifiers included), generated
 # by scripts/spdx_shacl_list.py. "proprietary" is accepted here because the JSON Schema
 # already rejects it (PORTO-CORE-060), as rashid's PTL-LIC-001 leaves it to PTL-LIC-003.
 ptl:LicenseIsSpdxShape
     a sh:NodeShape ;
     rdfs:label "Licence is an SPDX identifier or 'other'" ;
-    dct:identifier "PORTO-CORE-058" ;
+    dct:identifier "PORTO-CORE-059" ;
     rdfs:comment "Same rule as rashid PTL-LIC-001. SPDX identifiers are case-sensitive." ;
     sh:targetClass stac:Collection ;
     sh:property [
@@ -764,7 +764,7 @@ ptl:LicenseIsSpdxShape
         "xzoom"
         "zlib-acknowledgement"
         ) ;
-        sh:message "license must be an SPDX identifier (case-sensitive, such as CC-BY-4.0) or 'other' (PORTO-CORE-058)" ;
+        sh:message "license must be an SPDX identifier (case-sensitive, such as CC-BY-4.0) or 'other' (PORTO-CORE-059)" ;
     ] .
 
 # PORTO-CORE-059: license "other" needs a rel "license" link to the licence text.

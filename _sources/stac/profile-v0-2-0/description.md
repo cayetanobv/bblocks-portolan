@@ -26,12 +26,24 @@ The test files show the rules that differ between the two versions:
 
 The rules both versions share are tested by `missing-agents-link-fail.json`, `proprietary-license-fail.json` and `s3-asset-href-fail.json`.
 
+## What the SHACL shapes check
+
+The v0.2.0 schema, like the v0.3.0 one, leaves the SPDX identifier and the licence link for `other` to tooling. `shapes.shacl` checks those, and the logo title recommendation, on the RDF that the JSON-LD context produces. The shapes and requirements are the same as in v0.3.0:
+
+| Rule | Requirement | Same check in rashid | Level |
+|---|---|---|---|
+| `license` is an SPDX identifier or `other` | `PORTO-CORE-059` | `PTL-LIC-001` | error |
+| `license: other` has a `rel: license` link | `PORTO-CORE-059` | `PTL-LIC-002` | error |
+| A logo link (`rel: icon`) has a title | `PORTO-CORE-076` | `PTL-LNK-008` | warning |
+
+`license-not-spdx-fail.json` and `license-other-without-link-fail.json` pass the JSON Schema and fail only these shapes. `license-other-with-link.json` passes. `icon-link-without-title.json` passes with a warning. The block's `context.jsonld` maps the `type` values `Catalog` and `Collection` to the STAC ontology classes so that the shapes find their targets.
+
 ## STAC extensions
 
 v0.2.0 pins 13 upstream `stac-extensions` schemas plus the Portolan partition extension. Five of them exist as Building Blocks in [`bblocks-stac`](https://ogcincubator.github.io/bblocks-stac/) at the pinned version and are declared as dependencies: File Info v2.1.0, Raster v2.0.0, Scientific Citation v1.0.0, Themes v1.0.0 and Versioning Indicators v1.2.0.
 
 ## Examples
 
-The catalog, vector, tabular and raster examples are copies of files in the [Portolan reference catalog](https://github.com/portolan-sdi/portolan-spec/tree/v0.2.0/examples/catalog/portolan-reference) at the `v0.2.0` tag. The partitioned example comes from [`stac/examples`](https://github.com/portolan-sdi/portolan-spec/tree/v0.2.0/stac/examples). The test files each change one field of the vector example.
+The catalog, vector, tabular and raster examples are copies of files in the [Portolan reference catalog](https://github.com/portolan-sdi/portolan-spec/tree/v0.2.0/examples/catalog/portolan-reference) at the `v0.2.0` tag. The partitioned example comes from [`stac/examples`](https://github.com/portolan-sdi/portolan-spec/tree/v0.2.0/stac/examples). The test files each change one field of the vector example, except `icon-link-without-title.json`, which removes the logo title from the catalog example.
 
 As with the current block, rules the schema cannot express are checked by [rashid](https://github.com/portolan-sdi/rashid).

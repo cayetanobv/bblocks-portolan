@@ -21,6 +21,13 @@ FAIL_IN_V030 = {
     "pmtiles-asset-without-visual-role": "assets/visual/roles",
 }
 
+# Test files for the block's SHACL shapes. This client checks only the JSON Schema, which they all pass.
+SHACL_ONLY = {
+    "license-not-spdx-fail": "PORTO-CORE-059",
+    "license-other-without-link-fail": "PORTO-CORE-059",
+}
+SHACL_VALID = {"license-other-with-link", "icon-link-without-title"}
+
 
 def by_name(name):
     return load(next(p for p in V020_TEST_FILES if p.stem == name))
@@ -45,8 +52,14 @@ def test_valid_test_files_pass(published_v020, path):
 
 def test_every_test_file_is_listed():
     stems = {p.stem for p in V020_TEST_FILES}
-    assert {s for s in stems if s.endswith("-fail")} == set(EXPECTED_FIELD)
-    assert {s for s in stems if not s.endswith("-fail")} == set(FAIL_IN_V030)
+    assert {s for s in stems if s.endswith("-fail")} == set(EXPECTED_FIELD) | set(SHACL_ONLY)
+    assert {s for s in stems if not s.endswith("-fail")} == set(FAIL_IN_V030) | SHACL_VALID
+
+
+@pytest.mark.parametrize("name", sorted(SHACL_ONLY))
+def test_shacl_only_fail_files_pass_the_json_schema(published_v020, name):
+    _, validator = published_v020
+    assert validator.validate(by_name(name)) == []
 
 
 @pytest.mark.parametrize("name", sorted(EXPECTED_FIELD))
