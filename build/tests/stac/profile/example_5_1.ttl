@@ -1,13 +1,13 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/stac/assets/> .
-@prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <classification:> .
+@prefix ns2: <classification:> .
+@prefix ns3: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///github/workspace/valencia-2024> a <file:///github/workspace/Collection> ;
+<file:///github/workspace/valencia-2024> a stac:Collection ;
     dct:description "Flood classification over Valencia and l'Albufera after the 29 October 2024 DANA, from the GEP SAR Features service using Sentinel-1 backscatter and coherence. It is a single-COG collection with one discrete uint8 band with an embedded color table, 20 m, EPSG:32630. The raster has one band, so the class list sits on the asset, and each color_hint matches the color table entry for its value." ;
     dct:extent [ ] ;
     dct:license "other" ;
@@ -18,22 +18,22 @@
         "flood" ;
     dct:title "Flood classification, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)" ;
     rdfs:seeAlso [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Human-readable documentation" ;
-            dct:type "text/markdown" ;
-            ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
-            oa:hasTarget <file:///github/workspace/README.md> ],
-        [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Terms of use" ;
             dct:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/license> ;
+            ns3:relation <http://www.iana.org/assignments/relation/license> ;
             oa:hasTarget <file:///github/workspace/LICENSE.html> ],
+        [ dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ rdfs:label "Human-readable documentation" ;
+            dct:type "text/markdown" ;
+            ns3:relation <http://www.iana.org/assignments/relation/describedby> ;
+            oa:hasTarget <file:///github/workspace/README.md> ],
         [ rdfs:label "Guidance for AI agents" ;
             dct:type "text/markdown" ;
-            ns2:relation <http://www.iana.org/assignments/relation/agents> ;
+            ns3:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ] ;
     stac:hasAsset [ ns1:data <file:///github/workspace/sar-features-flood-spain-cog.tif> ;
             ns1:thumbnail <file:///github/workspace/thumbnail.png> ] ;
@@ -43,26 +43,26 @@
         [ ] ;
     stac:version "1.1.0" .
 
-<file:///github/workspace/sar-features-flood-spain-cog.tif> ns3:classes [ dct:title "Urban" ;
+<file:///github/workspace/sar-features-flood-spain-cog.tif> ns2:classes [ dct:title "Urban" ;
             ns1:color_hint "000000" ;
             ns1:name "urban" ;
             ns1:value 1 ],
-        [ dct:title "Other" ;
-            ns1:name "other" ;
-            ns1:nodata true ;
-            ns1:value 0 ],
-        [ dct:title "Permanent water" ;
-            ns1:color_hint "0000FF" ;
-            ns1:name "permanent-water" ;
-            ns1:value 2 ],
+        [ dct:title "Flooded urban area" ;
+            ns1:color_hint "00FFFF" ;
+            ns1:name "urban-flood" ;
+            ns1:value 4 ],
         [ dct:title "Flooded bare soil" ;
             ns1:color_hint "00FF00" ;
             ns1:name "bare-soil-flood" ;
             ns1:value 3 ],
-        [ dct:title "Flooded urban area" ;
-            ns1:color_hint "00FFFF" ;
-            ns1:name "urban-flood" ;
-            ns1:value 4 ] ;
+        [ dct:title "Permanent water" ;
+            ns1:color_hint "0000FF" ;
+            ns1:name "permanent-water" ;
+            ns1:value 2 ],
+        [ dct:title "Other" ;
+            ns1:name "other" ;
+            ns1:nodata true ;
+            ns1:value 0 ] ;
     dct:description "Discrete uint8 COG with an embedded color table and embedded band statistics. Value 0 is nodata and draws transparent." ;
     dct:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dct:title "Flood classification (COG)" ;

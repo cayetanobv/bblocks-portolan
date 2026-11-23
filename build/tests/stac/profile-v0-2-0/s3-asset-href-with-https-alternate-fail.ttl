@@ -1,10 +1,10 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/stac/assets/> .
+@prefix ns1: <table:> .
 @prefix ns2: <file:> .
 @prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <table:> .
-@prefix ns5: <proj:> .
-@prefix ns6: <pmtiles:> .
+@prefix ns4: <https://w3id.org/ogc/stac/assets/> .
+@prefix ns5: <pmtiles:> .
+@prefix ns6: <proj:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
@@ -20,11 +20,15 @@
         "parks",
         "recreation" ;
     dct:title "Boston Open Space" ;
-    rdfs:seeAlso [ rdfs:label "Web map tiles" ;
+    rdfs:seeAlso [ rdfs:label "Human-readable documentation" ;
+            dct:type "text/markdown" ;
+            ns3:relation <http://www.iana.org/assignments/relation/describedby> ;
+            oa:hasTarget <file:///github/workspace/README.md> ],
+        [ rdfs:label "Web map tiles" ;
             dct:type "application/vnd.pmtiles" ;
             ns3:relation <http://www.iana.org/assignments/relation/pmtiles> ;
             oa:hasTarget <file:///github/workspace/boston-open-space.pmtiles> ;
-            ns6:layers "boston-open-space" ],
+            ns5:layers "boston-open-space" ],
         [ rdfs:label "Original source" ;
             dct:type "text/html" ;
             ns3:relation <http://www.iana.org/assignments/relation/via> ;
@@ -32,25 +36,21 @@
         [ dct:type "application/json" ;
             ns3:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <file:///catalog.json> ],
-        [ dct:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Human-readable documentation" ;
-            dct:type "text/markdown" ;
-            ns3:relation <http://www.iana.org/assignments/relation/describedby> ;
-            oa:hasTarget <file:///github/workspace/README.md> ],
         [ rdfs:label "Guidance for AI agents" ;
             dct:type "text/markdown" ;
             ns3:relation <http://www.iana.org/assignments/relation/agents> ;
-            oa:hasTarget <file:///github/workspace/AGENTS.md> ] ;
-    stac:hasAsset [ ns1:data <s3://portolan-reference/boundaries/boston-open-space/boston-open-space.parquet> ;
-            ns1:style-acreage <file:///github/workspace/styles/acreage.json> ;
-            ns1:style-labeled <file:///github/workspace/styles/labeled.json> ;
-            ns1:style-ownership <file:///github/workspace/styles/ownership.json> ;
-            ns1:style-protection <file:///github/workspace/styles/protection.json> ;
-            ns1:style-types <file:///github/workspace/styles/types.json> ;
-            ns1:thumbnail <file:///github/workspace/thumbnail.png> ;
-            ns1:visual <file:///github/workspace/boston-open-space.pmtiles> ] ;
+            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ] ;
+    stac:hasAsset [ ns4:data <s3://portolan-reference/boundaries/boston-open-space/boston-open-space.parquet> ;
+            ns4:style-acreage <file:///github/workspace/styles/acreage.json> ;
+            ns4:style-labeled <file:///github/workspace/styles/labeled.json> ;
+            ns4:style-ownership <file:///github/workspace/styles/ownership.json> ;
+            ns4:style-protection <file:///github/workspace/styles/protection.json> ;
+            ns4:style-types <file:///github/workspace/styles/types.json> ;
+            ns4:thumbnail <file:///github/workspace/thumbnail.png> ;
+            ns4:visual <file:///github/workspace/boston-open-space.pmtiles> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
         "https://stac-extensions.github.io/alternate-assets/v1.2.0/schema.json",
         "https://stac-extensions.github.io/file/v2.1.0/schema.json",
@@ -60,47 +60,47 @@
     stac:hasProvider [ ],
         [ ] ;
     stac:version "1.1.0" ;
-    ns4:columns [ a <file:///github/workspace/varchar> ;
-            dct:description "The entity holding the open-space rights. BPRD, DCR, the Boston Conservation Commission, or None." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Street address if known, null for 589 rows." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Fee owner where known. City of Boston, Commonwealth of Massachusetts, private owners, and agency abbreviations like BRA and BNAN." ],
-        [ a <file:///github/workspace/integer> ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Managing entity only when it differs from OS_Own_Jur. Null means the steward manages it, not missing data." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Agency of jurisdiction for government-owned unprotected sites. Sparsely populated by design." ],
-        [ a <file:///github/workspace/integer> ;
-            dct:description "Numeric open space type 1 through 7. Disagrees with TypeLong on about 13 rows, treat TypeLong as closer to intent." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Planning district per the city's open space plan, not the official neighborhood boundaries. Includes the non-spatial value Multi-District." ],
-        [ a <file:///github/workspace/double> ;
-            dct:description "Official area in acres of the open-space portion, the figure to use instead of computing geometry area." ],
-        [ dct:description "Per-feature bounding box struct, the GeoParquet covering." ],
-        [ a <file:///github/workspace/geometry> ;
-            dct:description "Site geometry, WGS84 longitude and latitude." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Public access flag. X accessible, A by appointment, N no or unknown access." ],
+    ns1:columns [ a <file:///github/workspace/bigint> ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Open space type as text, with minor spelling variants worth normalizing before grouping." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Official, previous, or colloquial alternate names." ],
-        [ a <file:///github/workspace/bigint> ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Protected open space flag. X permanently protected, N not." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Slash-separated legal protection instruments. A97 is Article 97 of the Massachusetts Constitution, the strongest. Free text, match with LIKE." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Best-known or official site name. Multi-parcel sites carry Roman numeral suffixes, Stony Brook Reservation I and II." ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Aggregated zoning district, for example Open Space District." ],
         [ a <file:///github/workspace/double> ;
             dct:description "ArcGIS-computed perimeter in meters." ],
+        [ a <file:///github/workspace/integer> ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Agency of jurisdiction for government-owned unprotected sites. Sparsely populated by design." ],
         [ a <file:///github/workspace/double> ;
-            dct:description "ArcGIS-computed area in square meters from the source State Plane geometry." ] ;
-    ns4:primary_geometry "geom" ;
-    ns4:row_count 1012 .
+            dct:description "ArcGIS-computed area in square meters from the source State Plane geometry." ],
+        [ dct:description "Per-feature bounding box struct, the GeoParquet covering." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Best-known or official site name. Multi-parcel sites carry Roman numeral suffixes, Stony Brook Reservation I and II." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Planning district per the city's open space plan, not the official neighborhood boundaries. Includes the non-spatial value Multi-District." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Street address if known, null for 589 rows." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Fee owner where known. City of Boston, Commonwealth of Massachusetts, private owners, and agency abbreviations like BRA and BNAN." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Slash-separated legal protection instruments. A97 is Article 97 of the Massachusetts Constitution, the strongest. Free text, match with LIKE." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "The entity holding the open-space rights. BPRD, DCR, the Boston Conservation Commission, or None." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Protected open space flag. X permanently protected, N not." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Official, previous, or colloquial alternate names." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Managing entity only when it differs from OS_Own_Jur. Null means the steward manages it, not missing data." ],
+        [ a <file:///github/workspace/geometry> ;
+            dct:description "Site geometry, WGS84 longitude and latitude." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Public access flag. X accessible, A by appointment, N no or unknown access." ],
+        [ a <file:///github/workspace/double> ;
+            dct:description "Official area in acres of the open-space portion, the figure to use instead of computing geometry area." ],
+        [ a <file:///github/workspace/integer> ;
+            dct:description "Numeric open space type 1 through 7. Disagrees with TypeLong on about 13 rows, treat TypeLong as closer to intent." ] ;
+    ns1:primary_geometry "geom" ;
+    ns1:row_count 1012 .
 
 <file:///github/workspace/styles/acreage.json> ns2:checksum "122092647db9cb1290d34a8b4675e8e13548c4f45e6d2c26589726232bd0bb23d710" ;
     ns2:size 828 ;
@@ -148,9 +148,9 @@
     ns2:size 1188770 ;
     dct:format "application/vnd.apache.parquet" ;
     dct:title "Boston Open Space (GeoParquet)" ;
-    ns1:alternate [ ns1:https <https://data.example.org/portolan-reference/boundaries/boston-open-space/boston-open-space.parquet> ] ;
+    ns4:alternate [ ns4:https <https://data.example.org/portolan-reference/boundaries/boston-open-space/boston-open-space.parquet> ] ;
     stac:hasAssetroles "data"^^<xsd:string> ;
-    ns5:code "EPSG:4326" .
+    ns6:code "EPSG:4326" .
 
 <file:///github/workspace/boston-open-space.pmtiles> ns2:checksum "1220db3d459dc821db7adf739ad0afee9682a3b94f8d467c564c343dcb159a2b3281" ;
     ns2:size 989217 ;

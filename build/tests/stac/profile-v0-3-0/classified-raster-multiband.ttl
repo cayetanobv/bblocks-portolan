@@ -1,13 +1,13 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/stac/assets/> .
-@prefix ns2: <classification:> .
+@prefix ns1: <classification:> .
+@prefix ns2: <https://w3id.org/ogc/stac/assets/> .
 @prefix ns3: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///github/workspace/valencia-2024-multiband> a <file:///github/workspace/Collection> ;
+<file:///github/workspace/valencia-2024-multiband> a stac:Collection ;
     dct:description "Flood classification over Valencia and l'Albufera after the 29 October 2024 DANA, with a per-pixel confidence band. Test variant of the classified raster example: the COG has two discrete uint8 bands, so each class list sits on the band it describes, in the STAC 1.1 bands array of the asset, and not on the asset." ;
     dct:extent [ ] ;
     dct:license "other" ;
@@ -17,10 +17,7 @@
         "Valencia",
         "flood" ;
     dct:title "Flood classification and confidence, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)" ;
-    rdfs:seeAlso [ dct:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Human-readable documentation" ;
+    rdfs:seeAlso [ rdfs:label "Human-readable documentation" ;
             dct:type "text/markdown" ;
             ns3:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
@@ -31,12 +28,15 @@
         [ dct:type "application/json" ;
             ns3:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <file:///github/catalog.json> ],
+        [ dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Guidance for AI agents" ;
             dct:type "text/markdown" ;
             ns3:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ] ;
-    stac:hasAsset [ ns1:data <file:///github/workspace/sar-features-flood-confidence-cog.tif> ;
-            ns1:thumbnail <file:///github/workspace/thumbnail.png> ] ;
+    stac:hasAsset [ ns2:data <file:///github/workspace/sar-features-flood-confidence-cog.tif> ;
+            ns2:thumbnail <file:///github/workspace/thumbnail.png> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
         "https://stac-extensions.github.io/classification/v2.0.0/schema.json" ;
     stac:hasProvider [ ],
@@ -46,50 +46,50 @@
 <file:///github/workspace/sar-features-flood-confidence-cog.tif> dct:description "Discrete two-band uint8 COG. Band 1 is the flood class, band 2 the classification confidence. Value 0 is nodata in both bands." ;
     dct:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dct:title "Flood classification and confidence (COG)" ;
-    ns1:bands [ ns2:classes [ dct:title "Flooded bare soil" ;
-                    ns1:color_hint "00FF00" ;
-                    ns1:name "bare-soil-flood" ;
-                    ns1:value 3 ],
-                [ dct:title "Permanent water" ;
-                    ns1:color_hint "0000FF" ;
-                    ns1:name "permanent-water" ;
-                    ns1:value 2 ],
-                [ dct:title "Other" ;
-                    ns1:name "other" ;
-                    ns1:nodata true ;
-                    ns1:value 0 ],
-                [ dct:title "Flooded urban area" ;
-                    ns1:color_hint "00FFFF" ;
-                    ns1:name "urban-flood" ;
-                    ns1:value 4 ],
-                [ dct:title "Urban" ;
-                    ns1:color_hint "000000" ;
-                    ns1:name "urban" ;
-                    ns1:value 1 ] ;
-            dct:description "Flood classification" ;
-            ns1:data_type "uint8" ;
-            ns1:name "flood_class" ;
-            ns1:nodata 0 ],
-        [ ns2:classes [ dct:title "Low confidence" ;
-                    ns1:color_hint "FFFF00" ;
-                    ns1:name "low" ;
-                    ns1:value 1 ],
-                [ dct:title "Medium confidence" ;
-                    ns1:color_hint "FFA500" ;
-                    ns1:name "medium" ;
-                    ns1:value 2 ],
-                [ dct:title "High confidence" ;
-                    ns1:color_hint "FF0000" ;
-                    ns1:name "high" ;
-                    ns1:value 3 ],
+    ns2:bands [ ns1:classes [ dct:title "Low confidence" ;
+                    ns2:color_hint "FFFF00" ;
+                    ns2:name "low" ;
+                    ns2:value 1 ],
                 [ dct:title "No data" ;
-                    ns1:name "nodata" ;
-                    ns1:nodata true ;
-                    ns1:value 0 ] ;
+                    ns2:name "nodata" ;
+                    ns2:nodata true ;
+                    ns2:value 0 ],
+                [ dct:title "Medium confidence" ;
+                    ns2:color_hint "FFA500" ;
+                    ns2:name "medium" ;
+                    ns2:value 2 ],
+                [ dct:title "High confidence" ;
+                    ns2:color_hint "FF0000" ;
+                    ns2:name "high" ;
+                    ns2:value 3 ] ;
             dct:description "Confidence of the flood classification" ;
-            ns1:data_type "uint8" ;
-            ns1:name "confidence" ;
-            ns1:nodata 0 ] ;
+            ns2:data_type "uint8" ;
+            ns2:name "confidence" ;
+            ns2:nodata 0 ],
+        [ ns1:classes [ dct:title "Flooded urban area" ;
+                    ns2:color_hint "00FFFF" ;
+                    ns2:name "urban-flood" ;
+                    ns2:value 4 ],
+                [ dct:title "Permanent water" ;
+                    ns2:color_hint "0000FF" ;
+                    ns2:name "permanent-water" ;
+                    ns2:value 2 ],
+                [ dct:title "Other" ;
+                    ns2:name "other" ;
+                    ns2:nodata true ;
+                    ns2:value 0 ],
+                [ dct:title "Flooded bare soil" ;
+                    ns2:color_hint "00FF00" ;
+                    ns2:name "bare-soil-flood" ;
+                    ns2:value 3 ],
+                [ dct:title "Urban" ;
+                    ns2:color_hint "000000" ;
+                    ns2:name "urban" ;
+                    ns2:value 1 ] ;
+            dct:description "Flood classification" ;
+            ns2:data_type "uint8" ;
+            ns2:name "flood_class" ;
+            ns2:nodata 0 ] ;
     stac:hasAssetroles "data"^^<xsd:string> .
 
 <file:///github/workspace/thumbnail.png> dct:format "image/png" ;

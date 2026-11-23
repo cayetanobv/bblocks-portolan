@@ -8,8 +8,11 @@ allOf:
   - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
   - $ref: https://schemas.stacspec.org/v1.1.0/catalog-spec/json-schema/catalog.json
 - $ref: https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json
+x-jsonld-extra-terms:
+  Catalog: https://w3id.org/ogc/stac/core/Catalog
+  Collection: https://w3id.org/ogc/stac/core/Collection
 x-bblocks-metadata:
   itemIdentifier: portolan.stac.profile-v0-3-0
   register: https://cayetanobv.github.io/bblocks-portolan/build/register.json
   version: 0.3.0
-  dateOfLastChange: '2026-11-22'
+  dateOfLastChange: '2026-11-23'
