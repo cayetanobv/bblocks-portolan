@@ -47,18 +47,18 @@
             ns1:color_hint "00FFFF" ;
             ns1:name "urban-flood" ;
             ns1:value 4 ],
-        [ dct:title "Flooded bare soil" ;
-            ns1:color_hint "00FF00" ;
-            ns1:name "bare-soil-flood" ;
-            ns1:value 3 ],
-        [ dct:title "Urban" ;
-            ns1:color_hint "000000" ;
-            ns1:name "urban" ;
-            ns1:value 1 ],
         [ dct:title "Permanent water" ;
             ns1:color_hint "0000FF" ;
             ns1:name "permanent-water" ;
             ns1:value 2 ],
+        [ dct:title "Urban" ;
+            ns1:color_hint "000000" ;
+            ns1:name "urban" ;
+            ns1:value 1 ],
+        [ dct:title "Flooded bare soil" ;
+            ns1:color_hint "00FF00" ;
+            ns1:name "bare-soil-flood" ;
+            ns1:value 3 ],
         [ dct:title "Other" ;
             ns1:name "other" ;
             ns1:nodata true ;

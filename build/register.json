@@ -3,7 +3,7 @@
   "name": "Portolan Building Blocks",
   "abstract": "OGC Building Blocks for the [Portolan specification](https://github.com/portolan-sdi/portolan-spec):\nthe Portolan STAC profile and the STAC extensions Portolan defines.\n",
   "description": "Portolan is an open specification for cloud-native geospatial data catalogs. Every Portolan\ncatalog is a static STAC catalog on plain HTTPS object storage, with cloud-native assets and\nguidance files that both people and AI agents read.\n\nThis register wraps the published Portolan artifacts as Building Blocks. It does not redefine\nthem. The schema of record is `https://schemas.portolan-sdi.org/portolan/<version>/schema.json`,\nthe profile text lives in `portolan-spec/stac/README.md`, and rules the schema cannot express are\nchecked by the [rashid](https://github.com/portolan-sdi/rashid) validator.\n",
-  "modified": "2026-11-23T23:29:47.422944",
+  "modified": "2026-11-23T23:37:47.487649",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"990affbe72a10408bfed51a6254103fad13752c2",
@@ -78,6 +78,9 @@
       "group": "STAC",
       "highlighted": true,
       "shaclShapes": {
+        "portolan.stac.profile-v0-2-0": [
+          "https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-2-0/shapes.shacl"
+        ],
         "ogc.contrib.stac.components.assets-ontology": [
           "https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl"
         ],
@@ -104,12 +107,13 @@
         "name": "Apache-2.0",
         "url": "https://www.apache.org/licenses/LICENSE-2.0"
       },
+      "ldContext": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/context.jsonld",
       "schema": {
         "application/yaml": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/schema.yaml",
         "application/json": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/schema.json"
       },
       "sourceSchema": "https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-2-0/schema.yaml",
-      "ldContext": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/context.jsonld",
+      "sourceLdContext": "https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-2-0/context.jsonld",
       "resolvedSchemaProperties": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/resolvedProperties.json",
       "sourceFiles": "https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-2-0/",
       "validationPassed": true,

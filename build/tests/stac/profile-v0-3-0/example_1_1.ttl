@@ -7,27 +7,7 @@
 <file:///github/workspace/portolan-reference> a stac:Catalog ;
     dct:description "A mixed reference catalog exercising every major case in the Portolan v0.1 specification with real, openly licensed data pulled from its original upstream sources, vector polygons and points, raster, tabular, mirror provenance, nested catalogs and flat collections." ;
     dct:title "Portolan Reference Catalog" ;
-    rdfs:seeAlso [ dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///github/workspace/catalog.json> ],
-        [ rdfs:label "Raster Data" ;
-            dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <file:///github/workspace/raster/catalog.json> ],
-        [ rdfs:label "Human-readable documentation" ;
-            dct:language "en" ;
-            dct:type "text/markdown" ;
-            ns1:relation <http://www.iana.org/assignments/relation/describedby> ;
-            oa:hasTarget <file:///github/workspace/README.md> ],
-        [ rdfs:label "Tabular Data" ;
-            dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <file:///github/workspace/tabular/catalog.json> ],
-        [ rdfs:label "Reference Basemaps" ;
-            dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <file:///github/workspace/reference/catalog.json> ],
-        [ rdfs:label "Portolan SDI" ;
+    rdfs:seeAlso [ rdfs:label "Portolan SDI" ;
             dct:type "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/icon> ;
             oa:hasTarget <file:///github/workspace/_assets/portolan-logo.png> ],
@@ -36,6 +16,23 @@
             dct:type "text/markdown" ;
             ns1:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ rdfs:label "Raster Data" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <file:///github/workspace/raster/catalog.json> ],
+        [ rdfs:label "Reference Basemaps" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <file:///github/workspace/reference/catalog.json> ],
+        [ rdfs:label "Mirrored Collections" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <file:///github/workspace/mirror/catalog.json> ],
+        [ rdfs:label "Human-readable documentation" ;
+            dct:language "en" ;
+            dct:type "text/markdown" ;
+            ns1:relation <http://www.iana.org/assignments/relation/describedby> ;
+            oa:hasTarget <file:///github/workspace/README.md> ],
         [ rdfs:label "Arabic" ;
             dct:language "ar" ;
             dct:type "application/json" ;
@@ -45,10 +42,13 @@
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/child> ;
             oa:hasTarget <file:///github/workspace/boundaries/catalog.json> ],
-        [ rdfs:label "Mirrored Collections" ;
+        [ rdfs:label "Tabular Data" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <file:///github/workspace/mirror/catalog.json> ] ;
+            oa:hasTarget <file:///github/workspace/tabular/catalog.json> ],
+        [ dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///github/workspace/catalog.json> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
         "https://stac-extensions.github.io/language/v1.0.0/schema.json" ;
     stac:version "1.1.0" .
