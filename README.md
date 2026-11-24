@@ -36,6 +36,8 @@ imports:
 
 Then use `$ref: bblocks://portolan.stac.profile` in a schema.
 
+Validation is one use. [`docs/use-cases.md`](docs/use-cases.md) covers the others the OGC documentation describes: profiles built on Portolan, linked data, transforms and AI agents, with what works today and what's next.
+
 ## Check catalogs
 
 The [`client/`](client/) folder holds `portolan-bblocks`, a command-line client that loads a block from this register with OGC's `bblocks_client` library, walks a Portolan catalog and checks every catalog and collection against it:
@@ -84,6 +86,7 @@ _sources/<path>/           one directory per block; the path becomes the identif
   shapes.shacl             SHACL shapes run on the uplifted RDF
 plugins/portolan-rashid/   validator plugin that runs rashid on examples and tests
 build/                     generated on push by GitHub Actions; do not edit
+docs/                      guides, such as use-cases.md
 ```
 
 Template and tooling: [opengeospatial/bblock-template](https://github.com/opengeospatial/bblock-template) and its [USAGE.md](https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md).
