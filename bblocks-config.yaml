@@ -37,15 +37,17 @@ schema-oas30-downcompile: False
 # pin, each in its own virtualenv, and each copy handles only the blocks whose validation resource
 # names its version. The pins follow portolan-spec, which validates its v0.2.0 release with rashid
 # 0.1.8 and its v0.3.0 release with rashid 0.4.0. See SECURITY.md before changing these entries.
+# rashid comes first in each list: the register viewer only labels the entries that have a link,
+# and a local path has none, so this order shows each rashid pin on the register's home page.
 plugins:
   validators:
     - pip:
+        - git+https://github.com/portolan-sdi/rashid@v0.1.8
         - ./plugins/portolan-rashid
-        - rashid @ git+https://github.com/portolan-sdi/rashid@v0.1.8
       modules:
         - portolan_bblocks_rashid
     - pip:
+        - git+https://github.com/portolan-sdi/rashid@v0.4.0
         - ./plugins/portolan-rashid
-        - rashid @ git+https://github.com/portolan-sdi/rashid@v0.4.0
       modules:
         - portolan_bblocks_rashid
