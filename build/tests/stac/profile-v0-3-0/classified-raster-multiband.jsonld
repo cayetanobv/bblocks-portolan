@@ -10,6 +10,7 @@
   "title": "Flood classification and confidence, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)",
   "description": "Flood classification over Valencia and l'Albufera after the 29 October 2024 DANA, with a per-pixel confidence band. Test variant of the classified raster example: the COG has two discrete uint8 bands, so each class list sits on the band it describes, in the STAC 1.1 bands array of the asset, and not on the asset.",
   "license": "other",
+  "updated": "2026-11-24T00:00:00Z",
   "keywords": [
     "flood",
     "Sentinel-1",
@@ -162,6 +163,12 @@
       "href": "./LICENSE.html",
       "type": "text/html",
       "title": "Terms of use"
+    },
+    {
+      "rel": "via",
+      "href": "https://geohazards-tep.eu/",
+      "type": "text/html",
+      "title": "Geohazards Exploitation Platform (GEP), the original source"
     },
     {
       "rel": "agents",

@@ -9,4 +9,4 @@ x-bblocks-metadata:
   itemIdentifier: portolan.stac.profile
   register: https://cayetanobv.github.io/bblocks-portolan/build/register.json
   version: 0.3.0
-  dateOfLastChange: '2026-11-23'
+  dateOfLastChange: '2026-11-24'

@@ -1,7 +1,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <table:> .
-@prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <file:> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <file:> .
+@prefix ns3: <table:> .
 @prefix ns4: <https://w3id.org/ogc/stac/assets/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -19,30 +19,30 @@
         "tabular" ;
     dct:title "Eurostat Electricity Prices for Household Consumers" ;
     rdfs:seeAlso [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///catalog.json> ],
+        [ dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Arabic" ;
-            dct:language "ar" ;
-            dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <file:///ar/tabular/eurostat-electricity-prices/collection.json> ],
-        [ rdfs:label "Guidance for AI agents" ;
-            dct:language "en" ;
-            dct:type "text/markdown" ;
-            ns2:relation <http://www.iana.org/assignments/relation/agents> ;
-            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
         [ rdfs:label "Human-readable documentation" ;
             dct:language "en" ;
             dct:type "text/markdown" ;
-            ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
+            ns1:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
-        [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///catalog.json> ],
         [ rdfs:label "Original source" ;
             dct:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/via> ;
-            oa:hasTarget <https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table> ] ;
+            ns1:relation <http://www.iana.org/assignments/relation/via> ;
+            oa:hasTarget <https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table> ],
+        [ rdfs:label "Guidance for AI agents" ;
+            dct:language "en" ;
+            dct:type "text/markdown" ;
+            ns1:relation <http://www.iana.org/assignments/relation/agents> ;
+            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ rdfs:label "Arabic" ;
+            dct:language "ar" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <file:///ar/tabular/eurostat-electricity-prices/collection.json> ] ;
     stac:hasAsset [ ns4:data <file:///github/workspace/eurostat-electricity-prices.parquet> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
         "https://stac-extensions.github.io/attribution/v0.1.0/schema.json",
@@ -52,36 +52,36 @@
     stac:hasProvider [ ],
         [ ] ;
     stac:version "1.1.0" ;
-    ns1:columns [ a <file:///github/workspace/varchar> ;
-            dct:description "Confidentiality status, entirely null in this snapshot." ],
-        [ a <file:///github/workspace/varchar> ;
+    ns3:columns [ a <file:///github/workspace/varchar> ;
             dct:description "Tax level. X_TAX excludes all taxes and levies, X_VAT excludes VAT and recoverable taxes, I_TAX includes everything a household pays." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "EUR, NAC for national currency, or PPS purchasing power standard. NAC equals EUR in the euro area." ],
+        [ a <file:///github/workspace/timestamp> ;
+            dct:description "Frozen at one 2019 timestamp for every row of this snapshot while the data runs to 2025. Unreliable, do not derive freshness from it." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Confidentiality status, entirely null in this snapshot." ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Annual consumption band. KWH_LT1000, KWH1000-2499, KWH2500-4999 the headline household band, KWH5000-14999, KWH_GE15000, and TOT_KWH the weighted all-band average that exists only from 2017-S2." ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Observation status, e estimated, p provisional, d definition differs, null for 98 percent of rows." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Energy product code, the constant E7000 for electricity." ],
-        [ a <file:///github/workspace/varchar> ;
             dct:description "Eurostat dataflow identifier, the constant ESTAT nrg_pc_204 version 1.0." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Reporting country as a Eurostat NUTS-0 code, ISO 3166-1 alpha-2 except EL for Greece and UK for the United Kingdom, plus the aggregates EU27_2020 and EA. The join key to a geometry Collection." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "EUR, NAC for national currency, or PPS purchasing power standard. NAC equals EUR in the euro area." ],
-        [ a <file:///github/workspace/timestamp> ;
-            dct:description "Frozen at one 2019 timestamp for every row of this snapshot while the data runs to 2025. Unreliable, do not derive freshness from it." ],
+            dct:description "Energy product code, the constant E7000 for electricity." ],
         [ a <file:///github/workspace/double> ;
             dct:description "The observed electricity price in the stated currency per kilowatt-hour." ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Reference semester as a string, 2025-S2. Fixed format, so string ordering and MAX work." ],
         [ a <file:///github/workspace/varchar> ;
+            dct:description "Reporting country as a Eurostat NUTS-0 code, ISO 3166-1 alpha-2 except EL for Greece and UK for the United Kingdom, plus the aggregates EU27_2020 and EA. The join key to a geometry Collection." ],
+        [ a <file:///github/workspace/varchar> ;
             dct:description "Unit of measure, the constant KWH. Prices are per kilowatt-hour." ],
         [ a <file:///github/workspace/varchar> ;
             dct:description "Observation frequency, the constant S for semi-annual. S1 is January to June, S2 is July to December." ] ;
-    ns1:row_count 65466 .
+    ns3:row_count 65466 .
 
-<file:///github/workspace/eurostat-electricity-prices.parquet> ns3:checksum "122051a96f8677c374f6b54cb6e876dcf6af33bc2982b52c9445d0c9a857240b6477" ;
-    ns3:size 162919 ;
+<file:///github/workspace/eurostat-electricity-prices.parquet> ns2:checksum "122051a96f8677c374f6b54cb6e876dcf6af33bc2982b52c9445d0c9a857240b6477" ;
+    ns2:size 162919 ;
     dct:description "The rows of Eurostat table nrg_pc_204, one price for each country or country group, half year, consumption band, tax level, and currency." ;
     dct:format "application/vnd.apache.parquet" ;
     dct:title "Eurostat Electricity Prices for Household Consumers (Parquet)" ;
