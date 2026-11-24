@@ -66,10 +66,13 @@ Every negative test fails in rashid on the rule it was written to break:
 | `license-not-spdx-fail.json` | `PTL-LIC-001` | `PORTO-CORE-059` |
 | `license-other-without-link-fail.json` | `PTL-LIC-002` | `PORTO-CORE-059` |
 | `missing-agents-link-fail.json` | `PTL-FIL-002` | `PORTO-CORE-061` |
+| `mirror-without-via-fail.json` | `PTL-PRO-001` | `PORTO-CORE-053` |
 | `partition-glob-https-fail.json` | `PTL-PRT-002` | `PORTO-FMT-064` |
 | `pmtiles-asset-without-visual-role-fail.json` | `PTL-AST-009` | `PORTO-FMT-062` |
 | `proprietary-license-fail.json` | `PTL-LIC-003` | `PORTO-CORE-060` |
 | `s3-asset-href-fail.json` | `PTL-AST-002` | `PORTO-CORE-087` |
+
+`mirror-without-via-fail.json` is the Boston example without its `via` link. City of Boston is its producer and Portolan SDI its host, so it is a mirror and needs one. The JSON Schema and the SHACL shapes pass it. Only the plugin fails it.
 
 rashid also checks rules no schema or shape here can, such as the mirror rules: it is how the classified raster example's missing `via` link was found. The examples and valid tests pass with warnings for SHOULD rules, such as assets without `file:checksum`.
 

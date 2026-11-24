@@ -49,9 +49,12 @@ With rashid 0.1.8, the v0.2.0 rules hold: `data-asset-href-glob.json` and `pmtil
 | `license-not-spdx-fail.json` | `PTL-LIC-001` | `PORTO-CORE-059` |
 | `license-other-without-link-fail.json` | `PTL-LIC-002` | `PORTO-CORE-059` |
 | `missing-agents-link-fail.json` | `PTL-FIL-002` | `PORTO-CORE-061` |
+| `mirror-without-via-fail.json` | `PTL-PRO-001` | `PORTO-CORE-053` |
 | `proprietary-license-fail.json` | `PTL-LIC-003` | `PORTO-CORE-060` |
 | `s3-asset-href-fail.json` | `PTL-AST-002` | `PORTO-CORE-023` |
 | `s3-asset-href-with-https-alternate-fail.json` | `PTL-AST-002` | `PORTO-CORE-023` |
+
+`mirror-without-via-fail.json` is the Boston example without its `via` link. City of Boston is its producer and Portolan SDI its host, so it is a mirror and needs one. The JSON Schema and the SHACL shapes pass it. Only the plugin fails it.
 
 The plugin runs rashid's metadata rules only, offline, on a minimal catalog written around each document. The `portolan.stac.profile-v0-3-0` block describes how.
 
