@@ -51,12 +51,19 @@ SHACL_ONLY = {
     "license-other-without-link-fail": "PORTO-CORE-059",
 }
 
+# Fail files that break a rule only the rashid validator plugin checks, with the requirement each
+# breaks. They pass the JSON Schema and the SHACL shapes.
+PLUGIN_ONLY = {
+    "mirror-without-via-fail": "PORTO-CORE-053",
+}
+
 
 def test_every_fail_file_has_an_expected_field():
-    assert {p.stem for p in TEST_FILES if p.stem.endswith("-fail")} == set(EXPECTED_FIELD) | set(SHACL_ONLY)
+    expected = set(EXPECTED_FIELD) | set(SHACL_ONLY) | set(PLUGIN_ONLY)
+    assert {p.stem for p in TEST_FILES if p.stem.endswith("-fail")} == expected
 
 
-@pytest.mark.parametrize("name", sorted(SHACL_ONLY))
+@pytest.mark.parametrize("name", sorted(SHACL_ONLY) + sorted(PLUGIN_ONLY))
 def test_shacl_only_fail_files_pass_the_json_schema(published, name):
     _, validator = published
     assert validator.validate(load(next(p for p in TEST_FILES if p.stem == name))) == []
