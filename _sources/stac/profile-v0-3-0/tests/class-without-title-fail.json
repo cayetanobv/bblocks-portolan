@@ -9,6 +9,7 @@
   "title": "Flood classification, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)",
   "description": "Flood classification over Valencia and l'Albufera after the 29 October 2024 DANA, from the GEP SAR Features service using Sentinel-1 backscatter and coherence. It is a single-COG collection with one discrete uint8 band with an embedded color table, 20 m, EPSG:32630. The raster has one band, so the class list sits on the asset, and each color_hint matches the color table entry for its value.",
   "license": "other",
+  "updated": "2026-11-24T00:00:00Z",
   "keywords": [
     "flood",
     "Sentinel-1",
@@ -122,6 +123,12 @@
       "href": "./LICENSE.html",
       "type": "text/html",
       "title": "Terms of use"
+    },
+    {
+      "rel": "via",
+      "href": "https://geohazards-tep.eu/",
+      "type": "text/html",
+      "title": "Geohazards Exploitation Platform (GEP), the original source"
     },
     {
       "rel": "agents",

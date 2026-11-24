@@ -9,6 +9,7 @@
   "title": "Flood classification and confidence, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)",
   "description": "Negative test derived from the multiband classified raster test. The COG has two bands, but the class list sits on the asset instead of on each band in the STAC 1.1 bands array, so it fails the multiband placement rule (PORTO-FMT-050).",
   "license": "other",
+  "updated": "2026-11-24T00:00:00Z",
   "keywords": [
     "flood",
     "Sentinel-1",
@@ -135,6 +136,12 @@
       "href": "./LICENSE.html",
       "type": "text/html",
       "title": "Terms of use"
+    },
+    {
+      "rel": "via",
+      "href": "https://geohazards-tep.eu/",
+      "type": "text/html",
+      "title": "Geohazards Exploitation Platform (GEP), the original source"
     },
     {
       "rel": "agents",

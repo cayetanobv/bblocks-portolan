@@ -55,6 +55,8 @@ Portolan reuses established extensions rather than adding `portolan:` fields. Th
 
 The catalog, vector, tabular, and raster examples are copies of files in the [Portolan reference catalog](https://github.com/portolan-sdi/portolan-spec/tree/v0.3.0/examples/catalog/portolan-reference) at the `v0.3.0` tag. The classified raster and partitioned examples come from [`stac/examples`](https://github.com/portolan-sdi/portolan-spec/tree/v0.3.0/stac/examples). Relative hrefs in them point into those trees.
 
+The classified raster example differs from its source in one way. GEP is its producer and Portolan SDI its host, which makes it a mirror, and a mirror needs a `rel: via` link and `updated` (PORTO-CORE-053 and PORTO-CORE-057). The source file has neither ([portolan-spec#281](https://github.com/portolan-sdi/portolan-spec/issues/281)). Our copy, and the test files built from it, add a `via` link to the GEP site and `updated`. The patch goes once the spec fixes its example.
+
 The negative tests in `tests/` each change one field of an example so that it breaks exactly one rule.
 
 ## Versioning
