@@ -16,33 +16,33 @@
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/child> ;
             oa:hasTarget <file:///github/workspace/tabular/catalog.json> ],
-        [ dct:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/icon> ;
-            oa:hasTarget <file:///github/workspace/_assets/portolan-logo.png> ],
         [ rdfs:label "Raster Data" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/child> ;
             oa:hasTarget <file:///github/workspace/raster/catalog.json> ],
+        [ dct:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/icon> ;
+            oa:hasTarget <file:///github/workspace/_assets/portolan-logo.png> ],
         [ rdfs:label "Arabic" ;
             dct:language "ar" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <file:///github/workspace/ar/catalog.json> ],
-        [ dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///github/workspace/catalog.json> ],
         [ rdfs:label "Administrative Boundaries" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/child> ;
             oa:hasTarget <file:///github/workspace/boundaries/catalog.json> ],
-        [ rdfs:label "Mirrored Collections" ;
-            dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <file:///github/workspace/mirror/catalog.json> ],
         [ rdfs:label "Reference Basemaps" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/child> ;
             oa:hasTarget <file:///github/workspace/reference/catalog.json> ],
+        [ dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///github/workspace/catalog.json> ],
+        [ rdfs:label "Mirrored Collections" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <file:///github/workspace/mirror/catalog.json> ],
         [ rdfs:label "Human-readable documentation" ;
             dct:language "en" ;
             dct:type "text/markdown" ;

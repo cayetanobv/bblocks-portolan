@@ -21,12 +21,12 @@
     rdfs:label "Portolan STAC Profile" ;
     dct:abstract "A STAC Catalog or Collection that conforms to the latest Portolan specification, now v0.3.0. It points to the block of that version, such as portolan.stac.profile-v0-3-0. Reference this block to follow new Portolan versions, or a versioned block to stay on one."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-08T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/bblock/portolan.stac.profile> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/json-full/stac/profile/index.json> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/markdown/stac/profile/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/json-full/stac/profile/index.json> ] ;
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/bblock/portolan.stac.profile> ] ;
     dct:hasVersion "0.3.0" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://www.apache.org/licenses/LICENSE-2.0> ] ;
@@ -46,31 +46,17 @@
         "stac" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.components.assets-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.core-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://portolan.stac.profile-v0-3-0> ;
+            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-3-0/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://portolan.stac.profile-v0-3-0> ;
-            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-3-0/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.classification-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.api.records.v1.schemas.linkTemplate> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -79,13 +65,23 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.api.records.v1.schemas.linkTemplate> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.components.assets-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://github.com/portolan-sdi/rashid> ;
-            dct:format "application/schema+json" ;
-            prof:hasArtifact <https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json> ;
-            prof:hasRole <https://cayetanobv.github.io/validation> ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.classification-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.core-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.themes-ontology> ;
@@ -93,18 +89,22 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.raster-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://github.com/portolan-sdi/rashid> ;
+            dct:format "application/schema+json" ;
+            prof:hasArtifact <https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json> ;
+            prof:hasRole <https://cayetanobv.github.io/validation> ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.raster-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://ogc.contrib.stac.collection> ;
     bblocks:dependsOn <bblocks://ogc.contrib.stac.collection>,
         <bblocks://portolan.stac.profile-v0-3-0> ;
@@ -114,18 +114,18 @@
 
 <https://cayetanobv.github.io/bblocks-portolan/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N7ac4b1cf993b46df9701e7793847ab18 ;
+    prov:wasAttributedTo _:Nd5fe566c367340cfb41604adec55c0ab ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-11-24T00:59:05.531809"^^xsd:dateTime ;
-            prov:startedAtTime "2026-11-24T00:59:05.351113"^^xsd:dateTime ;
+            prov:endedAtTime "2026-11-24T01:13:48.438524"^^xsd:dateTime ;
+            prov:startedAtTime "2026-11-24T01:13:48.326197"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:58a06c73cfe3819457b67a2edabad240c0ac755c" ;
+                    dct:hasVersion "git:2c783f20b351154536d8cd32fc3d592532ff7665" ;
                     rdfs:seeAlso <https://cayetanobv.github.io/bblocks-portolan/build/register.json> ],
                 [ a prov:Entity ;
                     dct:format "application/yaml" ;
                     rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
-            prov:wasAssociatedWith _:N7ac4b1cf993b46df9701e7793847ab18 ] .
+            prov:wasAssociatedWith _:Nd5fe566c367340cfb41604adec55c0ab ] .
 
 <https://github.com/portolan-sdi/portolan-spec/blob/v0.2.0/specs/portolan/core.md> rdfs:label "Portolan Specification v0.2.0, Core" .
 
@@ -140,10 +140,10 @@
     rdfs:label "Portolan STAC Profile (v0.2.0)" ;
     dct:abstract "A STAC Catalog or Collection that conforms to the Portolan specification v0.2.0, the version most published Portolan catalogs declare. Use it to check those catalogs against the rules they claim; the Portolan STAC Profile block holds the current version."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-11-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/bblock/portolan.stac.profile-v0-2-0> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/markdown/stac/profile-v0-2-0/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/bblock/portolan.stac.profile-v0-2-0> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/json-full/stac/profile-v0-2-0/index.json> ] ;
     dct:hasVersion "0.2.0" ;
@@ -163,10 +163,10 @@
         "portolan",
         "profile",
         "stac" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/context.jsonld> ;
-            prof:hasRole role:mapping ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.themes-ontology> ;
@@ -174,41 +174,41 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.core-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.components.assets-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.api.records.v1.schemas.linkTemplate> ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.core-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/schema.yaml> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo <https://github.com/portolan-sdi/rashid> ;
+            dct:format "application/schema+json" ;
+            prof:hasArtifact <https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json> ;
+            prof:hasRole <https://cayetanobv.github.io/validation> ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.raster-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://portolan.stac.profile-v0-2-0> ;
             prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-2-0/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.components.assets-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://github.com/portolan-sdi/rashid> ;
-            dct:format "application/schema+json" ;
-            prof:hasArtifact <https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json> ;
-            prof:hasRole <https://cayetanobv.github.io/validation> ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
@@ -216,8 +216,8 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.raster-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
             prof:hasRole role:validation ] ;
     prof:isProfileOf <bblocks://ogc.contrib.stac.collection> ;
     bblocks:dependsOn <bblocks://ogc.contrib.stac.collection>,
@@ -246,12 +246,12 @@
     rdfs:label "Portolan STAC Profile (v0.3.0)" ;
     dct:abstract "A STAC Catalog or Collection that conforms to the Portolan specification v0.3.0: cloud-native assets on object storage with https access, a pinned set of STAC extensions, and AGENTS.md and README.md links on every catalog and collection."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-08T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/json-full/stac/profile-v0-3-0/index.json> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/markdown/stac/profile-v0-3-0/index.md> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/bblock/portolan.stac.profile-v0-3-0> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/markdown/stac/profile-v0-3-0/index.md> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://cayetanobv.github.io/bblocks-portolan/build/generateddocs/json-full/stac/profile-v0-3-0/index.json> ] ;
     dct:hasVersion "0.3.0" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://www.apache.org/licenses/LICENSE-2.0> ] ;
@@ -275,23 +275,28 @@
             prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.themes-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/themes-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.contrib.stac.core-ontology> ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://portolan.stac.profile-v0-3-0> ;
-            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-3-0/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.raster-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://github.com/portolan-sdi/rashid> ;
             dct:format "application/schema+json" ;
             prof:hasArtifact <https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json> ;
             prof:hasRole <https://cayetanobv.github.io/validation> ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-3-0/context.jsonld> ;
@@ -303,18 +308,18 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.raster-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://portolan.stac.profile-v0-3-0> ;
+            prof:hasArtifact <https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-3-0/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.api.records.v1.schemas.linkTemplate> ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
@@ -324,11 +329,6 @@
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.contrib.stac.components.assets-ontology> ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.themes-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/themes-ontology/shapes.shacl> ;
             prof:hasRole role:validation ] ;
     prof:isProfileOf <bblocks://ogc.contrib.stac.collection> ;
     bblocks:dependsOn <bblocks://ogc.contrib.stac.collection>,
@@ -364,29 +364,29 @@ checked by the [rashid](https://github.com/portolan-sdi/rashid) validator.
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://www.apache.org/licenses/LICENSE-2.0> ] ;
-    dct:modified "2026-11-24T00:57:01.208370"^^xsd:dateTime ;
+    dct:modified "2026-11-24T01:11:50.563582"^^xsd:dateTime ;
     owl:imports <https://ogcincubator.github.io/bblocks-stac/build/register.json>,
         <https://opengeospatial.github.io/bblocks/register.json> ;
     skos:hasTopConcept <bblocks://portolan.stac.profile>,
         <bblocks://portolan.stac.profile-v0-2-0>,
         <bblocks://portolan.stac.profile-v0-3-0> ;
     skos:prefLabel "Building Blocks - Portolan Building Blocks" ;
-    prof:hasResource [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
-            dct:type "text/turtle" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
             ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            ns1:hasTarget <https://cayetanobv.github.io/bblocks-portolan/build/bblocks.ttl> ],
+            ns1:hasTarget <https://cayetanobv.github.io/bblocks-portolan/build/bblocks.jsonld> ],
         [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/self> ;
             ns1:hasTarget <https://cayetanobv.github.io/bblocks-portolan/build/register.json> ],
-        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
-            dct:type "application/ld+json" ;
+        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
             ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            ns1:hasTarget <https://cayetanobv.github.io/bblocks-portolan/build/bblocks.jsonld> ] ;
+            ns1:hasTarget <https://cayetanobv.github.io/bblocks-portolan/build/bblocks.ttl> ] ;
     foaf:homepage <https://cayetanobv.github.io/bblocks-portolan/> ;
     bblocks:hasValidationReport <https://cayetanobv.github.io/bblocks-portolan/build/tests/report.html> .
 
-_:N7ac4b1cf993b46df9701e7793847ab18 a prov:Agent,
+_:Nd5fe566c367340cfb41604adec55c0ab a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.6.0" ;
