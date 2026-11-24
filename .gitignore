@@ -13,3 +13,7 @@ client/.venv/
 client/**/__pycache__/
 client/**/*.egg-info/
 client/catalogs-report.json
+.bblocks-sandbox/
+plugins/**/__pycache__/
+plugins/**/*.egg-info/
+plugins/**/build/

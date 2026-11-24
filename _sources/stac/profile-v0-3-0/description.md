@@ -31,7 +31,9 @@ The format rules skip assets with the `source` role.
 
 ## What tooling checks
 
-Some rules cannot be expressed in JSON Schema. The [rashid](https://github.com/portolan-sdi/rashid) validator checks them: the host provider is exactly one and listed last, the SPDX identifier is valid, `file:checksum` is a multihash and matches the bytes, range requests work on the assets, and the file-level format rules hold. Declaring the profile in `stac_extensions` is a claim of conformance. An object conforms when it passes rashid.
+Some rules cannot be expressed in JSON Schema. The [rashid](https://github.com/portolan-sdi/rashid) validator checks them: the host provider is exactly one and listed last, the SPDX identifier is valid, a collection whose producer and host differ is a mirror and links its source, `file:checksum` is a multihash and matches the bytes, range requests work on the assets, and the file-level format rules hold. Declaring the profile in `stac_extensions` is a claim of conformance. An object conforms when it passes rashid.
+
+This block runs rashid itself on its examples and tests, through the rashid validator plugin described below. File and live checks need the published catalog and stay outside the block for now.
 
 ## What the SHACL shapes check
 
@@ -46,6 +48,30 @@ Some of the rules the schema leaves to tooling can be read from the metadata of 
 The SPDX list is rashid's, so the two give the same answer. `scripts/spdx_shacl_list.py` regenerates it. The test files `license-not-spdx-fail.json` and `license-other-without-link-fail.json` pass the JSON Schema and fail only these shapes. `icon-link-without-title.json` passes with a warning.
 
 The block's `context.jsonld` maps the `type` values `Catalog` and `Collection` to the STAC ontology classes, so the shapes, and the STAC core shapes, find their targets. Rules on assets and providers, such as exactly one host provider listed last, need the STAC contexts to map those objects first.
+
+## What the rashid plugin checks
+
+The register declares an OGC [validator plugin](https://ogcincubator.github.io/bblocks-docs/create/validation#validator-plugins), in `plugins/portolan-rashid`, that runs rashid on each example and test file of this block. The block opts in with a `role: validation` resource in `bblock.json` that names the Portolan v0.3.0 schema. The plugin then runs rashid 0.4.0, the release portolan-spec pins for v0.3.0.
+
+rashid validates a whole catalog, so the plugin writes each document into a minimal catalog with stub `AGENTS.md` and `README.md` files and keeps only rashid's findings on that document. It runs rashid's metadata rules offline, without file or live checks, and leaves out link resolution (`PTL-LNK-006`), which needs the real tree. Each finding is reported with its rashid check and its Portolan requirement. rashid errors fail the block, warnings and notes do not.
+
+Every negative test fails in rashid on the rule it was written to break:
+
+| Test file | rashid check | Requirement |
+|---|---|---|
+| `class-without-title-fail.json` | `PTL-CLS-002` | `PORTO-FMT-052` |
+| `classes-in-raster-bands-fail.json` | `PTL-CLS-005` | `PORTO-FMT-050` |
+| `classes-on-asset-of-multiband-raster-fail.json` | `PTL-CLS-005` | `PORTO-FMT-050` |
+| `data-asset-href-glob-fail.json` | `PTL-AST-012` | `PORTO-FMT-065` |
+| `license-not-spdx-fail.json` | `PTL-LIC-001` | `PORTO-CORE-059` |
+| `license-other-without-link-fail.json` | `PTL-LIC-002` | `PORTO-CORE-059` |
+| `missing-agents-link-fail.json` | `PTL-FIL-002` | `PORTO-CORE-061` |
+| `partition-glob-https-fail.json` | `PTL-PRT-002` | `PORTO-FMT-064` |
+| `pmtiles-asset-without-visual-role-fail.json` | `PTL-AST-009` | `PORTO-FMT-062` |
+| `proprietary-license-fail.json` | `PTL-LIC-003` | `PORTO-CORE-060` |
+| `s3-asset-href-fail.json` | `PTL-AST-002` | `PORTO-CORE-087` |
+
+rashid also checks rules no schema or shape here can, such as the mirror rules: it is how the classified raster example's missing `via` link was found. The examples and valid tests pass with warnings for SHOULD rules, such as assets without `file:checksum`.
 
 ## STAC extensions
 

@@ -47,5 +47,14 @@
     "pmtiles"
   ],
   "group": "STAC",
-  "highlighted": true
+  "highlighted": true,
+  "resources": [
+    {
+      "role": "validation",
+      "ref": "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+      "format": "application/schema+json",
+      "conformsTo": "https://github.com/portolan-sdi/rashid",
+      "title": "Portolan v0.3.0 rules checked by the rashid validator plugin"
+    }
+  ]
 }

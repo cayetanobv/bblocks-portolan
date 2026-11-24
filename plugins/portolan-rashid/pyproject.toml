@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portolan-bblocks-rashid"
+version = "0.1.0"
+description = "OGC Building Blocks validator plugin that runs the rashid Portolan validator on each example and test"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+# rashid is not a dependency here: bblocks-config.yaml installs the rashid release that matches
+# each Portolan version next to this package, one virtualenv per pin.
+dependencies = []
+
+[tool.setuptools]
+packages = ["portolan_bblocks_rashid"]
