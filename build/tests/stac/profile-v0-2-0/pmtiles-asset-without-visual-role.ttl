@@ -1,8 +1,8 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <table:> .
-@prefix ns2: <https://w3id.org/ogc/stac/assets/> .
-@prefix ns3: <file:> .
-@prefix ns4: <http://www.iana.org/assignments/> .
+@prefix ns1: <https://w3id.org/ogc/stac/assets/> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns3: <table:> .
+@prefix ns4: <file:> .
 @prefix ns5: <proj:> .
 @prefix ns6: <pmtiles:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -22,35 +22,35 @@
     dct:title "Boston Open Space" ;
     rdfs:seeAlso [ rdfs:label "Original source" ;
             dct:type "text/html" ;
-            ns4:relation <http://www.iana.org/assignments/relation/via> ;
+            ns2:relation <http://www.iana.org/assignments/relation/via> ;
             oa:hasTarget <https://bostonopendata-boston.opendata.arcgis.com/datasets/2868d370c55d4d458d4ae2224ef8cddd_7> ],
-        [ dct:type "application/json" ;
-            ns4:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///catalog.json> ],
         [ rdfs:label "Human-readable documentation" ;
             dct:type "text/markdown" ;
-            ns4:relation <http://www.iana.org/assignments/relation/describedby> ;
+            ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
+        [ dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///catalog.json> ],
         [ rdfs:label "Web map tiles" ;
             dct:type "application/vnd.pmtiles" ;
-            ns4:relation <http://www.iana.org/assignments/relation/pmtiles> ;
+            ns2:relation <http://www.iana.org/assignments/relation/pmtiles> ;
             oa:hasTarget <file:///github/workspace/boston-open-space.pmtiles> ;
             ns6:layers "boston-open-space" ],
         [ rdfs:label "Guidance for AI agents" ;
             dct:type "text/markdown" ;
-            ns4:relation <http://www.iana.org/assignments/relation/agents> ;
+            ns2:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ],
         [ dct:type "application/json" ;
-            ns4:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <file:///github/catalog.json> ] ;
-    stac:hasAsset [ ns2:data <file:///github/workspace/boston-open-space.parquet> ;
-            ns2:style-acreage <file:///github/workspace/styles/acreage.json> ;
-            ns2:style-labeled <file:///github/workspace/styles/labeled.json> ;
-            ns2:style-ownership <file:///github/workspace/styles/ownership.json> ;
-            ns2:style-protection <file:///github/workspace/styles/protection.json> ;
-            ns2:style-types <file:///github/workspace/styles/types.json> ;
-            ns2:thumbnail <file:///github/workspace/thumbnail.png> ;
-            ns2:visual <file:///github/workspace/boston-open-space.pmtiles> ] ;
+    stac:hasAsset [ ns1:data <file:///github/workspace/boston-open-space.parquet> ;
+            ns1:style-acreage <file:///github/workspace/styles/acreage.json> ;
+            ns1:style-labeled <file:///github/workspace/styles/labeled.json> ;
+            ns1:style-ownership <file:///github/workspace/styles/ownership.json> ;
+            ns1:style-protection <file:///github/workspace/styles/protection.json> ;
+            ns1:style-types <file:///github/workspace/styles/types.json> ;
+            ns1:thumbnail <file:///github/workspace/thumbnail.png> ;
+            ns1:visual <file:///github/workspace/boston-open-space.pmtiles> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
         "https://stac-extensions.github.io/file/v2.1.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
@@ -59,99 +59,99 @@
     stac:hasProvider [ ],
         [ ] ;
     stac:version "1.1.0" ;
-    ns1:columns [ a <file:///github/workspace/varchar> ;
+    ns3:columns [ a <file:///github/workspace/varchar> ;
             dct:description "Official, previous, or colloquial alternate names." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Managing entity only when it differs from OS_Own_Jur. Null means the steward manages it, not missing data." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Aggregated zoning district, for example Open Space District." ],
-        [ a <file:///github/workspace/bigint> ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "The entity holding the open-space rights. BPRD, DCR, the Boston Conservation Commission, or None." ],
-        [ a <file:///github/workspace/varchar> ;
             dct:description "Fee owner where known. City of Boston, Commonwealth of Massachusetts, private owners, and agency abbreviations like BRA and BNAN." ],
+        [ a <file:///github/workspace/integer> ;
+            dct:description "Numeric open space type 1 through 7. Disagrees with TypeLong on about 13 rows, treat TypeLong as closer to intent." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Public access flag. X accessible, A by appointment, N no or unknown access." ],
+            dct:description "Planning district per the city's open space plan, not the official neighborhood boundaries. Includes the non-spatial value Multi-District." ],
         [ a <file:///github/workspace/double> ;
             dct:description "ArcGIS-computed perimeter in meters." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Agency of jurisdiction for government-owned unprotected sites. Sparsely populated by design." ],
-        [ a <file:///github/workspace/geometry> ;
-            dct:description "Site geometry, WGS84 longitude and latitude." ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Best-known or official site name. Multi-parcel sites carry Roman numeral suffixes, Stony Brook Reservation I and II." ],
-        [ a <file:///github/workspace/integer> ],
-        [ a <file:///github/workspace/varchar> ;
-            dct:description "Slash-separated legal protection instruments. A97 is Article 97 of the Massachusetts Constitution, the strongest. Free text, match with LIKE." ],
-        [ a <file:///github/workspace/double> ;
-            dct:description "ArcGIS-computed area in square meters from the source State Plane geometry." ],
-        [ a <file:///github/workspace/integer> ;
-            dct:description "Numeric open space type 1 through 7. Disagrees with TypeLong on about 13 rows, treat TypeLong as closer to intent." ],
+            dct:description "Aggregated zoning district, for example Open Space District." ],
         [ a <file:///github/workspace/double> ;
             dct:description "Official area in acres of the open-space portion, the figure to use instead of computing geometry area." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Street address if known, null for 589 rows." ],
+            dct:description "Public access flag. X accessible, A by appointment, N no or unknown access." ],
+        [ a <file:///github/workspace/double> ;
+            dct:description "ArcGIS-computed area in square meters from the source State Plane geometry." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Protected open space flag. X permanently protected, N not." ],
+            dct:description "Best-known or official site name. Multi-parcel sites carry Roman numeral suffixes, Stony Brook Reservation I and II." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Planning district per the city's open space plan, not the official neighborhood boundaries. Includes the non-spatial value Multi-District." ],
+            dct:description "Agency of jurisdiction for government-owned unprotected sites. Sparsely populated by design." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "The entity holding the open-space rights. BPRD, DCR, the Boston Conservation Commission, or None." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Slash-separated legal protection instruments. A97 is Article 97 of the Massachusetts Constitution, the strongest. Free text, match with LIKE." ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Open space type as text, with minor spelling variants worth normalizing before grouping." ],
+        [ a <file:///github/workspace/bigint> ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Managing entity only when it differs from OS_Own_Jur. Null means the steward manages it, not missing data." ],
         [ dct:description "Per-feature bounding box struct, the GeoParquet covering." ],
         [ a <file:///github/workspace/varchar> ;
-            dct:description "Open space type as text, with minor spelling variants worth normalizing before grouping." ] ;
-    ns1:primary_geometry "geom" ;
-    ns1:row_count 1012 .
+            dct:description "Protected open space flag. X permanently protected, N not." ],
+        [ a <file:///github/workspace/integer> ],
+        [ a <file:///github/workspace/varchar> ;
+            dct:description "Street address if known, null for 589 rows." ],
+        [ a <file:///github/workspace/geometry> ;
+            dct:description "Site geometry, WGS84 longitude and latitude." ] ;
+    ns3:primary_geometry "geom" ;
+    ns3:row_count 1012 .
 
-<file:///github/workspace/boston-open-space.parquet> ns3:checksum "122012852a6892d9f47810b6ad54959b22b840bdfbb118b136a25cc6dd7da41d3cff" ;
-    ns3:size 1188770 ;
+<file:///github/workspace/boston-open-space.parquet> ns4:checksum "122012852a6892d9f47810b6ad54959b22b840bdfbb118b136a25cc6dd7da41d3cff" ;
+    ns4:size 1188770 ;
     dct:format "application/vnd.apache.parquet" ;
     dct:title "Boston Open Space (GeoParquet)" ;
     stac:hasAssetroles "data"^^<xsd:string> ;
     ns5:code "EPSG:4326" .
 
-<file:///github/workspace/styles/acreage.json> ns3:checksum "122092647db9cb1290d34a8b4675e8e13548c4f45e6d2c26589726232bd0bb23d710" ;
-    ns3:size 828 ;
+<file:///github/workspace/styles/acreage.json> ns4:checksum "122092647db9cb1290d34a8b4675e8e13548c4f45e6d2c26589726232bd0bb23d710" ;
+    ns4:size 828 ;
     dct:description "ACRES binned at one, ten, and one hundred acres, light to dark green, from pocket parks through Franklin Park's 392 acres." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Acreage in four classes" ;
     stac:hasAssetroles "style"^^<xsd:string> .
 
-<file:///github/workspace/styles/labeled.json> ns3:checksum "12200ce7dcdabc5683bbd6348a8fee0d83b23c47a48cf03557d9eef73d5085a9d2ca" ;
-    ns3:size 1586 ;
+<file:///github/workspace/styles/labeled.json> ns4:checksum "12200ce7dcdabc5683bbd6348a8fee0d83b23c47a48cf03557d9eef73d5085a9d2ca" ;
+    ns4:size 1586 ;
     dct:description "The type colouring with a SITE_NAME label per site." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Types with site names" ;
     stac:hasAssetroles "style"^^<xsd:string> .
 
-<file:///github/workspace/styles/ownership.json> ns3:checksum "1220430bfc3a3f3572e0156f3ce1ca91dbbdd6f1f2b360bf4f237ed8a26071a7fed5" ;
-    ns3:size 1363 ;
+<file:///github/workspace/styles/ownership.json> ns4:checksum "1220430bfc3a3f3572e0156f3ce1ca91dbbdd6f1f2b360bf4f237ed8a26071a7fed5" ;
+    ns4:size 1363 ;
     dct:description "OWNERSHIP from the catalog palette, city, Commonwealth, federal, and the 214 privately owned sites side by side." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Who owns it" ;
     stac:hasAssetroles "style"^^<xsd:string> .
 
-<file:///github/workspace/styles/protection.json> ns3:checksum "122029441a7dbf26793f87185cb67a1ee3e5055d271a6550c1cffad5b8fdaa349078" ;
-    ns3:size 1122 ;
+<file:///github/workspace/styles/protection.json> ns4:checksum "122029441a7dbf26793f87185cb67a1ee3e5055d271a6550c1cffad5b8fdaa349078" ;
+    ns4:size 1122 ;
     dct:description "The POS flag, deep green where protection is permanent under Article 97 or a conservation restriction, gray where it is not. The inner match relabels the raw X and N codes so the legend a client derives from the outer match reads in plain words." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Permanently protected or not" ;
     stac:hasAssetroles "style"^^<xsd:string> .
 
-<file:///github/workspace/styles/types.json> ns3:checksum "1220b1762e9d48bd88b6901687f255ac37fb6afc3618f46f2e4d8a569f4b9df5bfcc" ;
-    ns3:size 1224 ;
+<file:///github/workspace/styles/types.json> ns4:checksum "1220b1762e9d48bd88b6901687f255ac37fb6afc3618f46f2e4d8a569f4b9df5bfcc" ;
+    ns4:size 1224 ;
     dct:description "TypeLong separates parks, parkways and reservations, cemeteries, urban wilds, malls and plazas, and community gardens." ;
     dct:format "application/vnd.mapbox.style+json" ;
     dct:title "Open space by type" ;
     stac:hasAssetroles "default"^^<xsd:string>,
         "style"^^<xsd:string> .
 
-<file:///github/workspace/thumbnail.png> ns3:checksum "122061292d50d6b52d5452897669fe629173564b49f0d2538de5605331a323299fb0" ;
-    ns3:size 377459 ;
+<file:///github/workspace/thumbnail.png> ns4:checksum "122061292d50d6b52d5452897669fe629173564b49f0d2538de5605331a323299fb0" ;
+    ns4:size 377459 ;
     dct:format "image/png" ;
     dct:title "Preview thumbnail over a light basemap. © OpenStreetMap contributors © CARTO." ;
     stac:hasAssetroles "thumbnail"^^<xsd:string> .
 
-<file:///github/workspace/boston-open-space.pmtiles> ns3:checksum "1220db3d459dc821db7adf739ad0afee9682a3b94f8d467c564c343dcb159a2b3281" ;
-    ns3:size 989217 ;
+<file:///github/workspace/boston-open-space.pmtiles> ns4:checksum "1220db3d459dc821db7adf739ad0afee9682a3b94f8d467c564c343dcb159a2b3281" ;
+    ns4:size 989217 ;
     dct:format "application/vnd.pmtiles" ;
     dct:title "Boston Open Space (PMTiles)" ;
     stac:hasAssetroles "overview"^^<xsd:string> .

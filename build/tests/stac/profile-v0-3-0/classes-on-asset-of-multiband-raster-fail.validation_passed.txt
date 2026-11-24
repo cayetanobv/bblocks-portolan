@@ -1,5 +1,5 @@
 Validation report for portolan.stac.profile-v0-3-0 - Portolan STAC Profile (v0.3.0)
-Generated 2026-11-24T00:47:09.150254+00:00
+Generated 2026-11-24T00:58:15.024888+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -14,7 +14,7 @@ Output Turtle classes-on-asset-of-multiband-raster-fail.ttl created
 === JSON Schema ===
 
 ** Validation error **
-ValidationError: {'type': 'Collection', 'stac_version': '1.1.0', 'stac_extensions': ['https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json', 'https://stac-extensions.github.io/classification/v2.0.0/schema.json'], 'id': 'valencia-2024-multiband', 'title': 'Flood classification and confidence, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)', 'description': 'Negative test derived from the multiband classified raster test. The COG has two bands, but the class list sits on the asset instead of on each band in the STAC 1.1 bands array, so it fails the multiband placement rule (PORTO-FMT-050).', 'license': 'other', 'updated': '2026-11-24T00:00:00Z', 'keywords': ['flood', 'Sentinel-1', 'SAR', 'Valencia', 'DANA'], 'providers': [{'name': 'Geohazards TEP (GEP)', 'roles': ['producer', 'licensor'], 'url': 'https://geohazards-tep.eu/'}, {'name': 'Portolan SDI', 'roles': ['processor', 'host'], 'url': 'https://github.com/portolan-sdi'}], 'extent': {'spatial': {'bbox': [[-0.62, 39.12, 0.03, 39.63]]}, 'temporal': {'interval': [['2024-10-07T00:00:00Z', '2024-10-31T23:59:59Z']]}}, 'assets': {'data': {'href': './sar-features-flood-confidence-cog.tif', 'type': 'image/tiff; application=geotiff; profile=cloud-optimized', 'title': 'Flood classification and confidence (COG)', 'description': 'Discrete two-band uint8 COG. Band 1 is the flood class, band 2 the classification confidence. Value 0 is nodata in both bands.', 'roles': ['data'], 'bands': [{'name': 'flood_class', 'description': 'Flood classification', 'data_type': 'uint8', 'nodata': 0}, {'name': 'confidence', 'description': 'Confidence of the flood classification', 'data_type': 'uint8', 'nodata': 0}], 'classification:classes': [{'value': 0, 'name': 'other', 'title': 'Other', 'nodata': True}, {'value': 1, 'name': 'urban', 'title': 'Urban', 'color_hint': '000000'}, {'value': 2, 'name': 'permanent-water', 'title': 'Permanent water', 'color_hint': '0000FF'}, {'value': 3, 'name': 'bare-soil-flood', 'title': 'Flooded bare soil', 'color_hint': '00FF00'}, {'value': 4, 'name': 'urban-flood', 'title': 'Flooded urban area', 'color_hint': '00FFFF'}]}, 'thumbnail': {'href': './thumbnail.png', 'type': 'image/png', 'title': 'Preview drawn from the embedded color table', 'roles': ['thumbnail']}}, 'links': [{'rel': 'root', 'href': '../catalog.json', 'type': 'application/json'}, {'rel': 'parent', 'href': '../catalog.json', 'type': 'application/json'}, {'rel': 'license', 'href': './LICENSE.html', 'type': 'text/html', 'title': 'Terms of use'}, {'rel': 'via', 'href': 'https://geohazards-tep.eu/', 'type': 'text/html', 'title': 'Geohazards Exploitation Platform (GEP), the original source'}, {'rel': 'agents', 'href': './AGENTS.md', 'type': 'text/markdown', 'title': 'Guidance for AI agents'}, {'rel': 'describedby', 'href': './README.md', 'type': 'text/markdown', 'title': 'Human-readable documentation'}]} is not valid under any of the given schemas
+ValidationError: {'type': 'Collection', 'stac_version': '1.1.0', 'stac_extensions': ['https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json', 'https://stac-extensions.github.io/classification/v2.0.0/schema.json'], 'id': 'valencia-2024-multiband', 'title': 'Flood classification and confidence, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)', 'description': 'Negative test derived from the multiband classified raster test. The COG has two bands, but the class list sits on the asset instead of on each band in the STAC 1.1 bands array, so it fails the multiband placement rule (PORTO-FMT-050).', 'license': 'other', 'updated': '2026-11-24T00:00:00Z', 'keywords': ['flood', 'Sentinel-1', 'SAR', 'Valencia', 'DANA'], 'providers': [{'name': 'Geohazards TEP (GEP)', 'roles': ['producer', 'licensor'], 'url': 'https://geohazards-tep.eu/'}, {'name': 'Portolan SDI', 'roles': ['processor', 'host'], 'url': 'https://github.com/portolan-sdi'}], 'extent': {'spatial': {'bbox': [[-0.62, 39.12, 0.03, 39.63]]}, 'temporal': {'interval': [['2024-10-07T00:00:00Z', '2024-10-31T23:59:59Z']]}}, 'assets': {'data': {'href': './sar-features-flood-confidence-cog.tif', 'type': 'image/tiff; application=geotiff; profile=cloud-optimized', 'title': 'Flood classification and confidence (COG)', 'description': 'Discrete two-band uint8 COG. Band 1 is the flood class, band 2 the classification confidence. Value 0 is nodata in both bands.', 'roles': ['data'], 'bands': [{'name': 'flood_class', 'description': 'Flood classification', 'data_type': 'uint8', 'nodata': 0}, {'name': 'confidence', 'description': 'Confidence of the flood classification', 'data_type': 'uint8', 'nodata': 0}], 'classification:classes': [{'value': 0, 'name': 'other', 'title': 'Other'}, {'value': 1, 'name': 'urban', 'title': 'Urban', 'color_hint': '000000'}, {'value': 2, 'name': 'permanent-water', 'title': 'Permanent water', 'color_hint': '0000FF'}, {'value': 3, 'name': 'bare-soil-flood', 'title': 'Flooded bare soil', 'color_hint': '00FF00'}, {'value': 4, 'name': 'urban-flood', 'title': 'Flooded urban area', 'color_hint': '00FFFF'}]}, 'thumbnail': {'href': './thumbnail.png', 'type': 'image/png', 'title': 'Preview drawn from the embedded color table', 'roles': ['thumbnail']}}, 'links': [{'rel': 'root', 'href': '../catalog.json', 'type': 'application/json'}, {'rel': 'parent', 'href': '../catalog.json', 'type': 'application/json'}, {'rel': 'license', 'href': './LICENSE.html', 'type': 'text/html', 'title': 'Terms of use'}, {'rel': 'via', 'href': 'https://geohazards-tep.eu/', 'type': 'text/html', 'title': 'Geohazards Exploitation Platform (GEP), the original source'}, {'rel': 'agents', 'href': './AGENTS.md', 'type': 'text/markdown', 'title': 'Guidance for AI agents'}, {'rel': 'describedby', 'href': './README.md', 'type': 'text/markdown', 'title': 'Human-readable documentation'}]} is not valid under any of the given schemas
 
 Failed validating 'oneOf' in schema['allOf'][1]:
     {'$schema': 'http://json-schema.org/draft-07/schema#',
@@ -752,8 +752,7 @@ On instance:
                                     'nodata': 0}],
                          'classification:classes': [{'value': 0,
                                                      'name': 'other',
-                                                     'title': 'Other',
-                                                     'nodata': True},
+                                                     'title': 'Other'},
                                                     {'value': 1,
                                                      'name': 'urban',
                                                      'title': 'Urban',
@@ -804,17 +803,17 @@ On instance:
 === End JSON Schema ===
 
 === SHACL ===
-Error processing closure source ../classification-ontology/ontology.ttl: [Errno 2] No such file or directory: '/classification-ontology/ontology.ttl' - SHACL validation will run against an incomplete closure graph
-Error processing closure source ../raster-ontology/skos.ttl: [Errno 2] No such file or directory: '/raster-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
 Error processing closure source skos.ttl: [Errno 2] No such file or directory: '/github/skos.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../raster-ontology/skos.ttl: [Errno 2] No such file or directory: '/raster-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../classification-ontology/ontology.ttl: [Errno 2] No such file or directory: '/classification-ontology/ontology.ttl' - SHACL validation will run against an incomplete closure graph
 Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
- - https://www.w3.org/ns/prov-o
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/raster-ontology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/classification-ontology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/themes-ontology/ontology.ttl
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/raster-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/themes-ontology/ontology.ttl
+ - https://www.w3.org/ns/prov-o
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/classification-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
 Validation result for _sources/stac/profile-v0-3-0/shapes.shacl: no results
 Focus nodes for _sources/stac/profile-v0-3-0/shapes.shacl:
  - Shape ptl:IconLinkHasTitleShape: <file:///github/workspace/valencia-2024-multiband>
@@ -828,73 +827,73 @@ Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl: no results
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
  - Shape stac:AssetShape: *none*
- - Shape stac:LinkShape: *none*
- - Shape stac:CollectionShape: <file:///github/workspace/valencia-2024-multiband>
  - Shape stac:ItemShape: *none*
+ - Shape stac:CollectionShape: <file:///github/workspace/valencia-2024-multiband>
+ - Shape stac:LinkShape: *none*
 
 Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl: no results
 Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>: *none*
  - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
- - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl: no results
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl:
- - Shape classification:BitfieldsUsageShape: *none*
  - Shape classification:ClassesUsageShape: *none*
  - Shape classification:BitFieldShape: *none*
+ - Shape classification:BitfieldsUsageShape: *none*
  - Shape classification:ClassShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl: no results
@@ -903,27 +902,52 @@ Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v
 
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl: no results
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:FeatureShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:LinkShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl: no results
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl:
- - Shape raster:BitsPerSampleShape: *none*
- - Shape raster:SpatialResolutionShape: *none*
- - Shape raster:ScaleShape: *none*
- - Shape raster:HistogramShape: *none*
- - Shape raster:OffsetShape: *none*
  - Shape raster:SamplingShape: *none*
  - Shape raster:HistogramUsageShape: *none*
+ - Shape raster:OffsetShape: *none*
+ - Shape raster:BitsPerSampleShape: *none*
+ - Shape raster:ScaleShape: *none*
+ - Shape raster:SpatialResolutionShape: *none*
+ - Shape raster:HistogramShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/themes-ontology/shapes.shacl: no results
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/themes-ontology/shapes.shacl:
- - Shape thns:SchemesUsageShape: *none*
  - Shape thns:ConceptShape: *none*
+ - Shape thns:SchemesUsageShape: *none*
  - Shape thns:ThemeShape: *none*
 
 === End SHACL ===
+
+=== Plugin ===
+
+--- Plugin: portolan_bblocks_rashid.RashidValidator ---
+rashid 0.4.0 checked classes-on-asset-of-multiband-raster-fail.json against Portolan v0.3.0 (metadata rules): 1 errors, 5 warnings
+
+** Validation warning **
+PTL-AST-003: asset 'data' has no file:checksum (PORTO-CORE-028, PORTO-CORE-085)
+
+** Validation warning **
+PTL-AST-003: asset 'data' has no file:size (PORTO-CORE-028, PORTO-CORE-085)
+
+** Validation warning **
+PTL-AST-003: asset 'thumbnail' has no file:checksum (PORTO-CORE-028, PORTO-CORE-085)
+
+** Validation warning **
+PTL-AST-003: asset 'thumbnail' has no file:size (PORTO-CORE-028, PORTO-CORE-085)
+
+** Validation warning **
+PTL-AST-010: asset 'thumbnail' has no description (PORTO-CORE-088)
+
+** Validation error **
+PTL-CLS-005: /assets/data/classification:classes is not on the band it describes in bands (PORTO-FMT-050)
+PTL-PRO-002: mirror collection has no rel:'canonical' link; add one if the upstream publishes its own STAC catalog (PORTO-CORE-054, PORTO-CORE-055)
+=== End Plugin ===
 

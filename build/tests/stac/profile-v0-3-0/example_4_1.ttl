@@ -18,26 +18,26 @@
         "rgb",
         "sample" ;
     dct:title "Sample Raster COG" ;
-    rdfs:seeAlso [ dct:type "application/json" ;
+    rdfs:seeAlso [ rdfs:label "Arabic" ;
+            dct:language "ar" ;
+            dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <file:///ar/raster/sample-cog/collection.json> ],
+        [ rdfs:label "Guidance for AI agents" ;
+            dct:language "en" ;
+            dct:type "text/markdown" ;
+            ns3:relation <http://www.iana.org/assignments/relation/agents> ;
+            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ dct:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ dct:type "application/json" ;
             ns3:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <file:///catalog.json> ],
         [ rdfs:label "Original source" ;
             dct:type "text/html" ;
             ns3:relation <http://www.iana.org/assignments/relation/via> ;
             oa:hasTarget <https://github.com/rasterio/rasterio/blob/main/tests/data/RGB.byte.tif> ],
-        [ rdfs:label "Guidance for AI agents" ;
-            dct:language "en" ;
-            dct:type "text/markdown" ;
-            ns3:relation <http://www.iana.org/assignments/relation/agents> ;
-            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
-        [ rdfs:label "Arabic" ;
-            dct:language "ar" ;
-            dct:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <file:///ar/raster/sample-cog/collection.json> ],
-        [ dct:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Human-readable documentation" ;
             dct:language "en" ;
             dct:type "text/markdown" ;

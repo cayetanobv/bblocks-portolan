@@ -1,8 +1,8 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns1: <raster:> .
 @prefix ns2: <https://w3id.org/ogc/stac/assets/> .
-@prefix ns3: <raster:> .
-@prefix ns4: <classification:> .
+@prefix ns3: <classification:> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
@@ -18,28 +18,28 @@
         "Valencia",
         "flood" ;
     dct:title "Flood classification, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)" ;
-    rdfs:seeAlso [ rdfs:label "Guidance for AI agents" ;
-            dct:type "text/markdown" ;
-            ns1:relation <http://www.iana.org/assignments/relation/agents> ;
-            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
-        [ dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Terms of use" ;
+    rdfs:seeAlso [ rdfs:label "Terms of use" ;
             dct:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            ns4:relation <http://www.iana.org/assignments/relation/license> ;
             oa:hasTarget <file:///github/workspace/LICENSE.html> ],
-        [ rdfs:label "Human-readable documentation" ;
-            dct:type "text/markdown" ;
-            ns1:relation <http://www.iana.org/assignments/relation/describedby> ;
-            oa:hasTarget <file:///github/workspace/README.md> ],
-        [ dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Geohazards Exploitation Platform (GEP), the original source" ;
             dct:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/via> ;
-            oa:hasTarget <https://geohazards-tep.eu/> ] ;
+            ns4:relation <http://www.iana.org/assignments/relation/via> ;
+            oa:hasTarget <https://geohazards-tep.eu/> ],
+        [ dct:type "application/json" ;
+            ns4:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ rdfs:label "Guidance for AI agents" ;
+            dct:type "text/markdown" ;
+            ns4:relation <http://www.iana.org/assignments/relation/agents> ;
+            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ dct:type "application/json" ;
+            ns4:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ rdfs:label "Human-readable documentation" ;
+            dct:type "text/markdown" ;
+            ns4:relation <http://www.iana.org/assignments/relation/describedby> ;
+            oa:hasTarget <file:///github/workspace/README.md> ] ;
     stac:hasAsset [ ns2:data <file:///github/workspace/sar-features-flood-spain-cog.tif> ;
             ns2:thumbnail <file:///github/workspace/thumbnail.png> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
@@ -54,14 +54,14 @@
     ns2:data_type "uint8" ;
     ns2:nodata 0 ;
     stac:hasAssetroles "data"^^<xsd:string> ;
-    ns3:bands [ ns4:classes [ dct:title "Other" ;
+    ns1:bands [ ns3:classes [ dct:title "Other" ;
                     ns2:name "other" ;
                     ns2:nodata true ;
                     ns2:value 0 ],
-                [ dct:title "Permanent water" ;
-                    ns2:color_hint "0000FF" ;
-                    ns2:name "permanent-water" ;
-                    ns2:value 2 ],
+                [ dct:title "Flooded urban area" ;
+                    ns2:color_hint "00FFFF" ;
+                    ns2:name "urban-flood" ;
+                    ns2:value 4 ],
                 [ dct:title "Flooded bare soil" ;
                     ns2:color_hint "00FF00" ;
                     ns2:name "bare-soil-flood" ;
@@ -70,10 +70,10 @@
                     ns2:color_hint "000000" ;
                     ns2:name "urban" ;
                     ns2:value 1 ],
-                [ dct:title "Flooded urban area" ;
-                    ns2:color_hint "00FFFF" ;
-                    ns2:name "urban-flood" ;
-                    ns2:value 4 ] ] .
+                [ dct:title "Permanent water" ;
+                    ns2:color_hint "0000FF" ;
+                    ns2:name "permanent-water" ;
+                    ns2:value 2 ] ] .
 
 <file:///github/workspace/thumbnail.png> dct:format "image/png" ;
     dct:title "Preview drawn from the embedded color table" ;

@@ -1,6 +1,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <https://w3id.org/ogc/stac/assets/> .
+@prefix ns1: <https://w3id.org/ogc/stac/assets/> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix ns3: <file:> .
 @prefix ns4: <proj:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -18,34 +18,34 @@
         "rgb",
         "sample" ;
     dct:title "Sample Raster COG" ;
-    rdfs:seeAlso [ dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Human-readable documentation" ;
+    rdfs:seeAlso [ rdfs:label "Guidance for AI agents" ;
             dct:language "en" ;
             dct:type "text/markdown" ;
-            ns1:relation <http://www.iana.org/assignments/relation/describedby> ;
-            oa:hasTarget <file:///github/workspace/README.md> ],
-        [ rdfs:label "Guidance for AI agents" ;
-            dct:language "en" ;
-            dct:type "text/markdown" ;
-            ns1:relation <http://www.iana.org/assignments/relation/agents> ;
+            ns2:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Original source" ;
             dct:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/via> ;
+            ns2:relation <http://www.iana.org/assignments/relation/via> ;
             oa:hasTarget <https://github.com/rasterio/rasterio/blob/main/tests/data/RGB.byte.tif> ],
         [ rdfs:label "Arabic" ;
             dct:language "ar" ;
             dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            ns2:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <file:///ar/raster/sample-cog/collection.json> ],
+        [ rdfs:label "Human-readable documentation" ;
+            dct:language "en" ;
+            dct:type "text/markdown" ;
+            ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
+            oa:hasTarget <file:///github/workspace/README.md> ],
         [ dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <file:///catalog.json> ] ;
-    stac:hasAsset [ ns2:data <file:///github/workspace/sample-cog.tif> ;
-            ns2:source <https://raw.githubusercontent.com/rasterio/rasterio/main/tests/data/RGB.byte.tif> ;
-            ns2:thumbnail <file:///github/workspace/thumbnail.png> ] ;
+    stac:hasAsset [ ns1:data <file:///github/workspace/sample-cog.tif> ;
+            ns1:source <https://raw.githubusercontent.com/rasterio/rasterio/main/tests/data/RGB.byte.tif> ;
+            ns1:thumbnail <file:///github/workspace/thumbnail.png> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
         "https://stac-extensions.github.io/file/v2.1.0/schema.json",
         "https://stac-extensions.github.io/language/v1.0.0/schema.json",
@@ -59,24 +59,24 @@
     dct:description "The 3-band 8-bit RGB image in UTM zone 18N, with band statistics in its header." ;
     dct:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dct:title "Sample Raster COG (COG)" ;
-    ns2:bands [ ns2:data_type "uint8" ;
-            ns2:statistics [ ns2:maximum 2.55e+02 ;
-                    ns2:mean 4.4396e+01 ;
-                    ns2:minimum 1e+00 ;
-                    ns2:stddev 5.84784e+01 ;
-                    ns2:valid_percent 6.74572e+01 ] ],
-        [ ns2:data_type "uint8" ;
-            ns2:statistics [ ns2:maximum 2.55e+02 ;
-                    ns2:mean 7.13248e+01 ;
-                    ns2:minimum 1e+00 ;
-                    ns2:stddev 6.08373e+01 ;
-                    ns2:valid_percent 6.74572e+01 ] ],
-        [ ns2:data_type "uint8" ;
-            ns2:statistics [ ns2:maximum 2.55e+02 ;
-                    ns2:mean 6.59922e+01 ;
-                    ns2:minimum 1e+00 ;
-                    ns2:stddev 5.82068e+01 ;
-                    ns2:valid_percent 6.74572e+01 ] ] ;
+    ns1:bands [ ns1:data_type "uint8" ;
+            ns1:statistics [ ns1:maximum 2.55e+02 ;
+                    ns1:mean 7.13248e+01 ;
+                    ns1:minimum 1e+00 ;
+                    ns1:stddev 6.08373e+01 ;
+                    ns1:valid_percent 6.74572e+01 ] ],
+        [ ns1:data_type "uint8" ;
+            ns1:statistics [ ns1:maximum 2.55e+02 ;
+                    ns1:mean 6.59922e+01 ;
+                    ns1:minimum 1e+00 ;
+                    ns1:stddev 5.82068e+01 ;
+                    ns1:valid_percent 6.74572e+01 ] ],
+        [ ns1:data_type "uint8" ;
+            ns1:statistics [ ns1:maximum 2.55e+02 ;
+                    ns1:mean 4.4396e+01 ;
+                    ns1:minimum 1e+00 ;
+                    ns1:stddev 5.84784e+01 ;
+                    ns1:valid_percent 6.74572e+01 ] ] ;
     stac:hasAssetroles "data"^^<xsd:string> ;
     ns4:code "EPSG:32618" .
 

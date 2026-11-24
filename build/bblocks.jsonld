@@ -217,7 +217,7 @@
   "name": "Building Blocks - Portolan Building Blocks",
   "abstract": "OGC Building Blocks for the [Portolan specification](https://github.com/portolan-sdi/portolan-spec):\nthe Portolan STAC profile and the STAC extensions Portolan defines.\n",
   "description": "Portolan is an open specification for cloud-native geospatial data catalogs. Every Portolan\ncatalog is a static STAC catalog on plain HTTPS object storage, with cloud-native assets and\nguidance files that both people and AI agents read.\n\nThis register wraps the published Portolan artifacts as Building Blocks. It does not redefine\nthem. The schema of record is `https://schemas.portolan-sdi.org/portolan/<version>/schema.json`,\nthe profile text lives in `portolan-spec/stac/README.md`, and rules the schema cannot express are\nchecked by the [rashid](https://github.com/portolan-sdi/rashid) validator.\n",
-  "modified": "2026-11-24T00:46:17.013130",
+  "modified": "2026-11-24T00:57:01.208370",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"990affbe72a10408bfed51a6254103fad13752c2",
@@ -238,6 +238,58 @@
   "imports": [
     "https://opengeospatial.github.io/bblocks/register.json",
     "https://ogcincubator.github.io/bblocks-stac/build/register.json"
+  ],
+  "validatorPlugins": [
+    {
+      "modules": [
+        {
+          "module": "portolan_bblocks_rashid",
+          "validators": [
+            {
+              "class": "RashidValidator",
+              "mimeTypes": [
+                "application/json"
+              ],
+              "fileExtensions": [
+                ".json"
+              ]
+            }
+          ]
+        }
+      ],
+      "pip": [
+        "./plugins/portolan-rashid",
+        "rashid @ git+https://github.com/portolan-sdi/rashid@v0.1.8"
+      ],
+      "urls": [
+        "https://pypi.org/project/rashid"
+      ]
+    },
+    {
+      "modules": [
+        {
+          "module": "portolan_bblocks_rashid",
+          "validators": [
+            {
+              "class": "RashidValidator",
+              "mimeTypes": [
+                "application/json"
+              ],
+              "fileExtensions": [
+                ".json"
+              ]
+            }
+          ]
+        }
+      ],
+      "pip": [
+        "./plugins/portolan-rashid",
+        "rashid @ git+https://github.com/portolan-sdi/rashid@v0.4.0"
+      ],
+      "urls": [
+        "https://pypi.org/project/rashid"
+      ]
+    }
   ],
   "remoteCacheDir": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/_cache",
   "links": [
@@ -318,6 +370,15 @@
       ],
       "group": "STAC",
       "highlighted": true,
+      "resources": [
+        {
+          "role": "validation",
+          "ref": "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+          "format": "application/schema+json",
+          "conformsTo": "https://github.com/portolan-sdi/rashid",
+          "title": "Portolan v0.2.0 rules checked by the rashid validator plugin"
+        }
+      ],
       "shaclShapes": [
         {
           "prof:hasArtifact": [
@@ -505,6 +566,15 @@
       ],
       "group": "STAC",
       "highlighted": true,
+      "resources": [
+        {
+          "role": "validation",
+          "ref": "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+          "format": "application/schema+json",
+          "conformsTo": "https://github.com/portolan-sdi/rashid",
+          "title": "Portolan v0.3.0 rules checked by the rashid validator plugin"
+        }
+      ],
       "shaclShapes": [
         {
           "prof:hasArtifact": [
@@ -695,6 +765,15 @@
       ],
       "group": "STAC",
       "highlighted": true,
+      "resources": [
+        {
+          "role": "validation",
+          "ref": "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+          "format": "application/schema+json",
+          "conformsTo": "https://github.com/portolan-sdi/rashid",
+          "title": "Portolan v0.3.0 rules checked by the rashid validator plugin"
+        }
+      ],
       "shaclShapes": [
         {
           "prof:hasArtifact": [

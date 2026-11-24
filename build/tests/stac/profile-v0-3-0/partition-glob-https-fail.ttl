@@ -1,9 +1,9 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <table:> .
+@prefix ns1: <http://www.iana.org/assignments/> .
 @prefix ns2: <file:> .
-@prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <partition:> .
-@prefix ns5: <https://w3id.org/ogc/stac/assets/> .
+@prefix ns3: <table:> .
+@prefix ns4: <https://w3id.org/ogc/stac/assets/> .
+@prefix ns5: <partition:> .
 @prefix ns6: <pmtiles:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -19,36 +19,36 @@
         "cadastre",
         "footprints" ;
     dct:title "Buildings of Andalusia" ;
-    rdfs:seeAlso [ rdfs:label "Guidance for AI agents" ;
+    rdfs:seeAlso [ dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ rdfs:label "Guidance for AI agents" ;
             dct:type "text/markdown" ;
-            ns3:relation <http://www.iana.org/assignments/relation/agents> ;
+            ns1:relation <http://www.iana.org/assignments/relation/agents> ;
             oa:hasTarget <file:///github/workspace/AGENTS.md> ],
         [ rdfs:label "Original source (Spanish Cadastre INSPIRE services)" ;
             dct:type "text/html" ;
-            ns3:relation <http://www.iana.org/assignments/relation/via> ;
+            ns1:relation <http://www.iana.org/assignments/relation/via> ;
             oa:hasTarget <https://www.catastro.hacienda.gob.es/webinspire/index.html> ],
-        [ rdfs:label "Web map tiles" ;
-            dct:type "application/vnd.pmtiles" ;
-            ns3:relation <http://www.iana.org/assignments/relation/pmtiles> ;
-            oa:hasTarget <file:///github/workspace/buildings.pmtiles> ;
-            ns6:layers "buildings" ],
-        [ dct:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ dct:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Buildings — Seville province" ;
-            dct:type "application/geo+json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <file:///github/workspace/buildings-sevilla/item.json> ],
         [ rdfs:label "Human-readable documentation" ;
             dct:type "text/markdown" ;
-            ns3:relation <http://www.iana.org/assignments/relation/describedby> ;
-            oa:hasTarget <file:///github/workspace/README.md> ] ;
-    stac:hasAsset [ ns5:style-default <file:///github/workspace/styles/default.json> ;
-            ns5:thumbnail <file:///github/workspace/thumbnail.png> ;
-            ns5:visual <file:///github/workspace/buildings.pmtiles> ] ;
+            ns1:relation <http://www.iana.org/assignments/relation/describedby> ;
+            oa:hasTarget <file:///github/workspace/README.md> ],
+        [ rdfs:label "Buildings — Seville province" ;
+            dct:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <file:///github/workspace/buildings-sevilla/item.json> ],
+        [ dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ rdfs:label "Web map tiles" ;
+            dct:type "application/vnd.pmtiles" ;
+            ns1:relation <http://www.iana.org/assignments/relation/pmtiles> ;
+            oa:hasTarget <file:///github/workspace/buildings.pmtiles> ;
+            ns6:layers "buildings" ] ;
+    stac:hasAsset [ ns4:style-default <file:///github/workspace/styles/default.json> ;
+            ns4:thumbnail <file:///github/workspace/thumbnail.png> ;
+            ns4:visual <file:///github/workspace/buildings.pmtiles> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
         "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
         "https://stac-extensions.github.io/file/v2.1.0/schema.json",
@@ -57,18 +57,18 @@
     stac:hasProvider [ ],
         [ ] ;
     stac:version "1.1.0" ;
-    ns4:file_count 8 ;
-    ns4:glob "https://example.org/andalusia/buildings/*/*.parquet" ;
-    ns4:keys [ a <file:///github/workspace/string> ;
+    ns5:file_count 8 ;
+    ns5:glob "https://example.org/andalusia/buildings/*/*.parquet" ;
+    ns5:keys [ a <file:///github/workspace/string> ;
             dct:description "Province of Andalusia, one GeoParquet file per province" ] ;
-    ns4:scheme "directory" ;
-    ns4:strategy "attribute" ;
-    ns1:columns [ a <file:///github/workspace/string> ;
+    ns5:scheme "directory" ;
+    ns5:strategy "attribute" ;
+    ns3:columns [ a <file:///github/workspace/string> ;
             dct:description "Cadastral reference of the building, unique across all partitions." ],
-        [ a <file:///github/workspace/string> ;
-            dct:description "Province name, the partition key; every file holds one province." ],
         [ a <file:///github/workspace/binary> ;
             dct:description "Building footprint as WKB, EPSG:4326." ],
+        [ a <file:///github/workspace/string> ;
+            dct:description "Province name, the partition key; every file holds one province." ],
         [ a <file:///github/workspace/float> ;
             dct:description "Building height in metres, null where the cadastre records none." ] .
 

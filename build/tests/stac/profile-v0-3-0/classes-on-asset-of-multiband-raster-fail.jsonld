@@ -83,8 +83,7 @@
         {
           "value": 0,
           "name": "other",
-          "title": "Other",
-          "nodata": true
+          "title": "Other"
         },
         {
           "value": 1,

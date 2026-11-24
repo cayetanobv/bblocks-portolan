@@ -17,28 +17,28 @@
         "Valencia",
         "flood" ;
     dct:title "Flood classification, Valencia, Spain, October 2024 (GEP SAR Features, Sentinel-1)" ;
-    rdfs:seeAlso [ rdfs:label "Geohazards Exploitation Platform (GEP), the original source" ;
-            dct:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/via> ;
-            oa:hasTarget <https://geohazards-tep.eu/> ],
-        [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <file:///github/catalog.json> ],
-        [ rdfs:label "Human-readable documentation" ;
+    rdfs:seeAlso [ rdfs:label "Human-readable documentation" ;
             dct:type "text/markdown" ;
             ns2:relation <http://www.iana.org/assignments/relation/describedby> ;
             oa:hasTarget <file:///github/workspace/README.md> ],
-        [ rdfs:label "Terms of use" ;
-            dct:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <file:///github/workspace/LICENSE.html> ],
+        [ dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <file:///github/catalog.json> ],
+        [ dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <file:///github/catalog.json> ],
         [ rdfs:label "Guidance for AI agents" ;
             dct:type "text/markdown" ;
             ns2:relation <http://www.iana.org/assignments/relation/agents> ;
-            oa:hasTarget <file:///github/workspace/AGENTS.md> ] ;
+            oa:hasTarget <file:///github/workspace/AGENTS.md> ],
+        [ rdfs:label "Geohazards Exploitation Platform (GEP), the original source" ;
+            dct:type "text/html" ;
+            ns2:relation <http://www.iana.org/assignments/relation/via> ;
+            oa:hasTarget <https://geohazards-tep.eu/> ],
+        [ rdfs:label "Terms of use" ;
+            dct:type "text/html" ;
+            ns2:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <file:///github/workspace/LICENSE.html> ] ;
     stac:hasAsset [ ns1:data <file:///github/workspace/sar-features-flood-spain-cog.tif> ;
             ns1:thumbnail <file:///github/workspace/thumbnail.png> ] ;
     stac:hasExtension "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
@@ -47,13 +47,17 @@
         [ ] ;
     stac:version "1.1.0" .
 
-<file:///github/workspace/sar-features-flood-spain-cog.tif> ns3:classes [ dct:title "Flooded urban area" ;
-            ns1:color_hint "00FFFF" ;
-            ns1:name "urban-flood" ;
-            ns1:value 4 ],
+<file:///github/workspace/sar-features-flood-spain-cog.tif> ns3:classes [ dct:title "Permanent water" ;
+            ns1:color_hint "0000FF" ;
+            ns1:name "permanent-water" ;
+            ns1:value 2 ],
         [ ns1:color_hint "000000" ;
             ns1:name "urban" ;
             ns1:value 1 ],
+        [ dct:title "Flooded urban area" ;
+            ns1:color_hint "00FFFF" ;
+            ns1:name "urban-flood" ;
+            ns1:value 4 ],
         [ dct:title "Other" ;
             ns1:name "other" ;
             ns1:nodata true ;
@@ -61,11 +65,7 @@
         [ dct:title "Flooded bare soil" ;
             ns1:color_hint "00FF00" ;
             ns1:name "bare-soil-flood" ;
-            ns1:value 3 ],
-        [ dct:title "Permanent water" ;
-            ns1:color_hint "0000FF" ;
-            ns1:name "permanent-water" ;
-            ns1:value 2 ] ;
+            ns1:value 3 ] ;
     dct:description "Discrete uint8 COG with an embedded color table and embedded band statistics. Value 0 is nodata and draws transparent." ;
     dct:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dct:title "Flood classification (COG)" ;
