@@ -58,6 +58,18 @@ Docker is required.
 
 The validation report is written to `build-local/tests/report.html`. Examples must pass. Files in `tests/` whose name ends in `-fail` must fail.
 
+The first local build asks before it installs the rashid validator plugin. Answer `y`, or pass `--skip-permissions true` to the postprocess image. CI skips the prompt.
+
+## How the blocks validate
+
+Each example and test file goes through three layers:
+
+1. **JSON Schema.** STAC, plus the Portolan schema of the block's version. It checks structure, such as an asset without a media type.
+2. **JSON-LD and SHACL.** The JSON-LD context turns the document into RDF, and `shapes.shacl` checks rules the schema leaves to tooling, such as an SPDX licence identifier. Any SHACL tool can apply these shapes.
+3. **The rashid validator plugin.** [`plugins/portolan-rashid`](plugins/portolan-rashid) runs [rashid](https://github.com/portolan-sdi/rashid)'s metadata rules on the document, through OGC's [validator plugin](https://ogcincubator.github.io/bblocks-docs/create/validation#validator-plugins) mechanism. It catches rules that compare parts of a document, such as a mirror without a `via` link. Each block names its Portolan version in a `role: validation` resource, and the plugin runs the rashid release portolan-spec pins for that version: 0.1.8 for v0.2.0, 0.4.0 for v0.3.0.
+
+rashid's file and live checks, which need the published catalog, are not part of the build. [`SECURITY.md`](SECURITY.md) lists the code a build runs.
+
 ## Layout
 
 ```
@@ -68,6 +80,9 @@ _sources/<path>/           one directory per block; the path becomes the identif
   examples.yaml            examples, validated on every build
   description.md           documentation
   tests/*-fail.json        negative fixtures
+  context.jsonld           JSON-LD context for the semantic uplift
+  shapes.shacl             SHACL shapes run on the uplifted RDF
+plugins/portolan-rashid/   validator plugin that runs rashid on examples and tests
 build/                     generated on push by GitHub Actions; do not edit
 ```
 

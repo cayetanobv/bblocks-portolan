@@ -11,4 +11,4 @@ To stay on one version, reference a versioned block instead, as the STAC Buildin
 | `portolan.stac.profile-v0-3-0` | v0.3.0, released on 17 November 2026 (current) |
 | `portolan.stac.profile-v0-2-0` | v0.2.0, released on 28 August 2026 |
 
-The rules each version enforces, its test files and the differences between versions are documented in the versioned blocks. The examples here are those of the v0.3.0 block.
+The rules each version enforces, its test files and the differences between versions are documented in the versioned blocks. Like them, this block is checked by the rashid validator plugin, with the rashid release that matches the latest version. The examples here are those of the v0.3.0 block.

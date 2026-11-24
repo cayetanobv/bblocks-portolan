@@ -38,6 +38,23 @@ The v0.2.0 schema, like the v0.3.0 one, leaves the SPDX identifier and the licen
 
 `license-not-spdx-fail.json` and `license-other-without-link-fail.json` pass the JSON Schema and fail only these shapes. `license-other-with-link.json` passes. `icon-link-without-title.json` passes with a warning. The block's `context.jsonld` maps the `type` values `Catalog` and `Collection` to the STAC ontology classes so that the shapes find their targets.
 
+## What the rashid plugin checks
+
+The register's [rashid](https://github.com/portolan-sdi/rashid) validator plugin also runs on this block. Each rashid release checks one Portolan version, the newest it knows, and rashid 0.4.0 applies the v0.3.0 rules. So for this block the plugin runs rashid 0.1.8, the release portolan-spec pins at its `v0.2.0` tag, which bundles the v0.2.0 schema. The block's `role: validation` resource in `bblock.json` names the v0.2.0 schema, and the copy of the plugin installed with rashid 0.1.8 is the one that handles it.
+
+With rashid 0.1.8, the v0.2.0 rules hold: `data-asset-href-glob.json` and `pmtiles-asset-without-visual-role.json` pass, and `s3-asset-href-with-https-alternate-fail.json` fails. Every negative test fails on the rule it was written to break:
+
+| Test file | rashid check | Requirement |
+|---|---|---|
+| `license-not-spdx-fail.json` | `PTL-LIC-001` | `PORTO-CORE-059` |
+| `license-other-without-link-fail.json` | `PTL-LIC-002` | `PORTO-CORE-059` |
+| `missing-agents-link-fail.json` | `PTL-FIL-002` | `PORTO-CORE-061` |
+| `proprietary-license-fail.json` | `PTL-LIC-003` | `PORTO-CORE-060` |
+| `s3-asset-href-fail.json` | `PTL-AST-002` | `PORTO-CORE-023` |
+| `s3-asset-href-with-https-alternate-fail.json` | `PTL-AST-002` | `PORTO-CORE-023` |
+
+The plugin runs rashid's metadata rules only, offline, on a minimal catalog written around each document. The `portolan.stac.profile-v0-3-0` block describes how.
+
 ## STAC extensions
 
 v0.2.0 pins 13 upstream `stac-extensions` schemas plus the Portolan partition extension. Five of them exist as Building Blocks in [`bblocks-stac`](https://ogcincubator.github.io/bblocks-stac/) at the pinned version and are declared as dependencies: File Info v2.1.0, Raster v2.0.0, Scientific Citation v1.0.0, Themes v1.0.0 and Versioning Indicators v1.2.0.

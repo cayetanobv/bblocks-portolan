@@ -30,3 +30,22 @@ license:
   url: https://www.apache.org/licenses/LICENSE-2.0
 
 schema-oas30-downcompile: False
+
+# Validator plugins: https://ogcincubator.github.io/bblocks-docs/create/validation#validator-plugins
+# The rashid plugin (plugins/portolan-rashid) runs the rashid Portolan validator on each example and
+# test file. Each rashid release checks one Portolan version, so the plugin is installed once per
+# pin, each in its own virtualenv, and each copy handles only the blocks whose validation resource
+# names its version. The pins follow portolan-spec, which validates its v0.2.0 release with rashid
+# 0.1.8 and its v0.3.0 release with rashid 0.4.0. See SECURITY.md before changing these entries.
+plugins:
+  validators:
+    - pip:
+        - ./plugins/portolan-rashid
+        - rashid @ git+https://github.com/portolan-sdi/rashid@v0.1.8
+      modules:
+        - portolan_bblocks_rashid
+    - pip:
+        - ./plugins/portolan-rashid
+        - rashid @ git+https://github.com/portolan-sdi/rashid@v0.4.0
+      modules:
+        - portolan_bblocks_rashid
