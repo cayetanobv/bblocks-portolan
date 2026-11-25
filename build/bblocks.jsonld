@@ -217,7 +217,7 @@
   "name": "Building Blocks - Portolan Building Blocks",
   "abstract": "OGC Building Blocks for the [Portolan specification](https://github.com/portolan-sdi/portolan-spec):\nthe Portolan STAC profile and the STAC extensions Portolan defines.\n",
   "description": "Portolan is an open specification for cloud-native geospatial data catalogs. Every Portolan\ncatalog is a static STAC catalog on plain HTTPS object storage, with cloud-native assets and\nguidance files that both people and AI agents read.\n\nThis register wraps the published Portolan artifacts as Building Blocks. It does not redefine\nthem. The schema of record is `https://schemas.portolan-sdi.org/portolan/<version>/schema.json`,\nthe profile text lives in `portolan-spec/stac/README.md`, and rules the schema cannot express are\nchecked by the [rashid](https://github.com/portolan-sdi/rashid) validator.\n",
-  "modified": "2026-11-24T08:48:02.068681",
+  "modified": "2026-11-25T07:54:54.933362",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"990affbe72a10408bfed51a6254103fad13752c2",
@@ -329,7 +329,7 @@
       "itemClass": "schema",
       "register": "bblocks-portolan",
       "version": "0.2.0",
-      "dateOfLastChange": "2026-11-24",
+      "dateOfLastChange": "2026-11-25",
       "dependsOn": [
         "bblocks://ogc.contrib.stac.collection",
         "bblocks://ogc.contrib.stac.extensions.file",
@@ -481,7 +481,7 @@
       "sourceLdContext": "https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-2-0/context.jsonld",
       "resolvedSchemaProperties": "https://cayetanobv.github.io/bblocks-portolan/build/annotated/stac/profile-v0-2-0/resolvedProperties.json",
       "sourceFiles": "https://cayetanobv.github.io/bblocks-portolan/_sources/stac/profile-v0-2-0/",
-      "validationPassed": false,
+      "validationPassed": true,
       "testOutputs": "https://github.com/cayetanobv/bblocks-portolan/blob/main/build/tests/stac/profile-v0-2-0/",
       "documentation": {
         "markdown": {
@@ -523,7 +523,7 @@
       "itemClass": "schema",
       "register": "bblocks-portolan",
       "version": "0.3.0",
-      "dateOfLastChange": "2026-11-24",
+      "dateOfLastChange": "2026-11-25",
       "dependsOn": [
         "bblocks://ogc.contrib.stac.collection",
         "bblocks://ogc.contrib.stac.extensions.classification",
@@ -728,7 +728,7 @@
       "itemClass": "schema",
       "register": "bblocks-portolan",
       "version": "0.3.0",
-      "dateOfLastChange": "2026-11-24",
+      "dateOfLastChange": "2026-11-25",
       "dependsOn": [
         "bblocks://ogc.contrib.stac.collection",
         "bblocks://portolan.stac.profile-v0-3-0"
